@@ -1133,12 +1133,13 @@ body {
   .ansprech-split-layout {
     flex-direction: column !important;
     height: auto !important;
-    gap: 1.5rem;
+    gap: 2rem;
   }
   .ansprech-texts {
     width: 100% !important;
     height: auto !important;
     position: relative !important;
+    order: 1 !important;
   }
   .ansprech-details {
     position: relative !important;
@@ -1146,7 +1147,7 @@ body {
     left: auto !important;
     transform: none !important;
     opacity: 1 !important;
-    padding: 1rem 0;
+    padding: 0;
   }
   .ansprech-details h3 {
     font-size: 1.8rem;
@@ -1164,6 +1165,7 @@ body {
     display: flex !important;
     flex-direction: column !important;
     gap: 1rem;
+    order: -1 !important;
   }
   .ansprech-image-wrapper {
     position: relative !important;
