@@ -970,7 +970,7 @@ body {
   .ansprech-split-layout {
     flex-direction: column;
     height: auto;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .ansprech-texts {
     width: 100%;
@@ -978,9 +978,9 @@ body {
     position: relative;
   }
   .ansprech-details {
-    position: relative;
-    top: auto;
-    left: auto;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
     transform: none !important;
     opacity: 1 !important;
     padding: 1rem 0;
@@ -995,6 +995,7 @@ body {
     font-size: 1rem;
   }
   .ansprech-images-container {
+    position: relative !important;
     width: 100%;
     height: auto;
     display: flex;
@@ -1002,10 +1003,10 @@ body {
     gap: 1rem;
   }
   .ansprech-image-wrapper {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 100%;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
     height: 300px;
     transform: none !important;
   }
