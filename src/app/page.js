@@ -86,6 +86,8 @@ export default function Home() {
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar';
   
+  const [menuOpen, setMenuOpen] = useState(false);
+  
   const scrollTextContainerRef = useRef(null);
   const scrollCharsRef = useRef([]);
   const hintergrundSectionRef = useRef(null);
@@ -227,11 +229,11 @@ export default function Home() {
             <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-header)" />
           </svg>
         </div>
-        <nav className="nav-links">
-          <a href="#angebote">{t.nav_angebote}</a>
-          <a href="#haltung">{t.nav_haltung}</a>
-          <a href="#ansprechpartner-section" onClick={handleTeamClick}>{t.nav_team}</a>
-          <a href="#kontakt">{t.nav_kontakt}</a>
+        <nav className={`nav-links${menuOpen ? ' open' : ''}`}>
+          <a href="#angebote" onClick={() => setMenuOpen(false)}>{t.nav_angebote}</a>
+          <a href="#haltung" onClick={() => setMenuOpen(false)}>{t.nav_haltung}</a>
+          <a href="#ansprechpartner-section" onClick={(e) => { setMenuOpen(false); handleTeamClick(e); }}>{t.nav_team}</a>
+          <a href="#kontakt" onClick={() => setMenuOpen(false)}>{t.nav_kontakt}</a>
         </nav>
         <div className="nav-actions">
           <div className="lang-selector">
@@ -244,6 +246,11 @@ export default function Home() {
             </select>
           </div>
           <a href="#anfragen" className="btn btn-primary">{t.nav_anfragen}</a>
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+          </button>
         </div>
       </header>
 

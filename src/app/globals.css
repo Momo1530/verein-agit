@@ -80,6 +80,48 @@ body {
   gap: 1.5rem;
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+  padding: 4px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+}
+
 .lang-selector select {
   border: none;
   background: transparent;
@@ -770,6 +812,238 @@ body {
   
   .nav-links {
     display: none;
+  }
+}
+
+/* ===== TABLET (768px - 1024px) ===== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .headline {
+    font-size: 3.5rem;
+  }
+  .hero-content {
+    padding: 3rem;
+  }
+  .ansprech-image-wrapper {
+    width: 280px;
+    height: 400px;
+  }
+  .ansprech-details h3 {
+    font-size: 2rem;
+  }
+  .ansprech-role,
+  .ansprech-contact-info p {
+    font-size: 1.2rem;
+  }
+  .contact-form-section {
+    padding: 6rem 2rem;
+  }
+  .form-title {
+    font-size: 2rem;
+  }
+  .site-footer {
+    padding: 3rem 2rem 1.5rem;
+  }
+}
+
+/* ===== MOBILE (< 768px) ===== */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .nav-logo {
+    height: 50px;
+  }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  .nav-actions {
+    gap: 0.8rem;
+  }
+  .nav-actions .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: auto;
+    padding-top: 5rem;
+  }
+  .hero-content {
+    padding: 2rem 1.5rem;
+  }
+  .headline {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .hero-image {
+    height: 250px;
+    clip-path: none;
+  }
+
+  /* Action Steps */
+  .action-steps {
+    padding: 2rem 1.5rem;
+    margin-top: 0;
+  }
+  .step {
+    padding: 1.5rem 0;
+  }
+  .step h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Hintergrund */
+  .hintergrund-scroll-section {
+    height: 150vh;
+  }
+  .hintergrund-title {
+    font-size: 1.8rem;
+  }
+  #scrollTextContainer {
+    font-size: 0.95rem;
+  }
+  .hintergrund-sticky-container {
+    padding: 0 1.5rem;
+  }
+
+  /* Contact Form */
+  .contact-form-section {
+    padding: 4rem 1rem;
+  }
+  .form-title {
+    font-size: 1.8rem;
+  }
+  .form-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+  .glass-form {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  /* Ansprechpartner */
+  .ansprechpartner-scroll-section {
+    height: 400vh;
+  }
+  .ansprech-sticky-container {
+    padding: 0 1rem;
+  }
+  .ansprech-split-layout {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+  }
+  .ansprech-texts {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .ansprech-details {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none !important;
+    opacity: 1 !important;
+    padding: 1rem 0;
+  }
+  .ansprech-details h3 {
+    font-size: 1.8rem;
+  }
+  .ansprech-role {
+    font-size: 1.1rem;
+  }
+  .ansprech-contact-info p {
+    font-size: 1rem;
+  }
+  .ansprech-images-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ansprech-image-wrapper {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: 300px;
+    transform: none !important;
+  }
+  .is-finale #ansprech-img-1,
+  .is-finale #ansprech-img-2,
+  .is-finale #ansprech-text-1,
+  .is-finale #ansprech-text-2 {
+    transform: none !important;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 2rem 1.5rem 1rem;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .footer-desc {
+    max-width: 100%;
+  }
+}
+
+/* ===== SMALL MOBILE (< 480px) ===== */
+@media (max-width: 480px) {
+  .headline {
+    font-size: 2rem;
+  }
+  .hero-content {
+    padding: 1.5rem 1rem;
+  }
+  .nav-logo {
+    height: 40px;
+  }
+  .nav-actions .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+  .lang-selector select {
+    font-size: 0.75rem;
+  }
+  .ansprech-image-wrapper {
+    height: 220px;
+  }
+  .ansprech-details h3 {
+    font-size: 1.4rem;
+  }
+  .form-title {
+    font-size: 1.5rem;
   }
 }
 
