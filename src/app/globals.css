@@ -921,7 +921,14 @@ body {
 
   /* Hintergrund */
   .hintergrund-scroll-section {
-    height: 150vh;
+    height: auto;
+    min-height: auto;
+  }
+  .hintergrund-sticky-container {
+    position: relative;
+    top: auto;
+    height: auto;
+    padding: 3rem 1.5rem;
   }
   .hintergrund-title {
     font-size: 1.8rem;
@@ -929,8 +936,8 @@ body {
   #scrollTextContainer {
     font-size: 0.95rem;
   }
-  .hintergrund-sticky-container {
-    padding: 0 1.5rem;
+  .scroll-char {
+    opacity: 1 !important; /* Alle Zeichen sichtbar */
   }
 
   /* Contact Form */
@@ -951,10 +958,14 @@ body {
 
   /* Ansprechpartner */
   .ansprechpartner-scroll-section {
-    height: 400vh;
+    height: auto;
+    min-height: auto;
   }
   .ansprech-sticky-container {
-    padding: 0 1rem;
+    position: relative;
+    top: auto;
+    height: auto;
+    padding: 2rem 1rem;
   }
   .ansprech-split-layout {
     flex-direction: column;

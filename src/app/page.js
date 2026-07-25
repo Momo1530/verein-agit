@@ -124,6 +124,9 @@ export default function Home() {
 
   // Scroll logic
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return; // Keine Scroll-Effekte auf Handy
+
     const handleScroll = () => {
       // Hintergrund Scroll Text
       if (hintergrundSectionRef.current && scrollCharsRef.current.length > 0) {
