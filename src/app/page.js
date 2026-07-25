@@ -351,7 +351,10 @@ export default function Home() {
         <section className="ansprechpartner-scroll-section" id="ansprechpartner-section" dir="ltr" ref={ansprechpartnerSectionRef}>
           <div className="ansprech-sticky-container">
             <div className="ansprech-split-layout">
-              <div className="ansprech-texts">
+              <div className="ansprech-person" id="person-1">
+                <div className="ansprech-image-wrapper" id="ansprech-img-1" style={{ zIndex: 1 }}>
+                  <img src="/kuebra.png" alt="Kübra Erik" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
+                </div>
                 <div className="ansprech-details" id="ansprech-text-1">
                   <h3>Kübra Erik</h3>
                   <p className="ansprech-role" dangerouslySetInnerHTML={{ __html: t.contact_role || "Ansprechpartnerin/Bereichsleitung:<br/>MA 13 außerschulische Kinder- und Jugendarbeit" }}></p>
@@ -360,6 +363,11 @@ export default function Home() {
                     <p><span><strong>Mobil:</strong></span> +43/676/3668820</p>
                   </div>
                 </div>
+              </div>
+              <div className="ansprech-person" id="person-2">
+                <div className="ansprech-image-wrapper" id="ansprech-img-2" style={{ zIndex: 2 }}>
+                  <img src="/murat.png" alt="Murat Percin" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
+                </div>
                 <div className="ansprech-details" id="ansprech-text-2">
                   <h3>Murat Percin, BA</h3>
                   <p className="ansprech-role" dangerouslySetInnerHTML={{ __html: t.contact2_role || "Ansprechpartner/Bereichsleitung:<br/>MA 11 Einzel/Gruppentrainings" }}></p>
@@ -367,14 +375,6 @@ export default function Home() {
                     <p><span><strong>E-Mail:</strong></span> <a href="mailto:m.percin@cult-wien.org">m.percin@cult-wien.org</a></p>
                     <p><span><strong>Mobil:</strong></span> +43/676/3668823</p>
                   </div>
-                </div>
-              </div>
-              <div className="ansprech-images-container">
-                <div className="ansprech-image-wrapper" id="ansprech-img-1" style={{ zIndex: 1 }}>
-                  <img src="/kuebra.png" alt="Kübra Erik" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
-                </div>
-                <div className="ansprech-image-wrapper" id="ansprech-img-2" style={{ zIndex: 2 }}>
-                  <img src="/murat.png" alt="Murat Percin" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
                 </div>
               </div>
             </div>
