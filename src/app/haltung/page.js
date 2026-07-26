@@ -17,7 +17,7 @@ const translations = {
       { title: "Kultursensibilität", desc: "Wir arbeiten mehrsprachig und kultursensibel. Gewaltprävention muss alle Menschen erreichen." }
     ],
     approach_title: "Unser Ansatz",
-    approach_text: "AGIT ist ein eigenständiges Angebot des Vereins Cult – Jugendarbeit wirkt. Wir verstehen Gewaltprävention als Querschnittsaufgabe, die in pädagogischen, sozialen und institutionellen Kontexten verankert werden muss. Unsere Angebote sind niederschwellig, lebensweltorientiert und richten sich nach dem konkreten Bedarf der Zielgruppe. Wir arbeiten präventiv, intervenierend und stärkend – je nachdem, was die Situation erfordert."
+    approach_text: "AGIT versteht Gewaltprävention als Querschnittsaufgabe, die in pädagogischen, sozialen und institutionellen Kontexten verankert werden muss. Wir verstehen Gewaltprävention als Querschnittsaufgabe, die in pädagogischen, sozialen und institutionellen Kontexten verankert werden muss. Unsere Angebote sind niederschwellig, lebensweltorientiert und richten sich nach dem konkreten Bedarf der Zielgruppe. Wir arbeiten präventiv, intervenierend und stärkend – je nachdem, was die Situation erfordert."
   },
   tr: {
     page_title: "Tutumumuz",
@@ -34,7 +34,7 @@ const translations = {
       { title: "Kültürel Duyarlılık", desc: "Çok dilli ve kültürel duyarlılıkla çalışıyoruz. Şiddet önleme herkese ulaşmalıdır." }
     ],
     approach_title: "Yaklaşımımız",
-    approach_text: "AGIT, Cult – Gençlik Çalışmaları İşe Yarar derneğinin bağımsız bir hizmetidir. Şiddet önlemeyi, pedagojik, sosyal ve kurumsal bağlamlarda yerleştirilmesi gereken kesitsel bir görev olarak görüyoruz."
+    approach_text: "AGIT, şiddet önlemeyi, pedagojik, sosyal ve kurumsal bağlamlarda yerleştirilmesi gereken kesitsel bir görev olarak görüyoruz. Şiddet önlemeyi, pedagojik, sosyal ve kurumsal bağlamlarda yerleştirilmesi gereken kesitsel bir görev olarak görüyoruz."
   },
   ar: {
     page_title: "موقفنا",
@@ -51,7 +51,7 @@ const translations = {
       { title: "الحساسية الثقافية", desc: "نعمل بعدة لغات وبحساسية ثقافية. يجب أن تصل الوقاية من العنف إلى الجميع." }
     ],
     approach_title: "نهجنا",
-    approach_text: "AGIT هي خدمة مستقلة لجمعية Cult - العمل الشبابي فعال. نحن نعتبر الوقاية من العنف مهمة شاملة يجب ترسيخها في السياقات التربوية والاجتماعية والمؤسسية."
+    approach_text: "AGIT تعتبر الوقاية من العنف مهمة شاملة يجب ترسيخها في السياقات التربوية والاجتماعية والمؤسسية. نحن نعتبر الوقاية من العنف مهمة شاملة يجب ترسيخها في السياقات التربوية والاجتماعية والمؤسسية."
   },
   ku: {
     page_title: "Helwesta Me",
@@ -68,7 +68,7 @@ const translations = {
       { title: "Hesasiyeta Çandî", desc: "Em bi pirzimanî û hesasiyeta çandî dixebitin. Pêşîlêgirtina şîdetê divê bigihêje her kesî." }
     ],
     approach_title: "Nêzîkatiya Me",
-    approach_text: "AGIT karûbareke serbixwe ya komeleya Cult – Xebatên Ciwanan Bibandor e. Em pêşîlêgirtina şîdetê wekî karekî qutkirî dibînin ku divê di çarçoveyên pedagojîk, civakî û sazî de were bicîhkirin."
+    approach_text: "AGIT pêşîlêgirtina şîdetê wekî karekî qutkirî dibîne ku divê di çarçoveyên pedagojîk, civakî û sazî de were bicîhkirin. Em pêşîlêgirtina şîdetê wekî karekî qutkirî dibînin ku divê di çarçoveyên pedagojîk, civakî û sazî de were bicîhkirin."
   },
   bks: {
     page_title: "Naš stav",
@@ -85,7 +85,7 @@ const translations = {
       { title: "Kulturna osjetljivost", desc: "Radimo višejezično i kulturno osjetljivo. Prevencija nasilja mora doseći sve ljude." }
     ],
     approach_title: "Naš pristup",
-    approach_text: "AGIT je samostalna usluga udruženja Cult – Rad sa mladima djeluje. Prevenciju nasilja vidimo kao poprečni zadatak koji mora biti ukorijenjen u pedagoškim, socijalnim i institucionalnim kontekstima."
+    approach_text: "AGIT prevenciju nasilja vidi kao poprečni zadatak koji mora biti ukorijenjen u pedagoškim, socijalnim i institucionalnim kontekstima. Prevenciju nasilja vidimo kao poprečni zadatak koji mora biti ukorijenjen u pedagoškim, socijalnim i institucionalnim kontekstima."
   }
 };
 
