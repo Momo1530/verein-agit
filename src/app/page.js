@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 const translations = {
   de: {
@@ -107,89 +107,7 @@ export default function Home() {
   
   const [menuOpen, setMenuOpen] = useState(false);
   
-  const ansprechpartnerSectionRef = useRef(null);
-  
   const [formSuccess, setFormSuccess] = useState(false);
-
-  // Scroll logic
-  useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) return; // Keine Scroll-Effekte auf Handy
-
-    const handleScroll = () => {
-      // Ansprechpartner Scroll
-      const ansprechSection = ansprechpartnerSectionRef.current;
-      if (ansprechSection) {
-        const rect = ansprechSection.getBoundingClientRect();
-        const scrollableDistance = rect.height - window.innerHeight;
-        
-        if (scrollableDistance > 0) {
-          let p = rect.top <= 0 ? -rect.top / scrollableDistance : 0;
-          p = Math.max(0, Math.min(1, p));
-          
-          const img1 = document.getElementById('ansprech-img-1');
-          const img2 = document.getElementById('ansprech-img-2');
-          const text1 = document.getElementById('ansprech-text-1');
-          const text2 = document.getElementById('ansprech-text-2');
-          const startX = -window.innerWidth;
-          
-          if (p >= 0.80) {
-            ansprechSection.classList.add('is-finale');
-            if (img1) img1.style.transform = '';
-            if (img2) img2.style.transform = '';
-            if (text1) text1.style.transform = '';
-            if (text2) text2.style.transform = '';
-          } else {
-            ansprechSection.classList.remove('is-finale');
-            
-            // Phase 1: img1 kommt (p: 0.20 → 0.35)
-            let img1P = Math.max(0, Math.min(1, (p - 0.20) / 0.15));
-            if (img1) img1.style.transform = `translateX(${startX + (0 - startX) * img1P}px)`;
-            
-            // Phase 2: text1 kommt (p: 0.35 → 0.50)
-            let text1P = Math.max(0, Math.min(1, (p - 0.35) / 0.15));
-            if (text1) {
-              if (p >= 0.60) {
-                text1.style.opacity = '0';
-              } else {
-                text1.style.opacity = '1';
-                text1.style.transform = `translate(${startX + (0 - startX) * text1P}px, -50%)`;
-              }
-            }
-            
-            // Phase 3: img2 kommt (p: 0.50 → 0.65)
-            let img2P = Math.max(0, Math.min(1, (p - 0.50) / 0.15));
-            if (img2) img2.style.transform = `translateX(${startX + (-40 - startX) * img2P}px)`;
-            
-            // Phase 4: text2 kommt (p: 0.60 → 0.75)
-            let text2P = Math.max(0, Math.min(1, (p - 0.60) / 0.15));
-            if (text2) {
-              if (p < 0.60) {
-                text2.style.opacity = '0';
-              } else {
-                text2.style.opacity = '1';
-                text2.style.transform = `translate(${startX + (0 - startX) * text2P}px, -50%)`;
-              }
-            }
-          }
-        }
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleTeamClick = (e) => {
-    e.preventDefault();
-    const section = ansprechpartnerSectionRef.current;
-    if (section) {
-      const rect = section.getBoundingClientRect();
-      const scrollableDistance = rect.height - window.innerHeight;
-      const targetY = (rect.top + window.scrollY) + (scrollableDistance * 0.9);
-      window.scrollTo({ top: targetY, behavior: 'auto' });
-    }
-  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -341,34 +259,29 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ansprechpartner-scroll-section" id="ansprechpartner-section" dir="ltr" ref={ansprechpartnerSectionRef}>
-          <div className="ansprech-sticky-container">
-            <div className="ansprech-split-layout">
-              <div className="ansprech-person" id="person-1">
-                <div className="ansprech-image-wrapper" id="ansprech-img-1" style={{ zIndex: 1 }}>
-                  <img src="/kuebra.png" alt="Kübra Erik" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
-                </div>
-                <div className="ansprech-details" id="ansprech-text-1">
-                  <h3>Kübra Erik</h3>
-                  <p className="ansprech-role" dangerouslySetInnerHTML={{ __html: t.contact_role || "Ansprechpartnerin/Bereichsleitung:<br/>MA 13 außerschulische Kinder- und Jugendarbeit" }}></p>
-                  <div className="ansprech-contact-info">
-                    <p><span><strong>E-Mail:</strong></span> <a href="mailto:k.erik@verein-agit.at">k.erik@verein-agit.at</a></p>
-                    <p><span><strong>Mobil:</strong></span> +43/676/3668820</p>
-                  </div>
-                </div>
+        <section className="ansprechpartner-section" id="ansprechpartner-section">
+          <div className="ansprechpartner-row">
+            <div className="ansprechperson-image-col">
+              <img src="/murat.png" alt="Murat Percin" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
+            </div>
+            <div className="ansprechperson-text-col">
+              <h3>Murat Percin, BA</h3>
+              <p className="ansprechperson-role" dangerouslySetInnerHTML={{ __html: t.contact2_role || "Ansprechpartner/Bereichsleitung:<br/>MA 11 Einzel/Gruppentrainings" }}></p>
+              <div className="ansprechperson-contact">
+                <p><strong>E-Mail:</strong> <a href="mailto:m.percin@verein-agit.at">m.percin@verein-agit.at</a></p>
+                <p><strong>Mobil:</strong> +43/676/3668823</p>
               </div>
-              <div className="ansprech-person" id="person-2">
-                <div className="ansprech-image-wrapper" id="ansprech-img-2" style={{ zIndex: 2 }}>
-                  <img src="/murat.png" alt="Murat Percin" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
-                </div>
-                <div className="ansprech-details" id="ansprech-text-2">
-                  <h3>Murat Percin, BA</h3>
-                  <p className="ansprech-role" dangerouslySetInnerHTML={{ __html: t.contact2_role || "Ansprechpartner/Bereichsleitung:<br/>MA 11 Einzel/Gruppentrainings" }}></p>
-                  <div className="ansprech-contact-info">
-                    <p><span><strong>E-Mail:</strong></span> <a href="mailto:m.percin@verein-agit.at">m.percin@verein-agit.at</a></p>
-                    <p><span><strong>Mobil:</strong></span> +43/676/3668823</p>
-                  </div>
-                </div>
+            </div>
+            
+            <div className="ansprechperson-image-col">
+              <img src="/kuebra.png" alt="Kübra Erik" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
+            </div>
+            <div className="ansprechperson-text-col">
+              <h3>Kübra Erik</h3>
+              <p className="ansprechperson-role" dangerouslySetInnerHTML={{ __html: t.contact_role || "Ansprechpartnerin/Bereichsleitung:<br/>MA 13 außerschulische Kinder- und Jugendarbeit" }}></p>
+              <div className="ansprechperson-contact">
+                <p><strong>E-Mail:</strong> <a href="mailto:k.erik@verein-agit.at">k.erik@verein-agit.at</a></p>
+                <p><strong>Mobil:</strong> +43/676/3668820</p>
               </div>
             </div>
           </div>
