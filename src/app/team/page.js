@@ -89,13 +89,31 @@ const translations = {
     person1_phone: "+43/676/3668820",
     person2_email: "m.percin@verein-agit.at",
     person2_phone: "+43/676/3668823"
+  },
+  fa: {
+    page_title: "تیم ما",
+    hero_title: "با ما آشنا شوید",
+    hero_desc: "پشت AGIT تیمی متعهد با سال‌ها تجربه در زمینه پیشگیری از خشونت و کار اجتماعی قرار دارد.",
+    team_intro: "تیم ما شایستگی‌های آموزشی، روانی-اجتماعی و بین‌فرهنگی را ترکیب می‌کند. ما چندزبانه و با حساسیت فرهنگی کار می‌کنیم.",
+    person1_name: "کبرا اریک",
+    person1_role: "شخص تماس/مدیر بخش:<br/>MA 13 کار با کودکان و نوجوانان خارج از مدرسه",
+    person1_bio: "کبرا اریک تجربه طولانی در کار با کودکان و نوجوانان خارج از مدرسه دارد. تمرکز او بر کارگاه‌های پیشگیرانه و آگاه‌سازی گروه‌ها است.",
+    person1_email: "k.erik@verein-agit.at",
+    person1_phone: "+43/676/3668820",
+    person2_name: "مورات پرچین، BA",
+    person2_role: "شخص تماس/مدیر بخش:<br/>MA 11 آموزش‌های فردی/گروهی",
+    person2_bio: "مورات پرچین در آموزش‌های فردی و گروهی در زمینه پیشگیری از خشونت تخصص دارد. با تحصیلات آکادمیک و تجربه عملی خود، کودکان، نوجوانان و بزرگسالان را همراهی می‌کند.",
+    person1_email: "k.erik@verein-agit.at",
+    person1_phone: "+43/676/3668820",
+    person2_email: "m.percin@verein-agit.at",
+    person2_phone: "+43/676/3668823"
   }
 };
 
 export default function TeamPage() {
   const [lang, setLang] = useState('de');
   const t = translations[lang] || translations.de;
-  const isRtl = lang === 'ar';
+  const isRtl = lang === 'ar' || lang === 'fa';
 
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -111,10 +129,10 @@ export default function TeamPage() {
           </svg>
         </div>
         <nav className="nav-links">
-          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : 'POČETNA STRANICA'}</a>
-          <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : 'PONUDE'}</a>
-          <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : 'STAV'}</a>
-          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : 'KONTAKT'}</a>
+          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'fa' ? 'صفحه اصلی' : 'POČETNA STRANICA'}</a>
+          <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : lang === 'fa' ? 'خدمات' : 'PONUDE'}</a>
+          <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : lang === 'fa' ? 'موضع‌گیری' : 'STAV'}</a>
+          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : lang === 'fa' ? 'تماس' : 'KONTAKT'}</a>
         </nav>
         <div className="nav-actions">
           <div className="lang-selector">
@@ -124,9 +142,10 @@ export default function TeamPage() {
               <option value="ar">AR</option>
               <option value="ku">KU</option>
               <option value="bks">BKS</option>
+              <option value="fa">FA</option>
             </select>
           </div>
-          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : 'ZATRAŽI PROJEKAT'}</a>
+          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : lang === 'fa' ? 'درخواست پروژه' : 'ZATRAŽI PROJEKAT'}</a>
         </div>
       </header>
 
@@ -188,15 +207,15 @@ export default function TeamPage() {
                 <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-footer)" />
               </svg>
             </div>
-            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : 'Udruženje protiv nasilja i prevencije'}</p>
+            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : lang === 'fa' ? 'انجمن مبارزه با خشونت و پیشگیری از خشونت' : 'Udruženje protiv nasilja i prevencije'}</p>
           </div>
           <div className="footer-contact">
-            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : 'Kontakt'}</h4>
+            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
             <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
             <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
-            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : 'Impresum'}</h4>
+            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'fa' ? 'مشخصات نشر' : 'Impresum'}</h4>
             <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
             <p className="small-text"><a href="/datenschutz">Datenschutzerklärung</a></p>
           </div>

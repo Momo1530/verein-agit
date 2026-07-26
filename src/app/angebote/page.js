@@ -76,13 +76,28 @@ const translations = {
     cta_text: "Dogovorite neobavezujući preliminarni razgovor s nama.",
     cta_btn: "Zatražite sada →",
     back_btn: "← Nazad na početnu stranicu"
+  },
+  fa: {
+    page_title: "پیشنهادات",
+    hero_title: "پیشنهادات ما",
+    hero_desc: "خدمات پیشگیری از خشونت متناسب با هر گروه هدف - از کودکان و نوجوانان تا متخصصان و مؤسسات.",
+    section1_title: "01 پیشگیری - کارگاه‌های پیشگیرانه",
+    section1_text: "پیشنهادات پیشگیرانه ما متوجه کودکان، نوجوانان، مربیان و مؤسسات است. در کارگاه‌ها و آموزش‌های تعاملی، فضاهایی برای تأمل و حساس‌سازی ایجاد می‌کنیم. موضوعات شامل: حل تعارض، شجاعت مدنی، کاهش تنش، مقابله با پرخاشگری و تقویت مهارت‌های اجتماعی.",
+    section2_title: "02 اقدام - مداخله پس از حوادث",
+    section2_text: "پس از حوادث خشونت‌آمیز مشخص، مداخله سریع و حرفه‌ای ارائه می‌دهیم. ما مؤسسات، تیم‌ها و افراد آسیب‌دیده را در پردازش رویدادها، ایجاد مفاهیم مراقبت پس از حادثه و توسعه استراتژی‌های عملی همراهی می‌کنیم.",
+    section3_title: "03 تقویت - همراهی بلندمدت",
+    section3_text: "فراتر از مداخله حاد، ما همراهی بلندمدت در مسیر تغییر پایدار ارائه می‌دهیم. این شامل آموزش‌های منظم، کارگاه‌های به‌روزرسانی، نظارت برای تیم‌ها و توسعه مفاهیم حفاظت داخلی است.",
+    cta_title: "درخواست مشخصی دارید؟",
+    cta_text: "یک جلسه مقدماتی بدون تعهد با ما هماهنگ کنید.",
+    cta_btn: "اکنون درخواست دهید ←",
+    back_btn: "← بازگشت به صفحه اصلی"
   }
 };
 
 export default function AngebotePage() {
   const [lang, setLang] = useState('de');
   const t = translations[lang] || translations.de;
-  const isRtl = lang === 'ar';
+  const isRtl = lang === 'ar' || lang === 'fa';
 
   // Beim Laden zur richtigen Stelle scrollen, wenn Hash in URL
   useEffect(() => {
@@ -93,7 +108,7 @@ export default function AngebotePage() {
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-      }, 100);
+      }, 300);
     }
   }, []);
 
@@ -111,10 +126,10 @@ export default function AngebotePage() {
           </svg>
         </div>
         <nav className="nav-links">
-          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : 'POČETNA STRANICA'}</a>
-          <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : 'STAV'}</a>
-          <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : 'TIM'}</a>
-          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : 'KONTAKT'}</a>
+          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'bks' ? 'POČETNA STRANICA' : 'صفحه اصلی'}</a>
+          <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : lang === 'bks' ? 'STAV' : 'موضع'}</a>
+          <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : lang === 'bks' ? 'TIM' : 'تیم'}</a>
+          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : lang === 'bks' ? 'KONTAKT' : 'تماس'}</a>
         </nav>
         <div className="nav-actions">
           <div className="lang-selector">
@@ -124,9 +139,10 @@ export default function AngebotePage() {
               <option value="ar">AR</option>
               <option value="ku">KU</option>
               <option value="bks">BKS</option>
+              <option value="fa">FA</option>
             </select>
           </div>
-          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : 'ZATRAŽI PROJEKAT'}</a>
+          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : lang === 'bks' ? 'ZATRAŽI PROJEKAT' : 'درخواست پروژه'}</a>
         </div>
       </header>
 
@@ -173,15 +189,15 @@ export default function AngebotePage() {
                 <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-footer)" />
               </svg>
             </div>
-            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : 'Udruženje protiv nasilja i prevencije'}</p>
+            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : lang === 'bks' ? 'Udruženje protiv nasilja i prevencije' : 'انجمن مبارزه با خشونت و پیشگیری از خشونت'}</p>
           </div>
           <div className="footer-contact">
-            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : 'Kontakt'}</h4>
+            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'bks' ? 'Kontakt' : 'تماس'}</h4>
             <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
             <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
-            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : 'Impresum'}</h4>
+            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'bks' ? 'Impresum' : 'مشخصات'}</h4>
             <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
             <p className="small-text"><a href="/datenschutz">Datenschutzerklärung</a></p>
           </div>

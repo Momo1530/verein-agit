@@ -80,6 +80,23 @@ const translations = {
     hintergrund_text: "Nasilje se stalno pojavljuje u mnogim različitim oblicima i formama u svakodnevnom životu. Često nam je teško pravilno reagovati, unaprijed prepoznati opasne situacije ili nam nedostaju odgovarajuće strategije za prekidanje obrazaca nasilja. Čovjek poželi da do situacije uopšte nije ni došlo ili da se iz nje brzo i neozlijeđeno izvuče.<br/><br/>Mi iz udruženja AGIT – Protiv nasilja i prevencije nudimo podršku kroz širok spektar obuka, radionica i treninga za profesionalne grupe koje se u svojoj svakodnevici suočavaju sa nasiljem. Pored toga, imamo i raznovrsne ponude za djecu, mlade kao i omladinske grupe. U principu smo uveli pravilo da svaku obuku, radionicu i trening posebno prilagodimo ciljnoj grupi i njihovim problemima.<br/><br/>Prevencija nasilja je toliko opširno područje da nakon uvodnih razgovora uvijek pripremamo individualnu ponudu, jer smatramo da na taj način možemo najbolje pružiti podršku. Cilj je pružiti podržavajuću, dopunsku ponudu na temu prevencije nasilja koja omogućava intenzivno bavljenje ovom temom.",
     form_title: "Stupite u kontakt s nama", form_subtitle: "Napišite nam svoj zahtjev, pouzdano ćemo vam odgovoriti.", form_name: "Ime", form_email: "E-Mail", form_phone: "Broj telefona (opcionalno)", form_subject: "Predmet", form_message: "Poruka", form_submit: "Pošalji poruku", form_success: "Vaša poruka je uspješno poslana!",
     footer_desc: "Udruženje protiv nasilja i prevencije", kontakt_title: "Kontakt", impressum_title: "Impresum"
+  },
+  fa: {
+    nav_angebote: "خدمات", nav_haltung: "موضع‌گیری", nav_team: "تیم", nav_kontakt: "تماس", nav_anfragen: "درخواست پروژه",
+    contact_role: "مخاطب/مدیر بخش:<br/>MA 13 کار با کودکان و نوجوانان خارج از مدرسه",
+    contact2_role: "مخاطب/مدیر بخش:<br/>MA 11 آموزش‌های فردی/گروهی",
+    hero_subtitle: "پیشگیری - مداخله - تغییر",
+    hero_headline: "پیشگیری از خشونت،<br/>که با کارگاه<br/>پایان نمی‌یابد.",
+    hero_desc: "ما کودکان، نوجوانان، متخصصان و مؤسسات را همراهی می‌کنیم – پیشگیرانه، پس از وقایع مشخص و در مسیر تغییر پایدار.",
+    btn_angebote: "مشاهده خدمات", btn_mehr: "بیشتر درباره AGIT →",
+    action_header: "مؤسسه شما در حال حاضر به چه چیزی نیاز دارد؟",
+    step_1: "پیشگیری", step_1_desc: "کارگاه‌ها و آموزش‌های پیشگیرانه برای افزایش آگاهی و تقویت گروه‌ها.",
+    step_2: "اقدام", step_2_desc: "مداخله سریع و راهنمایی حرفه‌ای پس از وقایع مشخص.",
+    step_3: "توانمندسازی", step_3_desc: "همراهی بلندمدت در مسیر تغییر پایدار و تاب‌آوری.",
+    hintergrund_title: "پیشینه",
+    hintergrund_text: "خشونت به اشکال و صورت‌های گوناگون بارها و بارها در زندگی روزمره با ما روبرو می‌شود. اغلب برای ما دشوار است که واکنش درستی نشان دهیم، موقعیت‌های خطرناک را از پیش تشخیص دهیم یا استراتژی‌های مناسبی برای شکستن الگوهای خشونت داشته باشیم. انسان آرزو می‌کند که کاش آن موقعیت هرگز پیش نمی‌آمد یا اینکه بتواند سریع و بدون آسیب از آن خارج شود.<br/><br/>انجمن AGIT – ضدخشونت و پیشگیری از خشونت با ارائه طیف گسترده‌ای از آموزش‌ها، کارگاه‌ها و دوره‌های آموزشی برای گروه‌های حرفه‌ای که در کار روزمره خود با خشونت مواجه هستند، حمایت ارائه می‌دهد. علاوه بر این، ما همچنین طیف وسیعی از خدمات را برای کودکان، نوجوانان و گروه‌های جوانان داریم. اصولاً ما آن را به عنوان قاعده خود قرار داده‌ایم که هر آموزش، هر کارگاه و هر دوره را به طور خاص برای گروه هدف و مشکلات آن‌ها تنظیم کنیم.<br/><br/>پیشگیری از خشونت چنان حوزه گسترده‌ای است که ما پس از گفتگوهای اولیه همیشه یک پیشنهاد فردی تهیه می‌کنیم، زیرا معتقدیم به این شکل می‌توانیم بهترین حمایت را ارائه دهیم. هدف ارائه یک پیشنهاد حمایتی و تکمیلی در زمینه پیشگیری از خشونت است که امکان بررسی عمیق این موضوع را فراهم می‌کند.",
+    form_title: "با ما در تماس باشید", form_subtitle: "درخواست خود را برای ما بنویسید، ما به طور قابل اعتماد پاسخ خواهیم داد.", form_name: "نام", form_email: "ایمیل", form_phone: "شماره تلفن (اختیاری)", form_subject: "موضوع", form_message: "پیام", form_submit: "ارسال پیام", form_success: "پیام شما با موفقیت ارسال شد!",
+    footer_desc: "انجمن ضدخشونت و پیشگیری از خشونت", kontakt_title: "تماس", impressum_title: "مشخصات"
   }
 };
 
@@ -264,6 +281,7 @@ export default function Home() {
               <option value="ar">AR</option>
               <option value="ku">KU</option>
               <option value="bks">BKS</option>
+              <option value="fa">FA</option>
             </select>
           </div>
           <a href="/kontakt" className="btn btn-primary">{t.nav_anfragen}</a>

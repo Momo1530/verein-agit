@@ -113,13 +113,30 @@ const translations = {
       { title: "8. Sigurnost podataka", content: "Preduzimamo tehničke i organizacijske sigurnosne mjere kako bismo zaštitili vaše podatke od manipulacije, gubitka, uništenja ili neovlaštenog pristupa. Web stranica se pruža putem šifrirane HTTPS veze (SSL/TLS)." },
       { title: "9. Izmjene", content: "Zadržavamo pravo da ovu izjavu o privatnosti po potrebi prilagodimo promijenjenim pravnim okvirima ili promjenama u našim uslugama." }
     ]
+  },
+  fa: {
+    page_title: "بیانیه حریم خصوصی",
+    hero_title: "بیانیه حریم خصوصی",
+    hero_desc: "حفاظت از داده‌های شخصی شما برای ما مهم است. در ادامه شما را در مورد پردازش داده‌هایتان در وب‌سایت ما مطلع می‌سازیم.",
+    last_updated: "آخرین به‌روزرسانی: جولای ۲۰۲۵",
+    sections: [
+      { title: "۱. مسئول", content: "انجمن AGIT – مبارزه با خشونت و پیشگیری از خشونت<br/>Gerichtsgasse 1, 1230 وین، اتریش<br/>ایمیل: office@verein-agit.at<br/>تلفن: +43/1/524 88 73" },
+      { title: "۲. اطلاعات کلی درباره پردازش داده‌ها", content: "ما داده‌های شخصی را فقط تا حدی که برای ارائه وب‌سایت و خدماتمان ضروری باشد جمع‌آوری و پردازش می‌کنیم. پردازش بر اساس GDPR (مقررات عمومی حفاظت از داده) و قانون حفاظت از داده اتریش (DSG) انجام می‌شود." },
+      { title: "۳. فرم تماس", content: "هنگامی که از طریق فرم تماس برای ما پیامی ارسال می‌کنید، داده‌های ارائه‌شده توسط شما (نام، آدرس ایمیل، شماره تلفن، موضوع، پیام) به منظور پردازش درخواست و برای پیگیری‌های بعدی ذخیره می‌شوند. مبنای قانونی ماده ۶ بند ۱ حرف b و f GDPR است. داده‌ها از طریق ایمیل به office@verein-agit.at ارسال و پس از تکمیل درخواست حذف می‌شوند، مگر اینکه الزامات قانونی برای نگهداری وجود داشته باشد." },
+      { title: "۴. ارتباط از طریق ایمیل", content: "هنگامی که از طریق ایمیل با ما تماس می‌گیرید، داده‌های شما (آدرس ایمیل، نام و در صورت لزوم سایر اطلاعات) به منظور پردازش درخواست شما ذخیره می‌شوند. داده‌ها با اشخاص ثالث به اشتراک گذاشته نمی‌شوند." },
+      { title: "۵. فایل‌های گزارش سرور", content: "در هر بار دسترسی به وب‌سایت ما، اطلاعاتی که مرورگر شما به سرور ما ارسال می‌کند به طور خودکار ثبت می‌شود. این موارد عبارتند از: آدرس IP، تاریخ و زمان دسترسی، نام و URL فایل درخواست‌شده، وب‌سایت مبدأ (URL مرجع)، مرورگر مورد استفاده و سیستم عامل. این داده‌ها حداکثر به مدت ۷ روز ذخیره و سپس حذف می‌شوند. مبنای قانونی ماده ۶ بند ۱ حرف f GDPR (منافع مشروع در تضمین فنی عملیات) است." },
+      { title: "۶. کوکی‌ها", content: "وب‌سایت ما از کوکی‌های ردیابی یا ابزارهای تحلیل استفاده نمی‌کند. فقط کوکی‌های جلسه (Session) ضروری از نظر فنی که برای عملکرد وب‌سایت لازم هستند استفاده می‌شوند. این کوکی‌ها پس از پایان جلسه مرورگر شما به طور خودکار حذف می‌شوند." },
+      { title: "۷. حقوق شما", content: "شما در هر زمان حق دسترسی به داده‌های شخصی ذخیره‌شده نزد ما و همچنین حق اصلاح، حذف یا محدود کردن پردازش را دارید. علاوه بر این، شما حق انتقال داده‌ها و شکایت به مرجع نظارتی را دارید. مرجع نظارتی مسئول در اتریش، اداره حفاظت از داده (Barichgasse 40-42, 1030 وین، dsb@dsb.gv.at) است." },
+      { title: "۸. امنیت داده‌ها", content: "ما اقدامات امنیتی فنی و سازمانی را برای محافظت از داده‌های شما در برابر دستکاری، از دست رفتن، تخریب یا دسترسی غیرمجاز انجام می‌دهیم. وب‌سایت از طریق اتصال HTTPS رمزگذاری‌شده (SSL/TLS) ارائه می‌شود." },
+      { title: "۹. تغییرات", content: "ما این حق را برای خود محفوظ می‌داریم که در صورت نیاز این بیانیه حریم خصوصی را برای تطبیق با شرایط قانونی تغییر یافته یا تغییرات در خدمات خود به‌روزرسانی کنیم." }
+    ]
   }
 };
 
 export default function DatenschutzPage() {
   const [lang, setLang] = useState('de');
   const t = translations[lang] || translations.de;
-  const isRtl = lang === 'ar';
+  const isRtl = lang === 'ar' || lang === 'fa';
 
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -135,11 +152,11 @@ export default function DatenschutzPage() {
           </svg>
         </div>
         <nav className="nav-links">
-          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : 'POČETNA STRANICA'}</a>
-          <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : 'PONUDE'}</a>
-          <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : 'STAV'}</a>
-          <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : 'TIM'}</a>
-          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : 'KONTAKT'}</a>
+          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'fa' ? 'صفحه اصلی' : 'POČETNA STRANICA'}</a>
+          <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : lang === 'fa' ? 'خدمات' : 'PONUDE'}</a>
+          <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : lang === 'fa' ? 'موضع' : 'STAV'}</a>
+          <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : lang === 'fa' ? 'تیم' : 'TIM'}</a>
+          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : lang === 'fa' ? 'تماس' : 'KONTAKT'}</a>
         </nav>
         <div className="nav-actions">
           <div className="lang-selector">
@@ -149,9 +166,10 @@ export default function DatenschutzPage() {
               <option value="ar">AR</option>
               <option value="ku">KU</option>
               <option value="bks">BKS</option>
+              <option value="fa">FA</option>
             </select>
           </div>
-          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : 'ZATRAŽI PROJEKAT'}</a>
+          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : lang === 'fa' ? 'درخواست پروژه' : 'ZATRAŽI PROJEKAT'}</a>
         </div>
       </header>
 
@@ -187,17 +205,17 @@ export default function DatenschutzPage() {
                 <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-footer)" />
               </svg>
             </div>
-            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : 'Udruženje protiv nasilja i prevencije'}</p>
+            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : lang === 'fa' ? 'انجمن مبارزه با خشونت و پیشگیری از خشونت' : 'Udruženje protiv nasilja i prevencije'}</p>
           </div>
           <div className="footer-contact">
-            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : 'Kontakt'}</h4>
+            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
             <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
             <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
-            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : 'Impresum'}</h4>
+            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'fa' ? 'مشخصات ناشر' : 'Impresum'}</h4>
             <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
-            <p className="small-text"><a href="/datenschutz">{lang === 'de' ? 'Datenschutzerklärung' : lang === 'tr' ? 'Veri Koruma' : lang === 'ar' ? 'سياسة الخصوصية' : lang === 'ku' ? 'Parastina Daneyan' : 'Privatnost'}</a></p>
+            <p className="small-text"><a href="/datenschutz">{lang === 'de' ? 'Datenschutzerklärung' : lang === 'tr' ? 'Veri Koruma' : lang === 'ar' ? 'سياسة الخصوصية' : lang === 'ku' ? 'Parastina Daneyan' : lang === 'fa' ? 'حریم خصوصی' : 'Privatnost'}</a></p>
           </div>
         </div>
         <div className="footer-bottom">

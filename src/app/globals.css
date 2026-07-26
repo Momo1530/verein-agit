@@ -275,7 +275,7 @@ body {
 .subpage-hero-desc { font-size: 1.2rem; color: #bbb; max-width: 600px; margin: 0 auto; line-height: 1.6; }
 
 .subpage-content { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
-.content-block { margin-bottom: 3rem; }
+.content-block { margin-bottom: 3rem; scroll-margin-top: 200px; }
 .content-block h2 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 1rem; color: var(--primary-color); }
 .content-block p { font-size: 1.05rem; line-height: 1.7; color: #444; }
 

@@ -86,13 +86,30 @@ const translations = {
     ],
     approach_title: "Naš pristup",
     approach_text: "AGIT prevenciju nasilja vidi kao poprečni zadatak koji mora biti ukorijenjen u pedagoškim, socijalnim i institucionalnim kontekstima. Prevenciju nasilja vidimo kao poprečni zadatak koji mora biti ukorijenjen u pedagoškim, socijalnim i institucionalnim kontekstima."
+  },
+  fa: {
+    page_title: "موضع ما",
+    hero_title: "موضع ما",
+    hero_desc: "پیشگیری از خشونت برای ما فراتر از یک کارگاه است – این یک موضع است که باید در زندگی روزمره ریشه‌دار باشد.",
+    leitbild_title: "اصول راهنمای ما",
+    leitbild_text: "انجمن AGIT – مبارزه با خشونت و پیشگیری از آن، نماینده فرهنگ هوشیاری، احترام و حل مسالمت‌آمیز تعارضات است. ما متقاعد شده‌ایم که خشونت یک سرنوشت نیست، بلکه رفتاری اکتسابی است که می‌توان از طریق پیشگیری و مداخله هدفمند آن را تغییر داد.",
+    values_title: "ارزش‌های ما",
+    values: [
+      { title: "احترام", desc: "هر انسانی حق دارد در محیطی عاری از خشونت زندگی کند. ما با همه با کرامت و بدون پیش‌داوری رفتار می‌کنیم." },
+      { title: "مشارکت", desc: "افراد متأثر در فرآیند مشارکت داده می‌شوند. تغییر تنها با همکاری موفق می‌شود." },
+      { title: "حرفه‌ای‌گری", desc: "کار ما بر پایه روش‌های مستحکم، تحقیقات به‌روز و تجربه چندین ساله استوار است." },
+      { title: "پایداری", desc: "مداخلات کوتاه ارزشمند هستند – تغییر پایدار نیاز به همراهی و تداوم دارد." },
+      { title: "حساسیت فرهنگی", desc: "ما به چندین زبان و با حساسیت فرهنگی کار می‌کنیم. پیشگیری از خشونت باید به همه مردم برسد." }
+    ],
+    approach_title: "رویکرد ما",
+    approach_text: "AGIT پیشگیری از خشونت را یک وظیفه میان‌بخشی می‌داند که باید در زمینه‌های آموزشی، اجتماعی و نهادی ریشه‌دار شود. ما پیشگیری از خشونت را یک وظیفه میان‌بخشی می‌دانیم که باید در زمینه‌های آموزشی، اجتماعی و نهادی ریشه‌دار شود."
   }
 };
 
 export default function HaltungPage() {
   const [lang, setLang] = useState('de');
   const t = translations[lang] || translations.de;
-  const isRtl = lang === 'ar';
+  const isRtl = lang === 'ar' || lang === 'fa';
 
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -108,10 +125,10 @@ export default function HaltungPage() {
           </svg>
         </div>
         <nav className="nav-links">
-          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : 'POČETNA STRANICA'}</a>
-          <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : 'PONUDE'}</a>
-          <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : 'TIM'}</a>
-          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : 'KONTAKT'}</a>
+          <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'bks' ? 'POČETNA STRANICA' : 'صفحه اصلی'}</a>
+          <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : lang === 'bks' ? 'PONUDE' : 'خدمات'}</a>
+          <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : lang === 'bks' ? 'TIM' : 'تیم'}</a>
+          <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : lang === 'bks' ? 'KONTAKT' : 'تماس'}</a>
         </nav>
         <div className="nav-actions">
           <div className="lang-selector">
@@ -121,9 +138,10 @@ export default function HaltungPage() {
               <option value="ar">AR</option>
               <option value="ku">KU</option>
               <option value="bks">BKS</option>
+              <option value="fa">FA</option>
             </select>
           </div>
-          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : 'ZATRAŽI PROJEKAT'}</a>
+          <a href="/kontakt" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : lang === 'bks' ? 'ZATRAŽI PROJEKAT' : 'درخواست پروژه'}</a>
         </div>
       </header>
 
@@ -173,15 +191,15 @@ export default function HaltungPage() {
                 <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-footer)" />
               </svg>
             </div>
-            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : 'Udruženje protiv nasilja i prevencije'}</p>
+            <p className="footer-desc">{lang === 'de' ? 'Verein Antigewalt und Gewaltprävention' : lang === 'tr' ? 'Şiddet Karşıtı ve Şiddeti Önleme Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف والوقاية منه' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Pêşîlêgirtinê' : lang === 'bks' ? 'Udruženje protiv nasilja i prevencije' : 'انجمن مبارزه با خشونت و پیشگیری'}</p>
           </div>
           <div className="footer-contact">
-            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : 'Kontakt'}</h4>
+            <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'bks' ? 'Kontakt' : 'تماس'}</h4>
             <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
             <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
-            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : 'Impresum'}</h4>
+            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'bks' ? 'Impresum' : 'مشخصات'}</h4>
             <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
             <p className="small-text"><a href="/datenschutz">Datenschutzerklärung</a></p>
           </div>
