@@ -4,17 +4,31 @@ import { useState, useEffect } from 'react';
 export default function Preloader() {
   const [visible, setVisible] = useState(true);
   const [phase, setPhase] = useState('loading');
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const startTime = Date.now();
     const minDuration = 2000;
 
+    // Animate pixel reveal
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        const elapsed = Date.now() - startTime;
+        const pct = Math.min(100, (elapsed / minDuration) * 100);
+        return pct;
+      });
+    }, 16); // ~60fps
+
     const handleLoad = () => {
       const elapsed = Date.now() - startTime;
       const remaining = Math.max(0, minDuration - elapsed);
       setTimeout(() => {
-        setPhase('complete');
-        setTimeout(() => setVisible(false), 900);
+        clearInterval(interval);
+        setProgress(100);
+        setTimeout(() => {
+          setPhase('complete');
+          setTimeout(() => setVisible(false), 900);
+        }, 200);
       }, remaining);
     };
 
@@ -22,43 +36,36 @@ export default function Preloader() {
       handleLoad();
     } else {
       window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
+      return () => {
+        window.removeEventListener('load', handleLoad);
+        clearInterval(interval);
+      };
     }
   }, []);
 
   if (!visible) return null;
 
-  const rows = 6;
-  const cols = 8;
-  const pieces = [];
-  for (let r = 0; r < rows; r++) {
-    for (let c = 0; c < cols; c++) {
-      pieces.push({ r, c, delay: (r * cols + c) * 0.025 });
-    }
-  }
-
   return (
     <div className={`preloader-overlay ${phase === 'complete' ? 'preloader-fade' : ''}`}>
       <div className="preloader-inner">
-        <div className="puzzle-container">
-          <div className="puzzle-grid">
-            {pieces.map(({ r, c, delay }) => (
-              <div
-                key={`${r}-${c}`}
-                className="puzzle-piece"
-                style={{
-                  animationDelay: `${delay}s`,
-                  backgroundImage: 'url(/preloader-drawing.jpg)',
-                  backgroundSize: `${cols * 100}% ${rows * 100}%`,
-                  backgroundPosition: `${-c * 100}% ${-r * 100}%`,
-                }}
-              />
-            ))}
-          </div>
+        <div className="image-container">
+          <div
+            className="pixel-reveal"
+            style={{
+              backgroundImage: 'url(/preloader-drawing.jpg)',
+              clipPath: `inset(0 ${100 - progress}% 0 0)`,
+            }}
+          />
+          <div
+            className="pixel-scanline"
+            style={{
+              left: `${progress}%`,
+            }}
+          />
         </div>
 
         <div className="preloader-bar-track">
-          <div className="preloader-bar-fill" />
+          <div className="preloader-bar-fill" style={{ width: `${progress}%` }} />
         </div>
 
         <p className="preloader-brand">AGIT</p>
@@ -85,32 +92,33 @@ export default function Preloader() {
           align-items: center;
           gap: 2rem;
         }
-        .puzzle-container {
-          width: 300px;
-          height: 400px;
+        .image-container {
+          width: 80vw;
+          max-width: 640px;
+          height: auto;
+          aspect-ratio: 1280 / 853;
+          position: relative;
+          background: #0a0a0a;
+          overflow: hidden;
+          border-radius: 4px;
         }
-        .puzzle-grid {
-          display: grid;
-          grid-template-columns: repeat(8, 1fr);
-          grid-template-rows: repeat(6, 1fr);
-          gap: 2px;
-          width: 100%;
-          height: 100%;
+        .pixel-reveal {
+          position: absolute;
+          inset: 0;
+          background-size: cover;
+          background-position: center;
+          image-rendering: pixelated;
+          transition: none;
         }
-        .puzzle-piece {
-          width: 100%;
-          height: 100%;
-          border-radius: 2px;
-          opacity: 0;
-          transform: scale(0.15) rotate(30deg);
-          animation: pieceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-          box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.04);
-          filter: contrast(1.1);
-        }
-        @keyframes pieceIn {
-          0% { opacity: 0; transform: scale(0.15) rotate(30deg); }
-          60% { opacity: 1; }
-          100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        .pixel-scanline {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 3px;
+          background: rgba(255, 255, 255, 0.3);
+          transform: translateX(-50%);
+          pointer-events: none;
+          box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
         }
         .preloader-bar-track {
           width: 220px;
@@ -121,17 +129,11 @@ export default function Preloader() {
         }
         .preloader-bar-fill {
           height: 100%;
-          width: 0%;
           background: linear-gradient(90deg, #666, #aaa, #666);
           background-size: 200% 100%;
           border-radius: 4px;
-          animation: fillBar 2s ease-in-out forwards, shimmer 1.2s linear infinite;
-        }
-        @keyframes fillBar {
-          0% { width: 0%; }
-          40% { width: 55%; }
-          75% { width: 82%; }
-          100% { width: 100%; }
+          transition: width 0.05s linear;
+          animation: shimmer 1.2s linear infinite;
         }
         @keyframes shimmer {
           0% { background-position: 200% 0; }
