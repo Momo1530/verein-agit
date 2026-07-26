@@ -342,14 +342,16 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 0.7fr 1fr 0.7fr 1fr;
+  grid-template-rows: 1fr;
   gap: 2rem;
-  align-items: start;
+  align-items: center;
 }
 .ansprechperson-image-col {
   aspect-ratio: 3/4;
   overflow: hidden;
   border-radius: 16px;
   background-color: #222;
+  align-self: center;
 }
 .ansprechperson-image-col img {
   width: 100%;
@@ -360,8 +362,10 @@ body {
 .ansprechperson-text-col {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 1rem;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  padding-top: 0;
 }
 .ansprechperson-text-col h3 {
   font-family: var(--font-heading);
