@@ -20,10 +20,12 @@ export default function Preloader() {
 
   if (!visible) return null;
 
+  const rows = 6;
+  const cols = 8;
   const pieces = [];
-  for (let r = 0; r < 4; r++) {
-    for (let c = 0; c < 3; c++) {
-      pieces.push({ r, c, delay: (r * 3 + c) * 0.07 });
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      pieces.push({ r, c, delay: (r * cols + c) * 0.025 });
     }
   }
 
@@ -38,8 +40,8 @@ export default function Preloader() {
                 className="puzzle-piece"
                 style={{
                   animationDelay: `${delay}s`,
-                  backgroundImage: 'url(/agit_logo.jpg)',
-                  backgroundSize: '300% 400%',
+                  backgroundImage: 'url(/preloader-drawing.jpg)',
+                  backgroundSize: `${cols * 100}% ${rows * 100}%`,
                   backgroundPosition: `${-c * 100}% ${-r * 100}%`,
                 }}
               />
@@ -81,24 +83,24 @@ export default function Preloader() {
         }
         .puzzle-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-template-rows: repeat(4, 1fr);
-          gap: 3px;
+          grid-template-columns: repeat(8, 1fr);
+          grid-template-rows: repeat(6, 1fr);
+          gap: 2px;
           width: 100%;
           height: 100%;
         }
         .puzzle-piece {
           width: 100%;
           height: 100%;
-          border-radius: 4px;
+          border-radius: 3px;
           opacity: 0;
-          transform: scale(0.3) rotate(20deg);
-          animation: pieceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-          box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.08);
+          transform: scale(0.2) rotate(25deg);
+          animation: pieceIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.06);
           filter: brightness(1.05) contrast(1.05);
         }
         @keyframes pieceIn {
-          0% { opacity: 0; transform: scale(0.3) rotate(20deg); }
+          0% { opacity: 0; transform: scale(0.2) rotate(25deg); }
           60% { opacity: 1; }
           100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
