@@ -296,19 +296,19 @@ export default function Home() {
             <p>{t.action_header}</p>
           </div>
           <div className="steps-grid">
-            <a href="/angebote" className="step">
+            <a href="/angebote#vorbeugen" className="step">
               <span className="step-num">01</span>
               <h3>{t.step_1}</h3>
               <p className="step-desc">{t.step_1_desc}</p>
               <span className="arrow">&rarr;</span>
             </a>
-            <a href="/angebote" className="step">
+            <a href="/angebote#handeln" className="step">
               <span className="step-num">02</span>
               <h3>{t.step_2}</h3>
               <p className="step-desc">{t.step_2_desc}</p>
               <span className="arrow">&rarr;</span>
             </a>
-            <a href="/angebote" className="step">
+            <a href="/angebote#staerken" className="step">
               <span className="step-num">03</span>
               <h3>{t.step_3}</h3>
               <p className="step-desc">{t.step_3_desc}</p>

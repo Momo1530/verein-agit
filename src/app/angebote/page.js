@@ -1,6 +1,5 @@
 "use client";
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 const translations = {
   de: {
@@ -84,7 +83,19 @@ export default function AngebotePage() {
   const [lang, setLang] = useState('de');
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar';
-  const router = useRouter();
+
+  // Beim Laden zur richtigen Stelle scrollen, wenn Hash in URL
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, []);
 
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -128,15 +139,15 @@ export default function AngebotePage() {
         </section>
 
         <section className="subpage-content">
-          <div className="content-block">
+          <div className="content-block" id="vorbeugen">
             <h2>{t.section1_title}</h2>
             <p>{t.section1_text}</p>
           </div>
-          <div className="content-block">
+          <div className="content-block" id="handeln">
             <h2>{t.section2_title}</h2>
             <p>{t.section2_text}</p>
           </div>
-          <div className="content-block">
+          <div className="content-block" id="staerken">
             <h2>{t.section3_title}</h2>
             <p>{t.section3_text}</p>
           </div>
