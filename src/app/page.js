@@ -107,39 +107,9 @@ export default function Home() {
   
   const [menuOpen, setMenuOpen] = useState(false);
   
-  const scrollTextContainerRef = useRef(null);
-  const scrollCharsRef = useRef([]);
-  const hintergrundSectionRef = useRef(null);
   const ansprechpartnerSectionRef = useRef(null);
   
   const [formSuccess, setFormSuccess] = useState(false);
-
-  // Initialize scroll chars
-  useEffect(() => {
-    if (scrollTextContainerRef.current) {
-      // Clear old spans
-      scrollTextContainerRef.current.innerHTML = '';
-      
-      // Parse HTML with <br/> safely
-      const parts = t.hintergrund_text.split('<br/><br/>');
-      
-      parts.forEach((part, pIdx) => {
-        const chars = part.split('');
-        chars.forEach(char => {
-          const span = document.createElement('span');
-          span.className = 'scroll-char';
-          span.textContent = char;
-          scrollTextContainerRef.current.appendChild(span);
-        });
-        if (pIdx < parts.length - 1) {
-          scrollTextContainerRef.current.appendChild(document.createElement('br'));
-          scrollTextContainerRef.current.appendChild(document.createElement('br'));
-        }
-      });
-      
-      scrollCharsRef.current = document.querySelectorAll('.scroll-char');
-    }
-  }, [t.hintergrund_text]);
 
   // Scroll logic
   useEffect(() => {
@@ -147,20 +117,6 @@ export default function Home() {
     if (isMobile) return; // Keine Scroll-Effekte auf Handy
 
     const handleScroll = () => {
-      // Hintergrund Scroll Text
-      if (hintergrundSectionRef.current && scrollCharsRef.current.length > 0) {
-        const rect = hintergrundSectionRef.current.getBoundingClientRect();
-        const scrollableDistance = rect.height - window.innerHeight;
-        if (scrollableDistance > 0) {
-          let p = rect.top <= 0 ? -rect.top / scrollableDistance : 0;
-          p = Math.max(0, Math.min(1, p));
-          const charsToReveal = Math.floor(p * scrollCharsRef.current.length);
-          scrollCharsRef.current.forEach((char, index) => {
-            char.style.opacity = index < charsToReveal ? 1 : 0.15;
-          });
-        }
-      }
-      
       // Ansprechpartner Scroll
       const ansprechSection = ansprechpartnerSectionRef.current;
       if (ansprechSection) {
@@ -186,12 +142,14 @@ export default function Home() {
           } else {
             ansprechSection.classList.remove('is-finale');
             
-            let img1P = Math.max(0, Math.min(1, p / 0.10));
+            // Phase 1: img1 kommt (p: 0.20 → 0.35)
+            let img1P = Math.max(0, Math.min(1, (p - 0.20) / 0.15));
             if (img1) img1.style.transform = `translateX(${startX + (0 - startX) * img1P}px)`;
             
-            let text1P = Math.max(0, Math.min(1, (p - 0.10) / 0.10));
+            // Phase 2: text1 kommt (p: 0.35 → 0.50)
+            let text1P = Math.max(0, Math.min(1, (p - 0.35) / 0.15));
             if (text1) {
-              if (p >= 0.45) {
+              if (p >= 0.60) {
                 text1.style.opacity = '0';
               } else {
                 text1.style.opacity = '1';
@@ -199,12 +157,14 @@ export default function Home() {
               }
             }
             
-            let img2P = Math.max(0, Math.min(1, (p - 0.40) / 0.10));
+            // Phase 3: img2 kommt (p: 0.50 → 0.65)
+            let img2P = Math.max(0, Math.min(1, (p - 0.50) / 0.15));
             if (img2) img2.style.transform = `translateX(${startX + (-40 - startX) * img2P}px)`;
             
-            let text2P = Math.max(0, Math.min(1, (p - 0.50) / 0.10));
+            // Phase 4: text2 kommt (p: 0.60 → 0.75)
+            let text2P = Math.max(0, Math.min(1, (p - 0.60) / 0.15));
             if (text2) {
-              if (p < 0.45) {
+              if (p < 0.60) {
                 text2.style.opacity = '0';
               } else {
                 text2.style.opacity = '1';
@@ -317,19 +277,16 @@ export default function Home() {
           </div>
           <div className="steps-grid">
             <a href="/angebote#vorbeugen" className="step">
-              <span className="step-num">01</span>
               <h3>{t.step_1}</h3>
               <p className="step-desc">{t.step_1_desc}</p>
               <span className="arrow">&rarr;</span>
             </a>
             <a href="/angebote#handeln" className="step">
-              <span className="step-num">02</span>
               <h3>{t.step_2}</h3>
               <p className="step-desc">{t.step_2_desc}</p>
               <span className="arrow">&rarr;</span>
             </a>
             <a href="/angebote#staerken" className="step">
-              <span className="step-num">03</span>
               <h3>{t.step_3}</h3>
               <p className="step-desc">{t.step_3_desc}</p>
               <span className="arrow">&rarr;</span>
@@ -337,13 +294,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="hintergrund-scroll-section" id="hintergrund-section" ref={hintergrundSectionRef}>
-          <div className="hintergrund-sticky-container">
+        <section className="hintergrund-section" id="hintergrund-section">
+          <div className="hintergrund-container">
             <div className="hintergrund-content">
               <h2 className="hintergrund-title">{t.hintergrund_title}</h2>
-              <div id="scrollTextContainer" ref={scrollTextContainerRef}>
-                {/* Dynamically populated by JS to wrap chars in spans */}
-              </div>
+              <div className="hintergrund-text" dangerouslySetInnerHTML={{ __html: t.hintergrund_text }} />
             </div>
           </div>
         </section>
