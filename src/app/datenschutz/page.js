@@ -6,7 +6,7 @@ const translations = {
     page_title: "Datenschutzerklärung",
     hero_title: "Datenschutzerklärung",
     hero_desc: "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Nachfolgend informieren wir Sie über die Verarbeitung Ihrer Daten auf unserer Website.",
-    last_updated: "Stand: Juli 2025",
+    last_updated: "Stand: Juli 2026",
     sections: [
       {
         title: "1. Verantwortlicher",
@@ -50,7 +50,7 @@ const translations = {
     page_title: "Veri Koruma Beyanı",
     hero_title: "Veri Koruma Beyanı",
     hero_desc: "Kişisel verilerinizin korunması bizim için önemlidir. Aşağıda, web sitemizde verilerinizin işlenmesi hakkında sizi bilgilendiriyoruz.",
-    last_updated: "Son güncelleme: Temmuz 2025",
+    last_updated: "Son güncelleme: Temmuz 2026",
     sections: [
       { title: "1. Sorumlu", content: "AGIT Derneği – Şiddet Karşıtı ve Şiddeti Önleme<br/>Gerichtsgasse 1, 1230 Viyana, Avusturya<br/>E-Posta: office@verein-agit.at<br/>Telefon: +43/1/524 88 73" },
       { title: "2. Veri İşleme Hakkında Genel Bilgiler", content: "Kişisel verileri yalnızca web sitemizin ve hizmetlerimizin sağlanması için gerekli olduğu ölçüde toplar ve işleriz. İşleme, GDPR ve Avusturya Veri Koruma Yasası'na (DSG) dayanarak gerçekleştirilir." },
@@ -67,7 +67,7 @@ const translations = {
     page_title: "سياسة الخصوصية",
     hero_title: "سياسة الخصوصية",
     hero_desc: "حماية بياناتك الشخصية مهمة بالنسبة لنا. فيما يلي نبلغك بمعالجة بياناتك على موقعنا الإلكتروني.",
-    last_updated: "آخر تحديث: يوليو 2025",
+    last_updated: "آخر تحديث: يوليو 2026",
     sections: [
       { title: "1. المسؤول", content: "جمعية AGIT – مكافحة العنف والوقاية منه<br/>Gerichtsgasse 1, 1230 فيينا, النمسا<br/>البريد الإلكتروني: office@verein-agit.at<br/>الهاتف: +43/1/524 88 73" },
       { title: "2. معلومات عامة عن معالجة البيانات", content: "نقوم بجمع ومعالجة البيانات الشخصية فقط بالقدر اللازم لتوفير موقعنا الإلكتروني وخدماتنا. تتم المعالجة على أساس اللائحة العامة لحماية البيانات (GDPR) وقانون حماية البيانات النمساوي (DSG)." },
@@ -84,7 +84,7 @@ const translations = {
     page_title: "Parastina Daneyan",
     hero_title: "Parastina Daneyan",
     hero_desc: "Parastina daneyên we yên kesane ji bo me girîng e. Li jêr em we li ser pêvajokirina daneyên we li ser malpera xwe agahdar dikin.",
-    last_updated: "Rewşa dawî: Tîrmeh 2025",
+    last_updated: "Rewşa dawî: Tîrmeh 2026",
     sections: [
       { title: "1. Berpirsiyar", content: "Komeleya AGIT – Dijî Şîdetê û Pêşîlêgirtinê<br/>Gerichtsgasse 1, 1230 Viyana, Awistirya<br/>E-Mail: office@verein-agit.at<br/>Telefon: +43/1/524 88 73" },
       { title: "2. Agahiyên Giştî yên Pêvajokirina Daneyan", content: "Em daneyên kesane tenê heya ku ji bo peydakirina malpera xwe û karûbarên xwe hewce be berhev û pêvajoyê dikin. Pêvajokirin li ser bingeha GDPR û Qanûna Parastina Daneyan a Awistiryayê (DSG) pêk tê." },
@@ -101,7 +101,7 @@ const translations = {
     page_title: "Izjava o privatnosti",
     hero_title: "Izjava o privatnosti",
     hero_desc: "Zaštita vaših ličnih podataka nam je važna. U nastavku vas informišemo o obradi vaših podataka na našoj web stranici.",
-    last_updated: "Stanje: Juli 2025",
+    last_updated: "Stanje: Juli 2026",
     sections: [
       { title: "1. Odgovorno lice", content: "Udruženje AGIT – Protiv nasilja i prevencije<br/>Gerichtsgasse 1, 1230 Beč, Austrija<br/>E-Mail: office@verein-agit.at<br/>Telefon: +43/1/524 88 73" },
       { title: "2. Općenito o obradi podataka", content: "Prikupljamo i obrađujemo lične podatke samo u mjeri potrebnoj za pružanje naše web stranice i naših usluga. Obrada se vrši na osnovu GDPR-a i austrijskog Zakona o zaštiti podataka (DSG)." },
@@ -221,7 +221,7 @@ export default function DatenschutzPage() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2025 Verein AGIT. Alle Rechte vorbehalten.</p>
+          <p>&copy; 2026 Verein AGIT. Alle Rechte vorbehalten.</p>
         </div>
       </footer>
     </div>

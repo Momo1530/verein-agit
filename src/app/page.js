@@ -448,7 +448,7 @@ export default function Home() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 Verein AGIT. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2026 Verein AGIT. Alle Rechte vorbehalten.</p>
           </div>
         </footer>
       </main>
