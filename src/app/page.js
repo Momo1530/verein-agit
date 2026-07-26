@@ -424,6 +424,7 @@ export default function Home() {
             <div className="footer-legal">
               <h4>{t.impressum_title}</h4>
               <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
+              <p className="small-text"><a href="/datenschutz">Datenschutzerklärung</a></p>
             </div>
           </div>
           <div className="footer-bottom">

@@ -318,6 +318,9 @@ body {
 
 .form-error { margin-top: 1.5rem; padding: 1rem; background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.3); color: #f87171; border-radius: 8px; text-align: center; font-weight: 500; }
 
+.subpage-hero-date { font-size: 0.85rem; color: #888; margin-top: 1rem; }
+.datenschutz-content .content-block p { font-size: 0.95rem; }
+
 @media (max-width: 768px) {
   .subpage-hero { padding: 6rem 1.5rem 3rem; }
   .subpage-hero h1 { font-size: 2.2rem; }

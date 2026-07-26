@@ -172,6 +172,7 @@ export default function AngebotePage() {
           <div className="footer-legal">
             <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : 'Impresum'}</h4>
             <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
+            <p className="small-text"><a href="/datenschutz">Datenschutzerklärung</a></p>
           </div>
         </div>
         <div className="footer-bottom">
