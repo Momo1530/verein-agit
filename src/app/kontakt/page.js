@@ -19,7 +19,7 @@ const translations = {
     contact_direct: "Direkter Kontakt",
     contact_name: "Verein AGIT – Antigewalt und Gewaltprävention",
     contact_address: "Gerichtsgasse 1, 1230 Wien, Österreich",
-    contact_phone: "+43/1/524 88 73",
+    contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "Kübra Erik",
     contact_person1_role: "Bereichsleitung MA 13 – außerschulische Kinder- und Jugendarbeit",
@@ -47,7 +47,7 @@ const translations = {
     contact_direct: "Doğrudan İletişim",
     contact_name: "AGIT Derneği – Şiddet Karşıtı ve Şiddeti Önleme",
     contact_address: "Gerichtsgasse 1, 1230 Viyana, Avusturya",
-    contact_phone: "+43/1/524 88 73",
+    contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "Kübra Erik",
     contact_person1_role: "Bölüm Başkanı MA 13 – okul dışı çocuk ve gençlik çalışmaları",
@@ -75,7 +75,7 @@ const translations = {
     contact_direct: "اتصال مباشر",
     contact_name: "جمعية AGIT – مكافحة العنف والوقاية منه",
     contact_address: "Gerichtsgasse 1, 1230 فيينا, النمسا",
-    contact_phone: "+43/1/524 88 73",
+    contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "كوبرا إريك",
     contact_person1_role: "مديرة القسم MA 13 – العمل مع الأطفال والشباب خارج المدرسة",
@@ -103,7 +103,7 @@ const translations = {
     contact_direct: "Têkiliya Rasterast",
     contact_name: "Komeleya AGIT – Dijî Şîdetê û Pêşîlêgirtinê",
     contact_address: "Gerichtsgasse 1, 1230 Viyana, Awistirya",
-    contact_phone: "+43/1/524 88 73",
+    contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "Kübra Erik",
     contact_person1_role: "Rêvebera Beşê MA 13 – xebata zarok û ciwanan a derveyî dibistanê",
@@ -131,7 +131,7 @@ const translations = {
     contact_direct: "Direktan kontakt",
     contact_name: "Udruženje AGIT – Protiv nasilja i prevencije",
     contact_address: "Gerichtsgasse 1, 1230 Beč, Austrija",
-    contact_phone: "+43/1/524 88 73",
+    contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "Kübra Erik",
     contact_person1_role: "Rukovoditeljica odjela MA 13 – izvanškolski rad s djecom i mladima",
@@ -304,7 +304,7 @@ export default function KontaktPage() {
           <div className="footer-contact">
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : 'Kontakt'}</h4>
             <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
-            <p>Telefon: +43/1/524 88 73<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+            <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
             <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : 'Impresum'}</h4>

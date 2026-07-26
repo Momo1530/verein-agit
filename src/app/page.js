@@ -418,7 +418,7 @@ export default function Home() {
             <div className="footer-contact">
               <h4>{t.kontakt_title}</h4>
               <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
-              <p>Telefon: +43/1/524 88 73<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+              <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
             </div>
 
             <div className="footer-legal">
