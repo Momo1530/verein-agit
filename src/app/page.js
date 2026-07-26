@@ -282,8 +282,8 @@ export default function Home() {
             <h1 className="headline" dangerouslySetInnerHTML={{ __html: t.hero_headline }}></h1>
             <p className="description">{t.hero_desc}</p>
             <div className="hero-actions">
-              <a href="#angebote" className="btn btn-solid">{t.btn_angebote}</a>
-              <a href="#about" className="btn btn-link">{t.btn_mehr}</a>
+              <a href="/angebote" className="btn btn-solid">{t.btn_angebote}</a>
+              <a href="/angebote" className="btn btn-link">{t.btn_mehr}</a>
             </div>
           </div>
           <div className="hero-image">
@@ -296,19 +296,19 @@ export default function Home() {
             <p>{t.action_header}</p>
           </div>
           <div className="steps-grid">
-            <a href="#vorbeugen" className="step">
+            <a href="/angebote" className="step">
               <span className="step-num">01</span>
               <h3>{t.step_1}</h3>
               <p className="step-desc">{t.step_1_desc}</p>
               <span className="arrow">&rarr;</span>
             </a>
-            <a href="#handeln" className="step">
+            <a href="/angebote" className="step">
               <span className="step-num">02</span>
               <h3>{t.step_2}</h3>
               <p className="step-desc">{t.step_2_desc}</p>
               <span className="arrow">&rarr;</span>
             </a>
-            <a href="#staerken" className="step">
+            <a href="/angebote" className="step">
               <span className="step-num">03</span>
               <h3>{t.step_3}</h3>
               <p className="step-desc">{t.step_3_desc}</p>

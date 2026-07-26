@@ -7,6 +7,14 @@ export default function Preloader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Nur auf der Startseite und beim ersten Besuch dieser Session
+    if (typeof window !== 'undefined') {
+      if (window.location.pathname !== '/' || sessionStorage.getItem('preloader_shown')) {
+        setVisible(false);
+        return;
+      }
+    }
+
     const startTime = Date.now();
     const minDuration = 2000;
 
@@ -27,6 +35,7 @@ export default function Preloader() {
         setProgress(100);
         setTimeout(() => {
           setPhase('complete');
+          sessionStorage.setItem('preloader_shown', '1');
           setTimeout(() => setVisible(false), 900);
         }, 200);
       }, remaining);
