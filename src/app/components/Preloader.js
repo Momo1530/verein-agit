@@ -6,12 +6,20 @@ export default function Preloader() {
   const [phase, setPhase] = useState('loading');
 
   useEffect(() => {
+    const startTime = Date.now();
+    const minDuration = 2000;
+
     const handleLoad = () => {
-      setPhase('complete');
-      setTimeout(() => setVisible(false), 900);
+      const elapsed = Date.now() - startTime;
+      const remaining = Math.max(0, minDuration - elapsed);
+      setTimeout(() => {
+        setPhase('complete');
+        setTimeout(() => setVisible(false), 900);
+      }, remaining);
     };
+
     if (document.readyState === 'complete') {
-      setTimeout(handleLoad, 2000);
+      handleLoad();
     } else {
       window.addEventListener('load', handleLoad);
       return () => window.removeEventListener('load', handleLoad);
