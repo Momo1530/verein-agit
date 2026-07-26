@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const translations = {
   de: {
@@ -108,6 +108,25 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   
   const [formSuccess, setFormSuccess] = useState(false);
+  const ansprechpartnerSectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = ansprechpartnerSectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add('is-visible');
+            observer.unobserve(section);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '0px 0px -100px 0px' }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -259,12 +278,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ansprechpartner-section" id="ansprechpartner-section">
+        <section className="ansprechpartner-section" id="ansprechpartner-section" ref={ansprechpartnerSectionRef}>
           <div className="ansprechpartner-row">
-            <div className="ansprechperson-image-col">
+            <div className="ansprechperson-image-col fly-from-left delay-1">
               <img src="/murat.png" alt="Murat Percin" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
             </div>
-            <div className="ansprechperson-text-col">
+            <div className="ansprechperson-text-col fly-from-right delay-2">
               <h3>Murat Percin, BA</h3>
               <p className="ansprechperson-role" dangerouslySetInnerHTML={{ __html: t.contact2_role || "Ansprechpartner/Bereichsleitung:<br/>MA 11 Einzel/Gruppentrainings" }}></p>
               <div className="ansprechperson-contact">
@@ -273,10 +292,10 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="ansprechperson-image-col">
+            <div className="ansprechperson-image-col fly-from-left delay-3">
               <img src="/kuebra.png" alt="Kübra Erik" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
             </div>
-            <div className="ansprechperson-text-col">
+            <div className="ansprechperson-text-col fly-from-right delay-4">
               <h3>Kübra Erik</h3>
               <p className="ansprechperson-role" dangerouslySetInnerHTML={{ __html: t.contact_role || "Ansprechpartnerin/Bereichsleitung:<br/>MA 13 außerschulische Kinder- und Jugendarbeit" }}></p>
               <div className="ansprechperson-contact">

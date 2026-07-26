@@ -390,6 +390,48 @@ body {
   color: #8ab4f8;
 }
 
+/* Ansprechpartner Fly-In Animationen */
+.ansprechperson-image-col,
+.ansprechperson-text-col {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.ansprechpartner-section.is-visible .fly-from-left {
+  animation: flyInFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.ansprechpartner-section.is-visible .fly-from-right {
+  animation: flyInFromRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.5s; }
+.delay-4 { animation-delay: 0.7s; }
+
+@keyframes flyInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flyInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 1100px) {
   .ansprechpartner-row {
     grid-template-columns: 1fr 1fr;
