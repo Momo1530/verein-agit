@@ -35,6 +35,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $to = 'office@verein-agit.at';
+$cc = ['k.erik@verein-agit.at', 'm.percin@verein-agit.at'];
 $email_subject = 'AGIT Kontaktformular: ' . $subject;
 
 $email_body = "Neue Nachricht vom AGIT Kontaktformular\n\n";
@@ -48,6 +49,7 @@ $email_body .= "Nachricht:\n$message\n";
 
 $headers = "From: $email\r\n";
 $headers .= "Reply-To: $email\r\n";
+$headers .= "Cc: " . implode(', ', $cc) . "\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion();
 
 $success = mail($to, $email_subject, $email_body, $headers);
