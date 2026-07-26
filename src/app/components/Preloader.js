@@ -68,6 +68,10 @@ export default function Preloader() {
           <div className="preloader-bar-fill" style={{ width: `${progress}%` }} />
         </div>
 
+        <p className="preloader-subtitle" style={{ clipPath: `inset(0 ${100 - progress}% 0 0)` }}>
+          PRÄVENTION - INTERVENTION - VERÄNDERUNG
+        </p>
+
         <p className="preloader-brand">AGIT</p>
       </div>
 
@@ -146,6 +150,15 @@ export default function Preloader() {
           color: rgba(255, 255, 255, 0.25);
           text-transform: uppercase;
           animation: breathe 1.6s ease-in-out infinite;
+        }
+        .preloader-subtitle {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.75rem;
+          letter-spacing: 4px;
+          color: rgba(255, 255, 255, 0.4);
+          text-transform: uppercase;
+          white-space: nowrap;
+          transition: none;
         }
         @keyframes breathe {
           0%, 100% { opacity: 0.25; }
