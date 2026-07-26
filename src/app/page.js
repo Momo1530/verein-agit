@@ -257,16 +257,18 @@ export default function Home() {
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
       <header className="navbar">
-        <div className="logo">
-          <svg className="nav-logo" viewBox="0 0 1024 1024" width="auto" height="90">
-            <defs>
-              <filter id="remove-white-header">
-                <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2 -2 -2 0 5" />
-              </filter>
-            </defs>
-            <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-header)" />
-          </svg>
-        </div>
+        <a href="/" className="logo-link">
+          <div className="logo">
+            <svg className="nav-logo" viewBox="0 0 1024 1024" width="auto" height="90">
+              <defs>
+                <filter id="remove-white-header">
+                  <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -2 -2 -2 0 5" />
+                </filter>
+              </defs>
+              <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-header)" />
+            </svg>
+          </div>
+        </a>
         <nav className={`nav-links${menuOpen ? ' open' : ''}`}>
           <a href="/angebote" onClick={() => setMenuOpen(false)}>{t.nav_angebote}</a>
           <a href="/haltung" onClick={() => setMenuOpen(false)}>{t.nav_haltung}</a>

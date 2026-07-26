@@ -115,7 +115,8 @@ export default function AngebotePage() {
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
       <header className="navbar">
-        <div className="logo">
+        <a href="/" className="logo-link">
+          <div className="logo">
           <svg className="nav-logo" viewBox="0 0 1024 1024" width="auto" height="90">
             <defs>
               <filter id="remove-white-header">
@@ -125,6 +126,7 @@ export default function AngebotePage() {
             <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-header)" />
           </svg>
         </div>
+        </a>
         <nav className="nav-links">
           <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'bks' ? 'POČETNA STRANICA' : 'صفحه اصلی'}</a>
           <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : lang === 'bks' ? 'STAV' : 'موضع'}</a>
