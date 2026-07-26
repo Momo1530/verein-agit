@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from 'react';
 const translations = {
   de: {
     nav_angebote: "ANGEBOTE", nav_haltung: "HALTUNG", nav_team: "TEAM", nav_kontakt: "KONTAKT", nav_anfragen: "PROJEKT ANFRAGEN",
+    contact_role: "Ansprechpartnerin/Bereichsleitung:<br/>MA 13 außerschulische Kinder- und Jugendarbeit",
+    contact2_role: "Ansprechpartner/Bereichsleitung:<br/>MA 11 Einzel/Gruppentrainings",
     hero_subtitle: "PRÄVENTION - INTERVENTION - VERÄNDERUNG",
     hero_headline: "Gewaltprävention,<br/>die nicht beim<br/>Workshop endet.",
     hero_desc: "Wir begleiten Kinder, Jugendliche, Fachkräfte und Einrichtungen – präventiv, nach konkreten Vorfällen und auf dem Weg zu nachhaltiger Veränderung.",
@@ -13,7 +15,7 @@ const translations = {
     step_2: "HANDELN", step_2_desc: "Schnelle Intervention und professionelle Begleitung nach konkreten Vorfällen.",
     step_3: "STÄRKEN", step_3_desc: "Langfristige Begleitung auf dem Weg zu nachhaltiger Veränderung und Resilienz.",
     hintergrund_title: "Hintergrund",
-    hintergrund_text: "Gewalt begegnet uns immer wieder in vielen verschiedenen Formen und Gestalten im alltäglichen Leben. Oft fällt es uns schwer richtig zu reagieren, gefährliche Situationen im Vorfeld zu erkennen oder es fehlen uns geeignete Strategien Muster von Gewalt zu durchbrechen. Man wünscht sich, dass die Situation gar nicht erst entstanden wäre oder das man schnell und unbeschadet wieder herauskommt.<br/><br/>Wir vom Verein \"Cult – Jugendarbeit wirkt\" bieten hierbei Unterstützung durch ein breites Spektrum an Schulungen, Workshops und Trainings für Berufsgruppen, die in ihrem Berufsalltag mit Gewalt konfrontiert sind. Des Weiteren haben wir auch eine Vielzahl von Angeboten für Kinder und Jugendliche sowie Jugendgruppen. Prinzipiell haben wir es uns zur Regel gemacht, jede Schulung, jeden Workshop und jedes Training auf die Zielgruppe und deren Problemlage speziell abzustimmen.<br/><br/>Die Gewaltprävention ist ein so umfangreiches Feld, so dass wir nach Vorgesprächen immer ein individuelles Angebot anfertigen, da wir der Meinung sind, in dieser Form am besten unterstützen zu können. Ziel ist ein unterstützendes, ergänzendes Angebot zum Thema Gewaltprävention das eine intensive Auseinandersetzung zu diesem Thema ermöglicht.",
+    hintergrund_text: "Gewalt begegnet uns immer wieder in vielen verschiedenen Formen und Gestalten im alltäglichen Leben. Oft fällt es uns schwer richtig zu reagieren, gefährliche Situationen im Vorfeld zu erkennen oder es fehlen uns geeignete Strategien Muster von Gewalt zu durchbrechen. Man wünscht sich, dass die Situation gar nicht erst entstanden wäre oder das man schnell und unbeschadet wieder herauskommt.<br/><br/>Der Verein AGIT – Antigewalt und Gewaltprävention bietet hierbei Unterstützung durch ein breites Spektrum an Schulungen, Workshops und Trainings für Berufsgruppen, die in ihrem Berufsalltag mit Gewalt konfrontiert sind. Des Weiteren haben wir auch eine Vielzahl von Angeboten für Kinder und Jugendliche sowie Jugendgruppen. Prinzipiell haben wir es uns zur Regel gemacht, jede Schulung, jeden Workshop und jedes Training auf die Zielgruppe und deren Problemlage speziell abzustimmen.<br/><br/>Die Gewaltprävention ist ein so umfangreiches Feld, so dass wir nach Vorgesprächen immer ein individuelles Angebot anfertigen, da wir der Meinung sind, in dieser Form am besten unterstützen zu können. Ziel ist ein unterstützendes, ergänzendes Angebot zum Thema Gewaltprävention das eine intensive Auseinandersetzung zu diesem Thema ermöglicht. AGIT ist ein Angebot in Zusammenarbeit mit Cult.prävention – Verein Cult – Jugendarbeit wirkt.",
     form_title: "Treten Sie mit uns in Kontakt",
     form_subtitle: "Schreiben Sie uns Ihr Anliegen, wir melden uns verlässlich zurück.",
     form_name: "Name", form_email: "E-Mail", form_phone: "Telefonnummer (optional)", form_subject: "Betreff", form_message: "Nachricht", form_submit: "Nachricht senden", form_success: "Ihre Nachricht wurde erfolgreich gesendet!",
@@ -212,11 +214,27 @@ export default function Home() {
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setFormSuccess(true);
-    e.target.reset();
-    setTimeout(() => setFormSuccess(false), 5000);
+    setFormSuccess(false);
+
+    const formData = new FormData(e.target);
+    formData.append('lang', lang);
+
+    try {
+      const res = await fetch('/mail.php', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await res.json();
+      if (data.success) {
+        setFormSuccess(true);
+        e.target.reset();
+        setTimeout(() => setFormSuccess(false), 6000);
+      }
+    } catch {
+      // silent fail
+    }
   };
 
   return (
@@ -233,10 +251,10 @@ export default function Home() {
           </svg>
         </div>
         <nav className={`nav-links${menuOpen ? ' open' : ''}`}>
-          <a href="#angebote" onClick={() => setMenuOpen(false)}>{t.nav_angebote}</a>
-          <a href="#haltung" onClick={() => setMenuOpen(false)}>{t.nav_haltung}</a>
-          <a href="#ansprechpartner-section" onClick={(e) => { setMenuOpen(false); handleTeamClick(e); }}>{t.nav_team}</a>
-          <a href="#kontakt" onClick={() => setMenuOpen(false)}>{t.nav_kontakt}</a>
+          <a href="/angebote" onClick={() => setMenuOpen(false)}>{t.nav_angebote}</a>
+          <a href="/haltung" onClick={() => setMenuOpen(false)}>{t.nav_haltung}</a>
+          <a href="/team" onClick={() => setMenuOpen(false)}>{t.nav_team}</a>
+          <a href="/kontakt" onClick={() => setMenuOpen(false)}>{t.nav_kontakt}</a>
         </nav>
         <div className="nav-actions">
           <div className="lang-selector">
@@ -248,7 +266,7 @@ export default function Home() {
               <option value="bks">BKS</option>
             </select>
           </div>
-          <a href="#anfragen" className="btn btn-primary">{t.nav_anfragen}</a>
+          <a href="/kontakt" className="btn btn-primary">{t.nav_anfragen}</a>
           <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
             <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
             <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
@@ -319,26 +337,26 @@ export default function Home() {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">{t.form_name}</label>
-                  <input type="text" id="name" required />
+                  <input type="text" id="name" name="name" required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">{t.form_email}</label>
-                  <input type="email" id="email" required />
+                  <input type="email" id="email" name="email" required />
                 </div>
               </div>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="phone">{t.form_phone}</label>
-                  <input type="tel" id="phone" />
+                  <input type="tel" id="phone" name="phone" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="subject">{t.form_subject}</label>
-                  <input type="text" id="subject" required />
+                  <input type="text" id="subject" name="subject" required />
                 </div>
               </div>
               <div className="form-group">
                 <label htmlFor="message">{t.form_message}</label>
-                <textarea id="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required></textarea>
               </div>
               <button type="submit" className="btn btn-primary form-submit-btn">{t.form_submit}</button>
               {formSuccess && (
@@ -359,7 +377,7 @@ export default function Home() {
                   <h3>Kübra Erik</h3>
                   <p className="ansprech-role" dangerouslySetInnerHTML={{ __html: t.contact_role || "Ansprechpartnerin/Bereichsleitung:<br/>MA 13 außerschulische Kinder- und Jugendarbeit" }}></p>
                   <div className="ansprech-contact-info">
-                    <p><span><strong>E-Mail:</strong></span> <a href="mailto:k.erik@cult-wien.org">k.erik@cult-wien.org</a></p>
+                    <p><span><strong>E-Mail:</strong></span> <a href="mailto:k.erik@verein-agit.at">k.erik@verein-agit.at</a></p>
                     <p><span><strong>Mobil:</strong></span> +43/676/3668820</p>
                   </div>
                 </div>
@@ -372,7 +390,7 @@ export default function Home() {
                   <h3>Murat Percin, BA</h3>
                   <p className="ansprech-role" dangerouslySetInnerHTML={{ __html: t.contact2_role || "Ansprechpartner/Bereichsleitung:<br/>MA 11 Einzel/Gruppentrainings" }}></p>
                   <div className="ansprech-contact-info">
-                    <p><span><strong>E-Mail:</strong></span> <a href="mailto:m.percin@cult-wien.org">m.percin@cult-wien.org</a></p>
+                    <p><span><strong>E-Mail:</strong></span> <a href="mailto:m.percin@verein-agit.at">m.percin@verein-agit.at</a></p>
                     <p><span><strong>Mobil:</strong></span> +43/676/3668823</p>
                   </div>
                 </div>
@@ -400,17 +418,16 @@ export default function Home() {
             <div className="footer-contact">
               <h4>{t.kontakt_title}</h4>
               <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
-              <p>Telefon: +43/1/524 88 73<br/>E-Mail: <a href="mailto:office@cult-wien.org">office@cult-wien.org</a></p>
+              <p>Telefon: +43/1/524 88 73<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
             </div>
 
             <div className="footer-legal">
               <h4>{t.impressum_title}</h4>
               <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
-              <p className="small-text">Angebot in Zusammenarbeit mit Cult.prävention - Verein Cult – Jugendarbeit wirkt.</p>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2026 Verein AGIT. Alle Rechte vorbehalten.</p>
+            <p>&copy; 2025 Verein AGIT. Alle Rechte vorbehalten.</p>
           </div>
         </footer>
       </main>
