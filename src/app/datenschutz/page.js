@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import { useLanguage } from '../hooks/useLanguage';
 
 const translations = {
   de: {
@@ -134,7 +135,7 @@ const translations = {
 };
 
 export default function DatenschutzPage() {
-  const [lang, setLang] = useState('de');
+  const { lang, setLang } = useLanguage();
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar' || lang === 'fa';
 

@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../hooks/useLanguage';
 
 const translations = {
   de: {
@@ -95,7 +96,7 @@ const translations = {
 };
 
 export default function AngebotePage() {
-  const [lang, setLang] = useState('de');
+  const { lang, setLang } = useLanguage();
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar' || lang === 'fa';
 
