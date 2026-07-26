@@ -11,7 +11,7 @@ export default function Preloader() {
       setTimeout(() => setVisible(false), 900);
     };
     if (document.readyState === 'complete') {
-      setTimeout(handleLoad, 800);
+      setTimeout(handleLoad, 2000);
     } else {
       window.addEventListener('load', handleLoad);
       return () => window.removeEventListener('load', handleLoad);
@@ -115,7 +115,7 @@ export default function Preloader() {
           background: linear-gradient(90deg, #666, #aaa, #666);
           background-size: 200% 100%;
           border-radius: 4px;
-          animation: fillBar 1.8s ease-in-out forwards, shimmer 1.2s linear infinite;
+          animation: fillBar 2s ease-in-out forwards, shimmer 1.2s linear infinite;
         }
         @keyframes fillBar {
           0% { width: 0%; }
