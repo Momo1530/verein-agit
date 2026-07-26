@@ -100,15 +100,15 @@ export default function Preloader() {
         .puzzle-piece {
           width: 100%;
           height: 100%;
-          border-radius: 3px;
+          border-radius: 2px;
           opacity: 0;
-          transform: scale(0.2) rotate(25deg);
-          animation: pieceIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-          box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.06);
-          filter: brightness(1.05) contrast(1.05);
+          transform: scale(0.15) rotate(30deg);
+          animation: pieceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          box-shadow: inset 0 0 0 0.5px rgba(255,255,255,0.04);
+          filter: contrast(1.1);
         }
         @keyframes pieceIn {
-          0% { opacity: 0; transform: scale(0.2) rotate(25deg); }
+          0% { opacity: 0; transform: scale(0.15) rotate(30deg); }
           60% { opacity: 1; }
           100% { opacity: 1; transform: scale(1) rotate(0deg); }
         }
