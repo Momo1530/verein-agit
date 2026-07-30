@@ -278,6 +278,10 @@ export default function KontaktPage() {
                 <label htmlFor="message">{t.form_message}</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
               </div>
+              <div className="form-group hp-field" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
+                <label htmlFor="website">Website</label>
+                <input type="text" id="website" name="website" tabIndex="-1" autoComplete="off" />
+              </div>
               <button type="submit" className="btn btn-primary form-submit-btn" disabled={formStatus === 'sending'}>
                 {formStatus === 'sending' ? '...' : t.form_submit}
               </button>

@@ -271,6 +271,10 @@ export default function Home() {
                 <label htmlFor="message">{t.form_message}</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
               </div>
+              <div className="form-group hp-field" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
+                <label htmlFor="website">Website</label>
+                <input type="text" id="website" name="website" tabIndex="-1" autoComplete="off" />
+              </div>
               <button type="submit" className="btn btn-primary form-submit-btn">{t.form_submit}</button>
               {formSuccess && (
                 <div id="form-success-msg" className="form-success">{t.form_success}</div>
