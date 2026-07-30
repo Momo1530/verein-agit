@@ -312,12 +312,12 @@ export default function KontaktPage() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="subject">{t.form_subject}</label>
-                  <input type="text" id="subject" name="subject" required />
+                  <input type="text" id="subject" name="subject" required maxLength="75" />
                 </div>
               </div>
               <div className="form-group">
                 <label htmlFor="message">{t.form_message}</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <textarea id="message" name="message" rows="5" required maxLength="5000"></textarea>
               </div>
               <div className="form-group hp-field" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
                 <label htmlFor="website">Website</label>

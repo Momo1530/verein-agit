@@ -111,6 +111,18 @@ if (empty($name) || empty($email) || empty($subject) || empty($message)) {
     exit;
 }
 
+if (mb_strlen($subject) > 75) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Betreff zu lang. Maximal 75 Zeichen erlaubt.']);
+    exit;
+}
+
+if (mb_strlen($message) > 5000) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Nachricht zu lang. Maximal 5000 Zeichen erlaubt.']);
+    exit;
+}
+
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Ungültige E-Mail-Adresse.']);
