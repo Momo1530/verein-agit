@@ -32,7 +32,7 @@ if ($honeypot !== '') {
     exit;
 }
 
-// --- Rate-Limit pro IP: max 3 Versuche pro 10 Minuten ---
+// --- Rate-Limit pro IP: max 3 Mails pro 10 Minuten ---
 $clientIp = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $rateLimitDir = sys_get_temp_dir() . '/agit_ratelimit';
 if (!is_dir($rateLimitDir)) {
@@ -57,6 +57,43 @@ if (file_exists($rateLimitFile)) {
 if (count($attempts) >= $maxAttempts) {
     http_response_code(429);
     echo json_encode(['success' => false, 'message' => 'Zu viele Versuche. Bitte versuchen Sie es später erneut.']);
+    exit;
+}
+
+// --- Cloudflare Turnstile verifizieren ---
+$turnstileSecret = '0x4AAAAAAECHdJhrjw47AVwdjNu0-Z5VXOE';
+$turnstileToken = trim($_POST['cf-turnstile-response'] ?? '');
+
+if ($turnstileToken === '') {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Sicherheitsprüfung fehlgeschlagen.']);
+    exit;
+}
+
+$verifyData = http_build_query([
+    'secret' => $turnstileSecret,
+    'response' => $turnstileToken,
+    'remoteip' => $clientIp,
+]);
+
+$ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $verifyData);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$verifyResponse = curl_exec($ch);
+$verifyError = curl_error($ch);
+curl_close($ch);
+
+if ($verifyResponse === false) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Verifizierungsfehler: ' . $verifyError]);
+    exit;
+}
+
+$verifyResult = json_decode($verifyResponse, true);
+if (empty($verifyResult['success'])) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'message' => 'Sicherheitsprüfung nicht bestanden.']);
     exit;
 }
 

@@ -112,6 +112,16 @@ export default function Home() {
   const ansprechpartnerSectionRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || window.turnstileLoaded) return;
+    window.turnstileLoaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
     const section = ansprechpartnerSectionRef.current;
     if (!section) return;
     const observer = new IntersectionObserver(
@@ -133,20 +143,51 @@ export default function Home() {
     e.preventDefault();
     setFormSuccess(false);
 
-    const formData = new FormData(e.target);
-    formData.append('lang', lang);
+    const form = e.target;
+
+    const submitForm = async () => {
+      const formData = new FormData(form);
+      formData.append('lang', lang);
+
+      try {
+        const res = await fetch('/mail.php', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          setFormSuccess(true);
+          form.reset();
+          setTimeout(() => setFormSuccess(false), 6000);
+        }
+      } catch {
+        // silent fail
+      }
+    };
+
+    if (!window.turnstile) {
+      await submitForm();
+      return;
+    }
 
     try {
-      const res = await fetch('/mail.php', {
-        method: 'POST',
-        body: formData
+      const token = await new Promise((resolve, reject) => {
+        window.turnstile.render('#cf-turnstile-container', {
+          sitekey: '0x4AAAAAAECHdB2byZJ3ZQG5',
+          callback: resolve,
+          'error-callback': reject
+        });
       });
-      const data = await res.json();
-      if (data.success) {
-        setFormSuccess(true);
-        e.target.reset();
-        setTimeout(() => setFormSuccess(false), 6000);
-      }
+
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'cf-turnstile-response';
+      input.value = token;
+      form.appendChild(input);
+
+      await submitForm();
+      input.remove();
+      window.turnstile.remove('#cf-turnstile-container');
     } catch {
       // silent fail
     }
@@ -276,6 +317,7 @@ export default function Home() {
                 <input type="text" id="website" name="website" tabIndex="-1" autoComplete="off" />
               </div>
               <button type="submit" className="btn btn-primary form-submit-btn">{t.form_submit}</button>
+              <div id="cf-turnstile-container" style={{ marginTop: '12px' }}></div>
               {formSuccess && (
                 <div id="form-success-msg" className="form-success">{t.form_success}</div>
               )}

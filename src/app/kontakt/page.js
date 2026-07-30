@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
 
 const translations = {
@@ -179,26 +179,67 @@ export default function KontaktPage() {
   const isRtl = lang === 'ar' || lang === 'fa';
   const [formStatus, setFormStatus] = useState('idle'); // idle | sending | success | error
 
+  useEffect(() => {
+    if (typeof window === 'undefined' || window.turnstileLoaded) return;
+    window.turnstileLoaded = true;
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setFormStatus('sending');
 
-    const formData = new FormData(e.target);
-    formData.append('lang', lang);
+    const form = e.target;
 
-    try {
-      const res = await fetch('/mail.php', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await res.json();
-      if (data.success) {
-        setFormStatus('success');
-        e.target.reset();
-        setTimeout(() => setFormStatus('idle'), 6000);
-      } else {
+    const submitForm = async () => {
+      const formData = new FormData(form);
+      formData.append('lang', lang);
+
+      try {
+        const res = await fetch('/mail.php', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+        if (data.success) {
+          setFormStatus('success');
+          form.reset();
+          setTimeout(() => setFormStatus('idle'), 6000);
+        } else {
+          setFormStatus('error');
+        }
+      } catch {
         setFormStatus('error');
       }
+    };
+
+    if (!window.turnstile) {
+      await submitForm();
+      return;
+    }
+
+    try {
+      const token = await new Promise((resolve, reject) => {
+        window.turnstile.render('#cf-turnstile-container', {
+          sitekey: '0x4AAAAAAECHdB2byZJ3ZQG5',
+          callback: resolve,
+          'error-callback': reject
+        });
+      });
+
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'cf-turnstile-response';
+      input.value = token;
+      form.appendChild(input);
+
+      await submitForm();
+      input.remove();
+      window.turnstile.remove('#cf-turnstile-container');
     } catch {
       setFormStatus('error');
     }
@@ -285,6 +326,7 @@ export default function KontaktPage() {
               <button type="submit" className="btn btn-primary form-submit-btn" disabled={formStatus === 'sending'}>
                 {formStatus === 'sending' ? '...' : t.form_submit}
               </button>
+              <div id="cf-turnstile-container" style={{ marginTop: '12px' }}></div>
               {formStatus === 'success' && (
                 <div className="form-success">{t.form_success}</div>
               )}
