@@ -111,9 +111,9 @@ if (empty($name) || empty($email) || empty($subject) || empty($message)) {
     exit;
 }
 
-if (mb_strlen($subject) > 75) {
+if (mb_strlen($subject) > 50) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Betreff zu lang. Maximal 75 Zeichen erlaubt.']);
+    echo json_encode(['success' => false, 'message' => 'Betreff zu lang. Maximal 50 Zeichen erlaubt.']);
     exit;
 }
 

@@ -305,7 +305,7 @@ export default function Home() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="subject">{t.form_subject}</label>
-                  <input type="text" id="subject" name="subject" required maxLength="75" />
+                  <input type="text" id="subject" name="subject" required maxLength="50" />
                 </div>
               </div>
               <div className="form-group">
