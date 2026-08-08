@@ -178,6 +178,8 @@ export default function KontaktPage() {
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar' || lang === 'fa';
   const [formStatus, setFormStatus] = useState('idle'); // idle | sending | success | error
+  const [charCount, setCharCount] = useState({ subject: 0, message: 0 });
+  const [focusedField, setFocusedField] = useState(null); // 'subject' | 'message' | null
 
   useEffect(() => {
     if (typeof window === 'undefined' || window.turnstileLoaded) return;
@@ -208,6 +210,8 @@ export default function KontaktPage() {
         if (data.success) {
           setFormStatus('success');
           form.reset();
+          setCharCount({ subject: 0, message: 0 });
+          setFocusedField(null);
           setTimeout(() => setFormStatus('idle'), 6000);
         } else {
           setFormStatus('error');
@@ -312,12 +316,36 @@ export default function KontaktPage() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="subject">{t.form_subject}</label>
-                  <input type="text" id="subject" name="subject" required maxLength="50" />
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                    maxLength="50"
+                    onChange={(e) => setCharCount((c) => ({ ...c, subject: e.target.value.length }))}
+                    onFocus={() => setFocusedField('subject')}
+                    onBlur={() => setFocusedField(null)}
+                  />
+                  {focusedField === 'subject' && (
+                    <span className="char-counter">{charCount.subject} / 50</span>
+                  )}
                 </div>
               </div>
               <div className="form-group">
                 <label htmlFor="message">{t.form_message}</label>
-                <textarea id="message" name="message" rows="5" required maxLength="5000"></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  maxLength="5000"
+                  onChange={(e) => setCharCount((c) => ({ ...c, message: e.target.value.length }))}
+                  onFocus={() => setFocusedField('message')}
+                  onBlur={() => setFocusedField(null)}
+                ></textarea>
+                {focusedField === 'message' && (
+                  <span className="char-counter">{charCount.message} / 5000</span>
+                )}
               </div>
               <div className="form-group hp-field" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
                 <label htmlFor="website">Website</label>

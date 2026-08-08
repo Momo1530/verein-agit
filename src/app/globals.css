@@ -239,6 +239,13 @@ body {
 .form-row .form-group { flex: 1; }
 .form-group { display: flex; flex-direction: column; margin-bottom: 0.75rem; }
 .form-group label { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; color: rgba(255,255,255,0.8); }
+.char-counter {
+  display: block;
+  color: #9d4edd;
+  font-size: 10px;
+  margin-top: 0.35rem;
+  text-align: right;
+}
 .form-group input, .form-group textarea {
   background: rgba(0,0,0,0.2);
   border: 1px solid rgba(255,255,255,0.15);
