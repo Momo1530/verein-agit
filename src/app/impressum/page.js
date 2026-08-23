@@ -32,10 +32,10 @@ const translations = {
     sections: [
       { title: "Medya Sahibi ve Yayıncı", content: "<strong>Dernek Adı:</strong> AGIT – Antigewalt- und Interventionsteam<br/><strong>Derneğin Merkezi:</strong> Viyana, Avusturya<br/><strong>Posta Adresi:</strong> Hallergasse 8/1/47, 1110 Viyana, Avusturya<br/><strong>E-Posta:</strong> <a href=\"mailto:office@verein-agit.at\">office@verein-agit.at</a>" },
       { title: "Dernek Sicili ve Yetkili Makam", content: "<strong>ZVR Numarası (Merkezi Dernek Sicili):</strong> 1897049103<br/><strong>Yetkili Dernek Makamı:</strong> Landespolizeidirektion Wien, Dernek, Toplantı ve Medya Hukuku Dairesi" },
-      { title: "Derneğin Amacı", content: "AGIT – Antigewalt- und Interventionsteam, kar amacı gütmeyen bir dernektir. Amacı; şiddet önleme, kriz müdahalesi ve gerilim azaltma çalışmalarını teşvik etmek ve şiddetten etkilenen veya risk altındaki gençleri desteklemektir." },
-      { title: "Telif Hakkı", content: "Bu web sitesinin tüm içerikleri özenle hazırlanmıştır. İçeriklerin doğruluğu, eksiksizliği ve güncelliği konusunda garanti veremeyiz." }
-    ]
-  },
+       { title: "Kamu Yararı ve Dernek Amacı", content: "Dernek kâr amacı gütmez ve §§ 34 ff Bundesabgabenordnung (BAO – Federal Vergi Usul Kanunu) anlamında yalnızca ve doğrudan kamu yararına yönelik amaçlar izler.<br/><br/><strong>Derneğin Amacı:</strong> Özellikle çocuklar, gençler ve genç yetişkinler için şiddet önleme, kriz müdahalesi ve gerilim azaltma çalışmalarının teşvik edilmesi; önleyici, koruyucu ve yüzleştirici çalışma yaklaşımlarının uygulanması; şiddet karşıtı ve gerilim azaltma çalışmaları alanındaki mesleki kalitenin teşvik edilmesi." },
+       { title: "Web Sitesinin Temel Yönelimi („Yayın Çizgisi“)", content: "Bu web sitesi, „AGIT – Antigewalt- und Interventionsteam“ derneğinin hedefleri, faaliyetleri, projeleri ve çalışmaları hakkında bilgi vermeye ve kamuoyunu şiddetsizlik, gerilim azaltma ve sivil cesaret konusunda bilinçlendirmeye hizmet etmektedir." }
+      ]
+      },
   ar: {
     page_title: "بصمة",
     hero_title: "بصمة",
@@ -43,8 +43,8 @@ const translations = {
     sections: [
       { title: "مالك الوسيلة الإعلامية", content: "<strong>اسم الجمعية:</strong> AGIT – Antigewalt- und Interventionsteam<br/><strong>مقر الجمعية:</strong> فيينا، النمسا<br/><strong>العنوان البريدي:</strong> Hallergasse 8/1/47، 1110 فيينا، النمسا<br/><strong>البريد الإلكتروني:</strong> <a href=\"mailto:office@verein-agit.at\">office@verein-agit.at</a>" },
       { title: "سجل الجمعيات والسلطة المختصة", content: "<strong>رقم ZVR:</strong> 1897049103<br/><strong>السلطة المختصة بالجمعيات:</strong> Landespolizeidirektion Wien" },
-      { title: "غرض الجمعية", content: "جمعية AGIT جمعية غير ربحية. هدفها تعزيز الوقاية من العنف والتدخل في الأزمات والعمل على الحد من التصعيد ودعم الشباب المتأثرين بالعنف." },
-      { title: "حقوق الطبع والنشر", content: "تم إنشاء محتويات هذا الموقع بعناية فائقة. ومع ذلك، لا يمكننا تحمل أي مسؤولية عن دقة المحتوى واكتماله وحداثته." }
+      { title: "النفع العام وغرض الجمعية", content: "الجمعية لا تسعى إلى تحقيق الربح وتتبع أغراض النفع العام حصريًا ومباشرة بالمعنى المقصود في §§ 34 ff Bundesabgabenordnung (BAO – قانون الضرائب الفيدرالي النمساوي).<br/><br/><strong>غرض الجمعية:</strong> تعزيز الوقاية من العنف والتدخل في الأزمات والعمل على خفض التصعيد، خاصة للأطفال والشباب والبالغين الشباب؛ تنفيذ أساليب عمل وقائية وحمائية ومواجهة؛ تعزيز الجودة المهنية في مجال مكافحة العنف وخفض التصعيد." },
+      { title: "التوجه الأساسي للموقع الإلكتروني („الخط التحريري“)", content: "يخدم هذا الموقع الإلكتروني إطلاع الجمهور على أهداف وعروض ومشاريع وأنشطة جمعية „AGIT – Antigewalt- und Interventionsteam“ وتوعية الرأي العام بحرية العنف وخفض التصعيد والشجاعة المدنية." }
     ]
   },
   ku: {
@@ -54,10 +54,10 @@ const translations = {
     sections: [
       { title: "Xwediyê Medyayê & Weşander", content: "<strong>Navê Komeleyê:</strong> AGIT – Antigewalt- und Interventionsteam<br/><strong>Cihê Komeleyê:</strong> Viyana, Awistirya<br/><strong>Navnîşana Postê:</strong> Hallergasse 8/1/47, 1110 Viyana, Awistirya<br/><strong>E-Mail:</strong> <a href=\"mailto:office@verein-agit.at\">office@verein-agit.at</a>" },
       { title: "Tomara Komeleyan & Saziyê Berpirsiyar", content: "<strong>Hejmara ZVR:</strong> 1897049103<br/><strong>Saziyê Berpirsiyar:</strong> Landespolizeidirektion Wien" },
-      { title: "Armanca Komeleyê", content: "Komeleya AGIT komeleyeke ne-bi-mena e. Armanca wê pêşîlêgirtina şîdetê, destêwerdana krîzê û xebata de-eskalasyonê pêşxistin e." },
-      { title: "Mafê Nivîsandinê", content: "Naveroka vê malperê bi baldarî hatiye çêkirin. Lebê em nikarin ji bo rastî, temamî û nûjeniya naverokê garantiyê bidin." }
-    ]
-  },
+       { title: "Bêqazancî & Armanca Komeleyê", content: "Komele ji bo qazancê neketiye damezrandin û tenê armancên bêqazanciyê di çarçoveya §§ 34 ff Bundesabgabenordnung (BAO – Qanûna Bacê ya Federal) dike.<br/><br/><strong>Armanca Komeleyê:</strong> Pêşxistina pêşîlêgirtina şîdetê, destêwerdana krizê û xebata kêmkirina şidatê, bi taybetî ji bo zarok, ciwan û mezinên ciwan; pêkanîna teknîkên xebata pêşîlêgirtinê, parastinê û konfrontasyonê; pêşxistina kalîteya pisporiyê di warê xebata dijî-şîdet û kêmkirina şidatê de." },
+       { title: "Rêya Bingehîn a Malperê („Lînya Editoryalê“)", content: "Ev malper ji bo agahdarkirina derbarê armanc, pêşnigar, projeyên û çalakiyên komeleya „AGIT – Antigewalt- und Interventionsteam“ û ji bo hişyarkirina raya giştî derbarê azadiya şîdetê, kêmkirina şidatê û cesareta sivîl e." }
+      ]
+      },
   bks: {
     page_title: "Impresum",
     hero_title: "Impresum",
@@ -65,10 +65,10 @@ const translations = {
     sections: [
       { title: "Vlasnik medija & Izdavač", content: "<strong>Naziv udruženja:</strong> AGIT – Antigewalt- und Interventionsteam<br/><strong>Sjedište udruženja:</strong> Beč, Austrija<br/><strong>Poštanska adresa:</strong> Hallergasse 8/1/47, 1110 Beč, Austrija<br/><strong>E-Mail:</strong> <a href=\"mailto:office@verein-agit.at\">office@verein-agit.at</a>" },
       { title: "Registar udruženja & Nadležno tijelo", content: "<strong>ZVR broj:</strong> 1897049103<br/><strong>Nadležno tijelo za udruženja:</strong> Landespolizeidirektion Wien" },
-      { title: "Svrha udruženja", content: "Udruženje AGIT je neprofitno udruženje. Svrha je promicanje prevencije nasilja, intervencije u kriznim situacijama i rada na deeskalaciji." },
-      { title: "Autorska prava", content: "Sadržaji ove web stranice kreirani su s najvećom pažnjom. Međutim, ne možemo preuzeti garanciju za točnost, cjelovitost i aktualnost sadržaja." }
-    ]
-  },
+       { title: "Neprofitabilnost & Svrha udruženja", content: "Udruženje nije usmjereno na dobit i slijedi isključivo i neposredno neprofitabilne svrhe u smislu §§ 34 ff Bundesabgabenordnung (BAO – Savezni zakon o porezima).<br/><br/><strong>Svrha udruženja:</strong> Promicanje prevencije nasilja, intervencije u krizama i rada na deeskalaciji, posebno za djecu, mlade i mlade odrasle; provođenje preventivnih, protektivnih i konfrontativnih pristupa rada; promicanje stručne kvalitete u području antinasilnog i rada na deeskalaciji." },
+       { title: "Osnovni smjer web stranice („urednička politika“)", content: "Ova web stranica služi informiranju o ciljevima, ponudama, projektima i aktivnostima udruženja „AGIT – Antigewalt- und Interventionsteam“ te osviještavanju javnosti o slobodi od nasilja, deeskalaciji i građanskoj hrabrosti." }
+      ]
+      },
   fa: {
     page_title: "مشخصات",
     hero_title: "مشخصات نشر",
@@ -76,8 +76,8 @@ const translations = {
     sections: [
       { title: "مالک رسانه و ناشر", content: "<strong>نام انجمن:</strong> AGIT – Antigewalt- und Interventionsteam<br/><strong>محل انجمن:</strong> وین، اتریش<br/><strong>آدرس پستی:</strong> Hallergasse 8/1/47، 1110 وین، اتریش<br/><strong>ایمیل:</strong> <a href=\"mailto:office@verein-agit.at\">office@verein-agit.at</a>" },
       { title: "ثبت انجمن & مرجع صالح", content: "<strong>شماره ZVR:</strong> 1897049103<br/><strong>مرجع صالح برای انجمن‌ها:</strong> Landespolizeidirektion Wien" },
-      { title: "هدف انجمن", content: "انجمن AGIT یک انجمن غیرانتفاعی است. هدف آن ارتقاء پیشگیری از خشونت، مداخله در بحران و کار در زمینه کاهش تنش است." },
-      { title: "حق نشر", content: "محتوای این وب‌سایت با دقت بالا تهیه شده است. با این حال، نمی‌توانیم تضمینی برای صحت، کامل بودن و به‌روز بودن محتوا ارائه دهیم." }
+      { title: "غیرانتفاعی بودن & هدف انجمن", content: "انجمن هدف سودآوری را دنبال نمی‌کند و به طور انحصاری و مستقیم اهداف عام‌المنفعه را به معنای §§ 34 ff Bundesabgabenordnung (BAO – قانون مالیات فدرال اتریش) دنبال می‌کند.<br/><br/><strong>هدف انجمن:</strong> ارتقاء پیشگیری از خشونت، مداخله در بحران و کار کاهش تنش، به ویژه برای کودکان، نوجوانان و بزرگسالان جوان؛ اجرای رویکردهای پیشگیرانه، حمایتی و روبروشونده؛ ارتقاء کیفیت حرفه‌ای در زمینه کار ضدخشونت و کاهش تنش." },
+      { title: "جهت‌گیری اساسی وب‌سایت („خط سردبیری“)", content: "این وب‌سایت در جهت اطلاع‌رسانی درباره اهداف، خدمات، پروژه‌ها و فعالیت‌های انجمن „AGIT – Antigewalt- und Interventionsteam“ و حساس‌سازی افکار عمومی نسبت به دور بودن از خشونت، کاهش تنش و شجاعت مدنی است." }
     ]
   }
 };
