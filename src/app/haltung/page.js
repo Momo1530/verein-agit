@@ -8,14 +8,15 @@ const translations = {
     hero_title: "Unsere Haltung",
     hero_desc: "Gewaltprävention ist für uns mehr als ein Workshop – sie ist eine Haltung, die im Alltag verankert sein muss.",
     leitbild_title: "Unser Leitbild",
-    leitbild_text: "Der Verein AGIT – Antigewalt und Gewaltprävention steht für eine Kultur der Achtsamkeit, des Respekts und der gewaltfreien Konfliktlösung. Wir sind überzeugt: Gewalt ist kein Schicksal, sondern ein erlernbares Verhalten – und kann durch gezielte Prävention und Intervention verändert werden. Unser Ansatz ist ganzheitlich, wertschätzend und partizipativ. Wir arbeiten mit Kindern, Jugendlichen, Erwachsenen, Familien und Institutionen zusammen, um nachhaltige Veränderungen zu bewirken.",
+    leitbild_text: "Die Arbeit von AGIT basiert auf einem ganzheitlichen, systemischen Ansatz. Wir betrachten Gewalt nicht isoliert, sondern beziehen das gesamte soziale Umfeld mit ein. Unsere Zielgruppen gliedern sich daher in drei wesentliche Bereiche:<br/><br/><strong>Der soziale Nahraum (Familie & Erziehungsberechtigte):</strong> Eltern und Bezugspersonen sind wichtige Säulen im Deeskalationsprozess. Durch gezielte Elternarbeit stärken wir die Erziehungskompetenz und fördern ein gewaltfreies Klima im familiären Alltag.<br/><br/><strong>Kinder, Jugendliche und junge Erwachsene:</strong> Im Zentrum unserer Arbeit stehen junge Menschen, die von Gewalt betroffen, gewaltbereit oder durch schwierige Lebensumstände gefährdet sind. Wir holen sie dort ab, wo sie stehen, und unterstützen sie dabei, erlernte Verhaltensmuster zu durchbrechen und eigene Ressourcen zu aktivieren.<br/><br/><strong>Fachkräfte, Institutionen und Multiplikator:innen:</strong> Wir sind starker Partner für Schulen, die Kinder- und Jugendhilfe (wie die MA 11 in Wien), Jugendarbeitseinrichtungen, Behörden und die Justiz. Zudem richten sich unsere Aus- und Weiterbildungen an Lehrer:innen, Sozialarbeiter:innen und Fachkräfte, die sich im Bereich der Gewaltprävention und des Krisenmanagements professionalisieren möchten.",
     values_title: "Unsere Werte",
     values: [
       { title: "Respekt", desc: "Jeder Mensch hat das Recht auf ein gewaltfreies Umfeld. Wir begegnen allen mit Würde und ohne Vorurteile." },
       { title: "Partizipation", desc: "Betroffene werden in den Prozess eingebunden. Veränderung gelingt nur gemeinsam." },
       { title: "Professionalität", desc: "Unsere Arbeit basiert auf fundierten Methoden, aktueller Forschung und langjähriger Erfahrung." },
       { title: "Nachhaltigkeit", desc: "Kurze Interventionen sind wertvoll – nachhaltige Veränderung braucht Begleitung und Kontinuität." },
-      { title: "Kultursensibilität", desc: "Wir arbeiten mehrsprachig und kultursensibel. Gewaltprävention muss alle Menschen erreichen." }
+      { title: "Kultursensibilität", desc: "Wir arbeiten mehrsprachig und kultursensibel. Gewaltprävention muss alle Menschen erreichen." },
+      { title: "Individualität", desc: "Jeder Mensch und jede Situation ist anders. Wir richten unsere Begleitung an individuellen Bedürfnissen, Ressourcen und Lebensrealitäten aus." }
     ],
     approach_title: "Unser Ansatz",
     approach_text: "AGIT versteht Gewaltprävention als Querschnittsaufgabe, die in pädagogischen, sozialen und institutionellen Kontexten verankert werden muss. Wir verstehen Gewaltprävention als Querschnittsaufgabe, die in pädagogischen, sozialen und institutionellen Kontexten verankert werden muss. Unsere Angebote sind niederschwellig, lebensweltorientiert und richten sich nach dem konkreten Bedarf der Zielgruppe. Wir arbeiten präventiv, intervenierend und stärkend – je nachdem, was die Situation erfordert."
@@ -32,7 +33,8 @@ const translations = {
       { title: "Katılım", desc: "Etkilenenler sürece dahil edilir. Değişim ancak birlikte başarılabilir." },
       { title: "Profesyonellik", desc: "Çalışmalarımız sağlam yöntemlere, güncel araştırmalara ve uzun yıllara dayanan deneyime dayanır." },
       { title: "Sürdürülebilirlik", desc: "Kısa müdahaleler değerlidir – sürdürülebilir değişim rehberlik ve süreklilik gerektirir." },
-      { title: "Kültürel Duyarlılık", desc: "Çok dilli ve kültürel duyarlılıkla çalışıyoruz. Şiddet önleme herkese ulaşmalıdır." }
+      { title: "Kültürel Duyarlılık", desc: "Çok dilli ve kültürel duyarlılıkla çalışıyoruz. Şiddet önleme herkese ulaşmalıdır." },
+      { title: "Bireysellik", desc: "Her insan ve her durum farklıdır. Rehberliğimizi bireysel ihtiyaçlara, kaynaklara ve yaşam gerçeklerine göre düzenleriz." }
     ],
     approach_title: "Yaklaşımımız",
     approach_text: "AGIT, şiddet önlemeyi, pedagojik, sosyal ve kurumsal bağlamlarda yerleştirilmesi gereken kesitsel bir görev olarak görüyoruz. Şiddet önlemeyi, pedagojik, sosyal ve kurumsal bağlamlarda yerleştirilmesi gereken kesitsel bir görev olarak görüyoruz."
@@ -49,7 +51,8 @@ const translations = {
       { title: "المشاركة", desc: "يتم إشراك المتأثرين في العملية. التغيير لا ينجح إلا معًا." },
       { title: "الاحترافية", desc: "يعتمد عملنا على أسس متينة وأبحاث حديثة وخبرة طويلة." },
       { title: "الاستدامة", desc: "التدخلات القصيرة قيمة - التغيير المستدام يحتاج إلى مرافقة واستمرارية." },
-      { title: "الحساسية الثقافية", desc: "نعمل بعدة لغات وبحساسية ثقافية. يجب أن تصل الوقاية من العنف إلى الجميع." }
+      { title: "الحساسية الثقافية", desc: "نعمل بعدة لغات وبحساسية ثقافية. يجب أن تصل الوقاية من العنف إلى الجميع." },
+      { title: "الفردية", desc: "كل إنسان وكل موقف مختلف. نخصص مرافقتنا وفقًا للاحتياجات والموارد والواقع المعيشي الفردي." }
     ],
     approach_title: "نهجنا",
     approach_text: "AGIT تعتبر الوقاية من العنف مهمة شاملة يجب ترسيخها في السياقات التربوية والاجتماعية والمؤسسية. نحن نعتبر الوقاية من العنف مهمة شاملة يجب ترسيخها في السياقات التربوية والاجتماعية والمؤسسية."
@@ -66,7 +69,8 @@ const translations = {
       { title: "Beşdarî", desc: "Kesên bandordar di pêvajoyê de têne tevlîkirin. Guherîn tenê bi hev re pêk tê." },
       { title: "Pîşeyîtî", desc: "Xebata me li ser rêbazên zexm, lêkolînên nûjen û ezmûna salan e." },
       { title: "Domdarî", desc: "Destêwerdanên kurt bi qîmet in – guherîna domdar hevalbendî û berdewamiyê dixwaze." },
-      { title: "Hesasiyeta Çandî", desc: "Em bi pirzimanî û hesasiyeta çandî dixebitin. Pêşîlêgirtina şîdetê divê bigihêje her kesî." }
+      { title: "Hesasiyeta Çandî", desc: "Em bi pirzimanî û hesasiyeta çandî dixebitin. Pêşîlêgirtina şîdetê divê bigihêje her kesî." },
+      { title: "Takîtî", desc: "Her mirov û her rewş cudatir e. Em rêberiya xwe li gorî hewce, çavkanî û rastiyên jiyanê yên kesane birêxistin dikin." }
     ],
     approach_title: "Nêzîkatiya Me",
     approach_text: "AGIT pêşîlêgirtina şîdetê wekî karekî qutkirî dibîne ku divê di çarçoveyên pedagojîk, civakî û sazî de were bicîhkirin. Em pêşîlêgirtina şîdetê wekî karekî qutkirî dibînin ku divê di çarçoveyên pedagojîk, civakî û sazî de were bicîhkirin."
@@ -83,7 +87,8 @@ const translations = {
       { title: "Participacija", desc: "Pogođene osobe se uključuju u proces. Promjena uspijeva samo zajedno." },
       { title: "Profesionalnost", desc: "Naš rad se temelji na provjerenim metodama, aktuelnim istraživanjima i dugogodišnjem iskustvu." },
       { title: "Održivost", desc: "Kratke intervencije su vrijedne – održiva promjena zahtijeva podršku i kontinuitet." },
-      { title: "Kulturna osjetljivost", desc: "Radimo višejezično i kulturno osjetljivo. Prevencija nasilja mora doseći sve ljude." }
+      { title: "Kulturna osjetljivost", desc: "Radimo višejezično i kulturno osjetljivo. Prevencija nasilja mora doseći sve ljude." },
+      { title: "Individualnost", desc: "Svaka osoba i svaka situacija je drugačija. Našu podršku prilagođavamo individualnim potrebama, resursima i životnim okolnostima." }
     ],
     approach_title: "Naš pristup",
     approach_text: "AGIT prevenciju nasilja vidi kao poprečni zadatak koji mora biti ukorijenjen u pedagoškim, socijalnim i institucionalnim kontekstima. Prevenciju nasilja vidimo kao poprečni zadatak koji mora biti ukorijenjen u pedagoškim, socijalnim i institucionalnim kontekstima."
@@ -100,7 +105,8 @@ const translations = {
       { title: "مشارکت", desc: "افراد متأثر در فرآیند مشارکت داده می‌شوند. تغییر تنها با همکاری موفق می‌شود." },
       { title: "حرفه‌ای‌گری", desc: "کار ما بر پایه روش‌های مستحکم، تحقیقات به‌روز و تجربه چندین ساله استوار است." },
       { title: "پایداری", desc: "مداخلات کوتاه ارزشمند هستند – تغییر پایدار نیاز به همراهی و تداوم دارد." },
-      { title: "حساسیت فرهنگی", desc: "ما به چندین زبان و با حساسیت فرهنگی کار می‌کنیم. پیشگیری از خشونت باید به همه مردم برسد." }
+      { title: "حساسیت فرهنگی", desc: "ما به چندین زبان و با حساسیت فرهنگی کار می‌کنیم. پیشگیری از خشونت باید به همه مردم برسد." },
+      { title: "فردیت", desc: "هر انسان و هر موقعیتی متفاوت است. ما همراهی خود را بر اساس نیازها، منابع و واقعیت‌های زندگی فردی تنظیم می‌کنیم." }
     ],
     approach_title: "رویکرد ما",
     approach_text: "AGIT پیشگیری از خشونت را یک وظیفه میان‌بخشی می‌داند که باید در زمینه‌های آموزشی، اجتماعی و نهادی ریشه‌دار شود. ما پیشگیری از خشونت را یک وظیفه میان‌بخشی می‌دانیم که باید در زمینه‌های آموزشی، اجتماعی و نهادی ریشه‌دار شود."
@@ -159,7 +165,7 @@ export default function HaltungPage() {
         <section className="subpage-content">
           <div className="content-block">
             <h2>{t.leitbild_title}</h2>
-            <p>{t.leitbild_text}</p>
+            <p dangerouslySetInnerHTML={{ __html: t.leitbild_text }} />
           </div>
 
           <div className="content-block">
