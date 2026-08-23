@@ -11,7 +11,7 @@ const translations = {
     sections: [
       {
         title: "1. Verantwortlicher",
-        content: "Verein AGIT – Antigewalt und Gewaltprävention<br/>Gerichtsgasse 1, 1230 Wien, Österreich<br/>E-Mail: office@verein-agit.at<br/>Telefon: +43/1/524 88 73<br/>ZVR-Zahl: (bitte einfügen)"
+        content: "Verein AGIT – Antigewalt und Interventionsteam<br/>Hallergasse 8/1/47, 1110 Wien, Österreich<br/>E-Mail: office@verein-agit.at<br/>ZVR-Zahl: 1897049103"
       },
       {
         title: "2. Allgemeines zur Datenverarbeitung",
@@ -53,7 +53,7 @@ const translations = {
     hero_desc: "Kişisel verilerinizin korunması bizim için önemlidir. Aşağıda, web sitemizde verilerinizin işlenmesi hakkında sizi bilgilendiriyoruz.",
     last_updated: "Son güncelleme: Temmuz 2026",
     sections: [
-      { title: "1. Sorumlu", content: "AGIT Derneği – Şiddet Karşıtı ve Şiddeti Önleme<br/>Gerichtsgasse 1, 1230 Viyana, Avusturya<br/>E-Posta: office@verein-agit.at<br/>Telefon: +43/1/524 88 73" },
+      { title: "1. Sorumlu", content: "AGIT Derneği – Şiddet Karşıtı ve Müdahale Ekibi<br/>Hallergasse 8/1/47, 1110 Viyana, Avusturya<br/>E-Posta: office@verein-agit.at<br/>ZVR Numarası: 1897049103" },
       { title: "2. Veri İşleme Hakkında Genel Bilgiler", content: "Kişisel verileri yalnızca web sitemizin ve hizmetlerimizin sağlanması için gerekli olduğu ölçüde toplar ve işleriz. İşleme, GDPR ve Avusturya Veri Koruma Yasası'na (DSG) dayanarak gerçekleştirilir." },
       { title: "3. İletişim Formu", content: "İletişim formumuz aracılığıyla bize mesaj gönderdiğinizde, sağladığınız veriler (isim, e-posta adresi, telefon numarası, konu, mesaj) talebinizi işleme koymak ve olası takip soruları için saklanır. Yasal dayanak GDPR Madde 6(1)(b) ve (f)'dir. Veriler e-posta ile office@verein-agit.at adresine iletilir ve talep tamamlandıktan sonra silinir." },
       { title: "4. E-Posta İletişimi", content: "Bize e-posta yoluyla ulaştığınızda, verileriniz (e-posta adresi, isim, gerekirse diğer bilgiler) talebinizi işleme koymak için saklanır. Veriler üçüncü taraflarla paylaşılmaz." },
@@ -70,7 +70,7 @@ const translations = {
     hero_desc: "حماية بياناتك الشخصية مهمة بالنسبة لنا. فيما يلي نبلغك بمعالجة بياناتك على موقعنا الإلكتروني.",
     last_updated: "آخر تحديث: يوليو 2026",
     sections: [
-      { title: "1. المسؤول", content: "جمعية AGIT – مكافحة العنف والوقاية منه<br/>Gerichtsgasse 1, 1230 فيينا, النمسا<br/>البريد الإلكتروني: office@verein-agit.at<br/>الهاتف: +43/1/524 88 73" },
+      { title: "1. المسؤول", content: "جمعية AGIT – مكافحة العنف وفريق التدخل<br/>Hallergasse 8/1/47, 1110 فيينا, النمسا<br/>البريد الإلكتروني: office@verein-agit.at<br/>رقم ZVR: 1897049103" },
       { title: "2. معلومات عامة عن معالجة البيانات", content: "نقوم بجمع ومعالجة البيانات الشخصية فقط بالقدر اللازم لتوفير موقعنا الإلكتروني وخدماتنا. تتم المعالجة على أساس اللائحة العامة لحماية البيانات (GDPR) وقانون حماية البيانات النمساوي (DSG)." },
       { title: "3. نموذج الاتصال", content: "عند إرسال رسالة لنا عبر نموذج الاتصال، يتم تخزين البيانات التي تقدمها (الاسم، البريد الإلكتروني، رقم الهاتف، الموضوع، الرسالة) لغرض معالجة الطلب وللاستفسارات المتابعة. الأساس القانوني هو المادة 6(1)(ب) و(و) من GDPR. يتم إرسال البيانات عبر البريد الإلكتروني إلى office@verein-agit.at وحذفها بعد معالجة الطلب." },
       { title: "4. التواصل عبر البريد الإلكتروني", content: "عند الاتصال بنا عبر البريد الإلكتروني، يتم تخزين بياناتك (البريد الإلكتروني، الاسم، وربما معلومات أخرى) لمعالجة طلبك. لا يتم مشاركة البيانات مع أطراف ثالثة." },
@@ -87,7 +87,7 @@ const translations = {
     hero_desc: "Parastina daneyên we yên kesane ji bo me girîng e. Li jêr em we li ser pêvajokirina daneyên we li ser malpera xwe agahdar dikin.",
     last_updated: "Rewşa dawî: Tîrmeh 2026",
     sections: [
-      { title: "1. Berpirsiyar", content: "Komeleya AGIT – Dijî Şîdetê û Pêşîlêgirtinê<br/>Gerichtsgasse 1, 1230 Viyana, Awistirya<br/>E-Mail: office@verein-agit.at<br/>Telefon: +43/1/524 88 73" },
+      { title: "1. Berpirsiyar", content: "Komeleya AGIT – Dijî Şîdetê û Tîma Destêwerdanê<br/>Hallergasse 8/1/47, 1110 Viyana, Awistirya<br/>E-Mail: office@verein-agit.at<br/>Hejmara ZVR: 1897049103" },
       { title: "2. Agahiyên Giştî yên Pêvajokirina Daneyan", content: "Em daneyên kesane tenê heya ku ji bo peydakirina malpera xwe û karûbarên xwe hewce be berhev û pêvajoyê dikin. Pêvajokirin li ser bingeha GDPR û Qanûna Parastina Daneyan a Awistiryayê (DSG) pêk tê." },
       { title: "3. Forma Têkiliyê", content: "Dema ku hûn bi forma têkiliyê peyamekê ji me re dişînin, daneyên ku we peyda kirine (nav, e-name, hejmara telefonê, mijar, peyam) ji bo pêvajokirina daxwazê û pirsên paşerojê têne hilanîn. Bingehê qanûnî Madde 6(1)(b) û (f) ya GDPR e. Dane bi e-nameyê ji office@verein-agit.at re têne şandin û piştî qedandina daxwazê têne jêbirin." },
       { title: "4. Têkiliya E-nameyê", content: "Dema ku hûn bi e-nameyê bi me re têkilî dikin, daneyên we (e-name, nav, heke hewce be agahiyên din) ji bo pêvajokirina daxwazê têne hilanîn. Dane bi kesên sêyemîn re nayê parvekirin." },
@@ -104,7 +104,7 @@ const translations = {
     hero_desc: "Zaštita vaših ličnih podataka nam je važna. U nastavku vas informišemo o obradi vaših podataka na našoj web stranici.",
     last_updated: "Stanje: Juli 2026",
     sections: [
-      { title: "1. Odgovorno lice", content: "Udruženje AGIT – Protiv nasilja i prevencije<br/>Gerichtsgasse 1, 1230 Beč, Austrija<br/>E-Mail: office@verein-agit.at<br/>Telefon: +43/1/524 88 73" },
+      { title: "1. Odgovorno lice", content: "Udruženje AGIT – Protiv nasilja i interventni tim<br/>Hallergasse 8/1/47, 1110 Beč, Austrija<br/>E-Mail: office@verein-agit.at<br/>ZVR broj: 1897049103" },
       { title: "2. Općenito o obradi podataka", content: "Prikupljamo i obrađujemo lične podatke samo u mjeri potrebnoj za pružanje naše web stranice i naših usluga. Obrada se vrši na osnovu GDPR-a i austrijskog Zakona o zaštiti podataka (DSG)." },
       { title: "3. Kontakt obrazac", content: "Kada nam pošaljete poruku putem kontakt obrasca, podaci koje navedete (ime, e-mail adresa, broj telefona, predmet, poruka) pohranjuju se radi obrade upita i mogućih dodatnih pitanja. Pravni osnov je čl. 6 st. 1 lit. b i f GDPR-a. Podaci se šalju e-mailom na office@verein-agit.at i brišu se nakon obrade upita." },
       { title: "4. E-mail komunikacija", content: "Kada nas kontaktirate putem e-maila, vaši podaci (e-mail adresa, ime, eventualno druge informacije) pohranjuju se radi obrade vašeg upita. Podaci se ne dijele s trećim stranama." },
@@ -121,7 +121,7 @@ const translations = {
     hero_desc: "حفاظت از داده‌های شخصی شما برای ما مهم است. در ادامه شما را در مورد پردازش داده‌هایتان در وب‌سایت ما مطلع می‌سازیم.",
     last_updated: "آخرین به‌روزرسانی: جولای ۲۰۲۶",
     sections: [
-      { title: "۱. مسئول", content: "انجمن AGIT – مبارزه با خشونت و پیشگیری از خشونت<br/>Gerichtsgasse 1, 1230 وین، اتریش<br/>ایمیل: office@verein-agit.at<br/>تلفن: +43/1/524 88 73" },
+      { title: "۱. مسئول", content: "انجمن AGIT – مبارزه با خشونت و تیم مداخله<br/>Hallergasse 8/1/47، 1110 وین، اتریش<br/>ایمیل: office@verein-agit.at<br/>شماره ZVR: 1897049103" },
       { title: "۲. اطلاعات کلی درباره پردازش داده‌ها", content: "ما داده‌های شخصی را فقط تا حدی که برای ارائه وب‌سایت و خدماتمان ضروری باشد جمع‌آوری و پردازش می‌کنیم. پردازش بر اساس GDPR (مقررات عمومی حفاظت از داده) و قانون حفاظت از داده اتریش (DSG) انجام می‌شود." },
       { title: "۳. فرم تماس", content: "هنگامی که از طریق فرم تماس برای ما پیامی ارسال می‌کنید، داده‌های ارائه‌شده توسط شما (نام، آدرس ایمیل، شماره تلفن، موضوع، پیام) به منظور پردازش درخواست و برای پیگیری‌های بعدی ذخیره می‌شوند. مبنای قانونی ماده ۶ بند ۱ حرف b و f GDPR است. داده‌ها از طریق ایمیل به office@verein-agit.at ارسال و پس از تکمیل درخواست حذف می‌شوند، مگر اینکه الزامات قانونی برای نگهداری وجود داشته باشد." },
       { title: "۴. ارتباط از طریق ایمیل", content: "هنگامی که از طریق ایمیل با ما تماس می‌گیرید، داده‌های شما (آدرس ایمیل، نام و در صورت لزوم سایر اطلاعات) به منظور پردازش درخواست شما ذخیره می‌شوند. داده‌ها با اشخاص ثالث به اشتراک گذاشته نمی‌شوند." },
@@ -212,13 +212,13 @@ export default function DatenschutzPage() {
           </div>
           <div className="footer-contact">
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
-            <p>Hallergasse 8/1/47<br/>1110 Wien<br/>Österreich</p>
+            <p>Hallergasse 8/1/47, 1110 Wien, Österreich</p>
             <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
             <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'fa' ? 'مشخصات ناشر' : 'Impresum'}</h4>
-            <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
-            <p className="small-text"><a href="/datenschutz">{lang === 'de' ? 'Datenschutzerklärung' : lang === 'tr' ? 'Veri Koruma' : lang === 'ar' ? 'سياسة الخصوصية' : lang === 'ku' ? 'Parastina Daneyan' : lang === 'fa' ? 'حریم خصوصی' : 'Privatnost'}</a></p>
+            <p>ZVR-Zahl: 1897049103<br/>Behörde: LPD Wien</p>
+            <p className="small-text"><a href="/impressum">Impressum</a> | <a href="/datenschutz">{lang === 'de' ? 'Datenschutzerklärung' : lang === 'tr' ? 'Veri Koruma' : lang === 'ar' ? 'سياسة الخصوصية' : lang === 'ku' ? 'Parastina Daneyan' : lang === 'fa' ? 'حریم خصوصی' : 'Privatnost'}</a></p>
           </div>
         </div>
         <div className="footer-bottom">

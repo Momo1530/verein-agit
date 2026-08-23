@@ -387,13 +387,13 @@ export default function KontaktPage() {
           </div>
           <div className="footer-contact">
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
-            <p>Hallergasse 8/1/47<br/>1110 Wien<br/>Österreich</p>
+            <p>Hallergasse 8/1/47, 1110 Wien, Österreich</p>
             <p>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
             <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'fa' ? 'مشخصات' : 'Impresum'}</h4>
-            <p>ZVR-Zahl: (bitte einfügen)<br/>Behörde: LPD Wien</p>
-            <p className="small-text"><a href="/datenschutz">Datenschutzerklärung</a></p>
+            <p>ZVR-Zahl: 1897049103<br/>Behörde: LPD Wien</p>
+            <p className="small-text"><a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutzerklärung</a></p>
           </div>
         </div>
         <div className="footer-bottom">
