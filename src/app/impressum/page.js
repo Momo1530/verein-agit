@@ -16,20 +16,12 @@ const translations = {
         content: "<strong>ZVR-Zahl (Zentrales Vereinsregister):</strong> 1897049103<br/><strong>Zuständige Vereinsbehörde:</strong> Landespolizeidirektion Wien, Referat Vereins-, Versammlungs- und Medienrechtsangelegenheiten"
       },
       {
-        title: "Vereinszweck & Tätigkeitsbereich",
-        content: "Der Verein AGIT – Antigewalt- und Interventionsteam ist ein gemeinnütziger, nicht auf Gewinn ausgerichteter Verein. Zweck des Vereins ist die Förderung der Gewaltprävention, Krisenintervention und Deeskalationsarbeit sowie die Unterstützung junger Menschen, die von Gewalt betroffen oder gefährdet sind, im Raum Wien und ganz Österreich."
+        title: "Gemeinnützigkeit & Vereinszweck",
+        content: "Der Verein ist nicht auf Gewinn ausgerichtet und verfolgt ausschließlich und unmittelbar gemeinnützige Zwecke im Sinne der §§ 34 ff Bundesabgabenordnung (BAO).<br/><br/><strong>Zweck des Vereins:</strong> Förderung der Gewaltprävention, Krisenintervention und Deeskalationsarbeit, insbesondere für Kinder, Jugendliche und junge Erwachsene; Durchführung präventiver, protektiver und konfrontativer Arbeitsansätze; Förderung der fachlichen Qualität im Bereich Antigewalt- und Deeskalationsarbeit."
       },
       {
-        title: "Vertretungsbefugte Organe",
-        content: "Der Verein wird durch den Vorstand vertreten. Kontaktaufnahme über die oben genannten Kontaktdaten."
-      },
-      {
-        title: "Urheberrecht & Inhalte",
-        content: "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Alle Texte, Bilder und sonstigen Inhalte dieser Website unterliegen dem Urheberrecht des Vereins AGIT, sofern nicht anders angegeben."
-      },
-      {
-        title: "Haftung für Links",
-        content: "Diese Website enthält keine externen Links zu Inhalten Dritter, für die wir keine Gewähr übernehmen können. Sollten wir auf Inhalte Dritter verweisen, liegt die Verantwortung beim jeweiligen Anbieter."
+        title: "Grundlegende Richtung der Website („Blattlinie“)",
+        content: "Diese Website dient der Information über die Ziele, Angebote, Projekte und Tätigkeiten des Vereins „AGIT – Antigewalt- und Interventionsteam“ sowie der Sensibilisierung der Öffentlichkeit für Gewaltfreiheit, Deeskalation und Zivilcourage."
       }
     ]
   },
