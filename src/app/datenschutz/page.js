@@ -212,7 +212,7 @@ export default function DatenschutzPage() {
           </div>
           <div className="footer-contact">
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
-            <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
+            <p>Hallergasse 8/1/47<br/>1110 Wien<br/>Österreich</p>
             <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">

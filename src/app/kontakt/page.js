@@ -19,17 +19,8 @@ const translations = {
     form_error: "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
     contact_direct: "Direkter Kontakt",
     contact_name: "Verein AGIT – Antigewalt und Gewaltprävention",
-    contact_address: "Gerichtsgasse 1, 1230 Wien, Österreich",
-    contact_phone: "+43/1/111111111",
-    contact_email: "office@verein-agit.at",
-    contact_person1: "Kübra Erik",
-    contact_person1_role: "Bereichsleitung MA 13 – außerschulische Kinder- und Jugendarbeit",
-    contact_person1_phone: "+43/676/3668820",
-    contact_person1_email: "k.erik@verein-agit.at",
-    contact_person2: "Murat Percin, BA",
-    contact_person2_role: "Bereichsleitung MA 11 – Einzel/Gruppentrainings",
-    contact_person2_phone: "+43/676/3668823",
-    contact_person2_email: "m.percin@verein-agit.at"
+    contact_address: "Hallergasse 8/1/47, 1110 Wien",
+    contact_email: "office@verein-agit.at"
   },
   tr: {
     page_title: "İletişim",
@@ -47,7 +38,7 @@ const translations = {
     form_error: "Gönderilirken hata oluştu. Lütfen daha sonra tekrar deneyin.",
     contact_direct: "Doğrudan İletişim",
     contact_name: "AGIT Derneği – Şiddet Karşıtı ve Şiddeti Önleme",
-    contact_address: "Gerichtsgasse 1, 1230 Viyana, Avusturya",
+    contact_address: "Hallergasse 8/1/47, 1110 Viyana, Avusturya",
     contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "Kübra Erik",
@@ -75,7 +66,7 @@ const translations = {
     form_error: "خطأ في الإرسال. يرجى المحاولة مرة أخرى لاحقًا.",
     contact_direct: "اتصال مباشر",
     contact_name: "جمعية AGIT – مكافحة العنف والوقاية منه",
-    contact_address: "Gerichtsgasse 1, 1230 فيينا, النمسا",
+    contact_address: "Hallergasse 8/1/47, 1110 فيينا, النمسا",
     contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "كوبرا إريك",
@@ -103,7 +94,7 @@ const translations = {
     form_error: "Di şandinê de çewtî. Ji kerema xwe paşê dîsa biceribînin.",
     contact_direct: "Têkiliya Rasterast",
     contact_name: "Komeleya AGIT – Dijî Şîdetê û Pêşîlêgirtinê",
-    contact_address: "Gerichtsgasse 1, 1230 Viyana, Awistirya",
+    contact_address: "Hallergasse 8/1/47, 1110 Viyana, Awistirya",
     contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "Kübra Erik",
@@ -131,7 +122,7 @@ const translations = {
     form_error: "Greška pri slanju. Molimo pokušajte ponovo kasnije.",
     contact_direct: "Direktan kontakt",
     contact_name: "Udruženje AGIT – Protiv nasilja i prevencije",
-    contact_address: "Gerichtsgasse 1, 1230 Beč, Austrija",
+    contact_address: "Hallergasse 8/1/47, 1110 Beč, Austrija",
     contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "Kübra Erik",
@@ -159,7 +150,7 @@ const translations = {
     form_error: "خطا در ارسال. لطفاً بعداً دوباره تلاش کنید.",
     contact_direct: "تماس مستقیم",
     contact_name: "انجمن AGIT – مبارزه با خشونت و پیشگیری از آن",
-    contact_address: "Gerichtsgasse 1، 1230 وین، اتریش",
+    contact_address: "Hallergasse 8/1/47، 1110 وین، اتریش",
     contact_phone: "+43/1/111111111",
     contact_email: "office@verein-agit.at",
     contact_person1: "کوبرا اریک",
@@ -371,21 +362,8 @@ export default function KontaktPage() {
             <div className="contact-direct-grid">
               <div className="contact-direct-card">
                 <h3>{t.contact_name}</h3>
-                <p>{t.contact_address}</p>
-                <p>Telefon: <a href={`tel:${t.contact_phone.replace(/[^0-9+]/g, '')}`}>{t.contact_phone}</a></p>
-                <p>E-Mail: <a href={`mailto:${t.contact_email}`}>{t.contact_email}</a></p>
-              </div>
-              <div className="contact-direct-card">
-                <h3>{t.contact_person1}</h3>
-                <p className="contact-role">{t.contact_person1_role}</p>
-                <p>Mobil: <a href={`tel:${t.contact_person1_phone.replace(/[^0-9+]/g, '')}`}>{t.contact_person1_phone}</a></p>
-                <p>E-Mail: <a href={`mailto:${t.contact_person1_email}`}>{t.contact_person1_email}</a></p>
-              </div>
-              <div className="contact-direct-card">
-                <h3>{t.contact_person2}</h3>
-                <p className="contact-role">{t.contact_person2_role}</p>
-                <p>Mobil: <a href={`tel:${t.contact_person2_phone.replace(/[^0-9+]/g, '')}`}>{t.contact_person2_phone}</a></p>
-                <p>E-Mail: <a href={`mailto:${t.contact_person2_email}`}>{t.contact_person2_email}</a></p>
+                <p><strong>Postanschrift:</strong><br/>{t.contact_address}</p>
+                <p><strong>E-Mail-Adresse:</strong><br/><a href={`mailto:${t.contact_email}`}>{t.contact_email}</a></p>
               </div>
             </div>
           </div>
@@ -409,8 +387,8 @@ export default function KontaktPage() {
           </div>
           <div className="footer-contact">
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
-            <p>Gerichtsgasse 1<br/>1230 Wien<br/>Österreich</p>
-            <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+            <p>Hallergasse 8/1/47<br/>1110 Wien<br/>Österreich</p>
+            <p>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
           </div>
           <div className="footer-legal">
             <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'fa' ? 'مشخصات' : 'Impresum'}</h4>
