@@ -5,19 +5,20 @@ import { useLanguage } from '../hooks/useLanguage';
 const translations = {
   de: {
     page_title: "Unser Team",
-    hero_title: "Lernen Sie uns kennen",
+    hero_title: "Über uns",
     hero_desc: "Hinter AGIT steht ein engagiertes Team mit langjähriger Erfahrung in der Gewaltprävention und sozialen Arbeit.",
-    team_intro: "Unser Team vereint pädagogische, psychosoziale und interkulturelle Kompetenz. Wir arbeiten mehrsprachig und kultursensibel – damit unsere Angebote alle Menschen erreichen.",
-    person1_name: "Kübra Erik",
-    person1_role: "Ansprechpartnerin/Bereichsleitung:<br/>MA 13 außerschulische Kinder- und Jugendarbeit",
-    person1_bio: "Kübra Erik bringt langjährige Erfahrung in der außerschulischen Kinder- und Jugendarbeit mit. Ihr Schwerpunkt liegt auf präventiven Workshops und der Sensibilisierung von Gruppen. Sie ist erste Ansprechpartnerin für Einrichtungen, die präventive Angebote suchen.",
+    team_intro: "Hinter AGIT steht ein multidisziplinäres Team, das Idealismus mit wissenschaftlicher und praktischer Präzision vereint.<br/><br/>Wir sind nicht nur Fachkräfte; wir sind Wegbegleiter, Krisenmanager und Brückenbauer. Der Verein AGIT – Antigewalt- und Interventionsteam ist aus der Synergie jahrzehntelanger Erfahrung in der Jugendarbeit und hochspezialisierter Expertise im Antigewalt- sowie konfrontativen Ressourcentraining (AGT/KRT) entstanden.<br/><br/>In einer kosmopolitischen Stadt wie Wien ist der Schutz von Jugendlichen und das proaktive Entgegenwirken von Gewalt eine existentielle Notwendigkeit. Nach jahrelanger, erfolgreicher Arbeit im Bereich der Gewaltprävention im Wiener Raum haben wir uns strukturell neu aufgestellt, um unsere bewährten Methoden noch gezielter und weitreichender einsetzen zu können. Unser Handeln wird von dem unerschütterlichen Grundsatz geleitet: Das Wohl und die positive Entwicklung junger Menschen stehen an oberster Stelle.",
+    team_subtitle: "Unser Team",
+    person1_name: "Kübra Erik, BA",
+    person1_role: "",
+    person1_bio: "Bildungswissenschaftlerin, Sozialpädagogin sowie Anti-Gewalt- und Ressourcentrainerin. Sie verfügt über langjährige Erfahrung in der Arbeit mit Kindern und Jugendlichen in Einzel- und Gruppensettings, Schulklassen und Workshops. Darüber hinaus begleitete sie junge Frauen in belastenden Lebenssituationen und bringt Erfahrung in der Fallarbeit sowie in der Arbeit mit Fachkräften mit.",
     person1_email: "k.erik@verein-agit.at",
-    person1_phone: "+43/676/3668820",
+    person1_phone: "+43 660 6251500",
     person2_name: "Murat Percin, BA",
-    person2_role: "Ansprechpartner/Bereichsleitung:<br/>MA 11 Einzel/Gruppentrainings",
-    person2_bio: "Murat Percin ist spezialisiert auf Einzel- und Gruppentrainings im Bereich Gewaltprävention. Mit seiner akademischen Ausbildung und praktischen Erfahrung begleitet er Kinder, Jugendliche und Erwachsene nach konkreten Vorfällen und auf dem Weg zu nachhaltiger Veränderung.",
+    person2_role: "",
+    person2_bio: "Sozialarbeiter sowie Anti-Gewalt- und Ressourcentrainer. Seine langjährige Erfahrung umfasst Einzel- und Gruppentrainings sowie die außerschulische Kinder- und Jugendarbeit. Darüber hinaus arbeitete er in der Türkei mit Jugendlichen, die mit delinquentem Verhalten und Kriminalität in Berührung gekommen sind.",
     person2_email: "m.percin@verein-agit.at",
-    person2_phone: "+43/676/3668823"
+    person2_phone: "+43 699 10097285"
   },
   tr: {
     page_title: "Ekibimiz",
@@ -161,7 +162,9 @@ export default function TeamPage() {
         </section>
 
         <section className="subpage-content">
-          <p className="team-intro">{t.team_intro}</p>
+          <p className="team-intro" dangerouslySetInnerHTML={{ __html: t.team_intro }} />
+
+          <h2>{t.team_subtitle}</h2>
 
           <div className="team-grid">
             <div className="team-card">
@@ -170,11 +173,10 @@ export default function TeamPage() {
               </div>
               <div className="team-card-info">
                 <h3>{t.person1_name}</h3>
-                <p className="team-role" dangerouslySetInnerHTML={{ __html: t.person1_role }}></p>
                 <p className="team-bio">{t.person1_bio}</p>
                 <div className="team-contact">
                   <p><strong>E-Mail:</strong> <a href={`mailto:${t.person1_email}`}>{t.person1_email}</a></p>
-                  <p><strong>Mobil:</strong> {t.person1_phone}</p>
+                  <p><strong>Telefon:</strong> {t.person1_phone}</p>
                 </div>
               </div>
             </div>
@@ -185,7 +187,6 @@ export default function TeamPage() {
               </div>
               <div className="team-card-info">
                 <h3>{t.person2_name}</h3>
-                <p className="team-role" dangerouslySetInnerHTML={{ __html: t.person2_role }}></p>
                 <p className="team-bio">{t.person2_bio}</p>
                 <div className="team-contact">
                   <p><strong>E-Mail:</strong> <a href={`mailto:${t.person2_email}`}>{t.person2_email}</a></p>
