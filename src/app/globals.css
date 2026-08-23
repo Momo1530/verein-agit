@@ -359,6 +359,15 @@ body {
   border-radius: 16px;
   background-color: #222;
   align-self: center;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.ansprechperson-image-col:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(138, 180, 248, 0.25);
 }
 .ansprechperson-image-col img {
   width: 100%;
@@ -373,6 +382,13 @@ body {
   align-self: center;
   height: 100%;
   padding-top: 0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.ansprechperson-text-col:hover h3 {
+  color: #8ab4f8;
+  transition: color 0.3s;
 }
 .ansprechperson-text-col h3 {
   font-family: var(--font-heading);
