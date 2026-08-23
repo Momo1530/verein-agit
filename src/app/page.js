@@ -246,6 +246,26 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="action-steps">
+          <div className="steps-grid">
+            <a href="/angebote#vorbeugen" className="step">
+              <h3>{t.step_1}</h3>
+              <p className="step-desc">{t.step_1_desc}</p>
+              <span className="arrow">&rarr;</span>
+            </a>
+            <a href="/angebote#handeln" className="step">
+              <h3>{t.step_2}</h3>
+              <p className="step-desc">{t.step_2_desc}</p>
+              <span className="arrow">&rarr;</span>
+            </a>
+            <a href="/angebote#staerken" className="step">
+              <h3>{t.step_3}</h3>
+              <p className="step-desc">{t.step_3_desc}</p>
+              <span className="arrow">&rarr;</span>
+            </a>
+          </div>
+        </section>
+
         <section className="hintergrund-section" id="hintergrund-section">
           <div className="hintergrund-container">
             <div className="hintergrund-content">
