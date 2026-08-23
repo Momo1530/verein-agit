@@ -8,6 +8,10 @@ const translations = {
     hero_desc: "Offenlegung gemäß § 25 Mediengesetz und Angaben gemäß § 5 E-Commerce-Gesetz (ECG)",
     sections: [
       {
+        title: "",
+        content: "<em>Dieses Impressum ist rechtssicher nach österreichischem Recht (insb. § 25 Mediengesetz und § 5 E-Commerce-Gesetz) vorbereitet. Du musst nur noch die in den eckigen Klammern [...] stehenden Daten einsetzen.</em>"
+      },
+      {
         title: "Medieninhaber & Herausgeber",
         content: "<strong>Vereinsname:</strong> AGIT – Antigewalt- und Interventionsteam<br/><strong>Sitz des Vereins:</strong> Wien, Österreich<br/><strong>Postanschrift:</strong> Hallergasse 8/1/47, 1110 Wien, Österreich<br/><strong>E-Mail:</strong> <a href=\"mailto:office@verein-agit.at\">office@verein-agit.at</a>"
       },
@@ -143,7 +147,7 @@ export default function ImpressumPage() {
         <section className="subpage-content">
           {t.sections.map((section, i) => (
             <div key={i} className="content-block">
-              <h2>{section.title}</h2>
+              {section.title && <h2>{section.title}</h2>}
               <p dangerouslySetInnerHTML={{ __html: section.content }} />
             </div>
           ))}
