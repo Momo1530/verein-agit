@@ -6,13 +6,13 @@ const translations = {
   de: {
     page_title: "Angebote",
     hero_title: "Unsere Angebote",
-    hero_desc: "Maßgeschneiderte Gewaltprävention für jede Zielgruppe – von Kindern und Jugendlichen bis zu Fachkräften und Einrichtungen.",
-    section1_title: "VORBEUGEN – Präventive Workshops",
-    section1_text: "Unsere präventiven Angebote richten sich an Kinder, Jugendliche, pädagogische Fachkräfte und Einrichtungen. In interaktiven Workshops und Trainings schaffen wir Räume für Reflexion und Sensibilisierung. Themen umfassen: Konfliktlösung, Zivilcourage, Deeskalation, Umgang mit Aggressionen und Förderung sozialer Kompetenzen. Jedes Angebot wird nach Vorgesprächen individuell auf die Zielgruppe abgestimmt.",
-    section2_title: "HANDELN – Intervention nach Vorfällen",
-    section2_text: "Nach konkreten Gewaltvorfällen bieten wir schnelle und professionelle Intervention. Wir begleiten Einrichtungen, Teams und betroffene Personen bei der Aufarbeitung, erstellen Nachsorgekonzepte und unterstützen bei der Entwicklung von Handlungsstrategien. Unser Ziel ist es, aus Krisen Lernprozesse zu gestalten und nachhaltige Sicherheit zu schaffen.",
-    section3_title: "STÄRKEN – Langfristige Begleitung",
-    section3_text: "Über die akute Intervention hinaus bieten wir langfristige Begleitung auf dem Weg zu nachhaltiger Veränderung. Dazu gehören regelmäßige Trainings, Auffrischungsworkshops, Supervision für Teams und die Entwicklung von internen Schutzkonzepten. Wir stärken Resilienz und begleiten Einrichtungen bei der Etablierung einer gewaltsensiblen Kultur.",
+    hero_desc: "Wir begegnen dem komplexen Phänomen Gewalt auf drei miteinander verschränkten Ebenen, um eine nachhaltige Veränderung zu bewirken:",
+    section1_title: "Mikro-Ebene: Direkte Arbeit mit dem Individuum",
+    section1_text: "<strong>Antigewalt-Individuell-Training (AGIT):</strong> Hochfokussierte Einzelarbeit zur individuellen Aufarbeitung von Aggressionen, Verhaltensänderung und Aktivierung persönlicher Ressourcen.<br/><br/><strong>Gruppentrainings & Workshops:</strong> Kollektives soziales Lernen, Erlernen von Deeskalationsstrategien und Stärkung der sozialen Kompetenzen direkt in Gruppen oder Schulklassen.<br/><br/><strong>Beratung, Begleitung & Betreuung:</strong> Kontinuierliche, vertrauensvolle Unterstützung der Jugendlichen in akuten Krisensituationen und kritischen Lebensphasen.",
+    section2_title: "Mezzo-Ebene: Stärkung des sozialen Nahraums",
+    section2_text: "<strong>Elternarbeit:</strong> Schulungen und intensive Begleitung von Eltern zur Stärkung der Erziehungskompetenz und Deeskalation im familiären Kreis.<br/><br/><strong>Helfer:innenkonferenzen:</strong> Fallbezogene, interdisziplinäre Koordination in professionellen Netzwerken zur optimalen Unterstützung des Jugendlichen.<br/><br/><strong>Fortbildungen & Seminare:</strong> Fachspezifische Workshops für Lehrkräfte, Sozialarbeiter:innen und Multiplikator:innen zur Professionalisierung im Umgang mit Gewalt und Krisen.",
+    section3_title: "Makro-Ebene: Gesellschaft und Strukturentwicklung",
+    section3_text: "<strong>Netzwerk- und Kooperationsarbeit:</strong> Aktiver Austausch und enge Zusammenarbeit mit Systempartnern wie Schulen, der MA 11, Behörden und der Justiz.<br/><br/><strong>Aus- und Weiterbildung:</strong> Durchführung zertifizierter Lehrgänge (z. B. zur Ausbildung von Antigewalttrainer:innen) zur Qualitätssicherung in der Präventionslandschaft.<br/><br/><strong>Öffentlichkeitsarbeit & Konzeptentwicklung:</strong> Sensibilisierung der breiten Öffentlichkeit für Gewaltfreiheit und Zivilcourage sowie die wissenschaftlich begleitete Weiterentwicklung innovativer Interventionsmethoden.",
     cta_title: "Sie haben ein konkretes Anliegen?",
     cta_text: "Vereinbaren Sie ein unverbindliches Vorgespräch mit uns.",
     cta_btn: "Jetzt anfragen →",
@@ -160,15 +160,15 @@ export default function AngebotePage() {
         <section className="subpage-content">
           <div className="content-block" id="vorbeugen">
             <h2>{t.section1_title}</h2>
-            <p>{t.section1_text}</p>
+            <p dangerouslySetInnerHTML={{ __html: t.section1_text }} />
           </div>
           <div className="content-block" id="handeln">
             <h2>{t.section2_title}</h2>
-            <p>{t.section2_text}</p>
+            <p dangerouslySetInnerHTML={{ __html: t.section2_text }} />
           </div>
           <div className="content-block" id="staerken">
             <h2>{t.section3_title}</h2>
-            <p>{t.section3_text}</p>
+            <p dangerouslySetInnerHTML={{ __html: t.section3_text }} />
           </div>
         </section>
 
