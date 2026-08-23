@@ -355,7 +355,7 @@ export default function Home() {
             <div className="footer-contact">
               <h4>{t.kontakt_title}</h4>
               <p>Hallergasse 8/1/47, 1110 Wien, Österreich</p>
-              <p>Telefon: +43/1/111111111<br/>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+              <p>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
             </div>
 
             <div className="footer-legal">
