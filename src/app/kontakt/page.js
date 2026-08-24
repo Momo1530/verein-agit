@@ -265,11 +265,6 @@ export default function KontaktPage() {
           <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : lang === 'fa' ? 'تیم' : 'TIM'}</a>
         </nav>
         <div className="nav-actions">
-          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
-            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
-            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
-            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
-          </button>
           <div className="lang-selector">
             <select value={lang} onChange={(e) => setLang(e.target.value)}>
               <option value="de">DE</option>
@@ -281,6 +276,11 @@ export default function KontaktPage() {
             </select>
           </div>
           <a href="#kontakt-formular" className="btn btn-primary">{lang === 'de' ? 'PROJEKT ANFRAGEN' : lang === 'tr' ? 'PROJE TALEP ET' : lang === 'ar' ? 'طلب مشروع' : lang === 'ku' ? 'PROJE BIXWAZE' : lang === 'fa' ? 'درخواست پروژه' : 'ZATRAŽI PROJEKAT'}</a>
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+          </button>
         </div>
       </header>
 
