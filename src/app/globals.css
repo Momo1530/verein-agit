@@ -542,12 +542,13 @@ body {
   .nav-actions { gap: 0.8rem; }
   .nav-actions .btn { padding: 0.5rem 1rem; font-size: 0.75rem; }
 
-  .hero { min-height: auto; padding-top: 5rem; }
-  .hero-content { padding: 2rem 1.5rem; }
-  .headline { font-size: 2.5rem; }
-  .description { font-size: 1rem; max-width: 100%; }
+  .hero { min-height: auto; padding-top: 5rem; flex-direction: column !important; }
+  .hero-content { padding: 2rem 1.5rem 1rem; }
+  .headline { font-size: 2rem; line-height: 1.15; margin-bottom: 1rem; }
+  .subtitle { font-size: 0.7rem; letter-spacing: 1.5px; margin-bottom: 0.8rem; }
+  .description { font-size: 0.95rem; max-width: 100%; margin-bottom: 1.5rem; line-height: 1.6; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 1rem; }
-  .hero-image { height: 250px; clip-path: none; }
+  .hero-image { height: 260px; clip-path: none; order: 2; }
 
   .action-steps { padding: 2rem 1.5rem; margin-top: 0; }
   .step { padding: 1.5rem 0; }
