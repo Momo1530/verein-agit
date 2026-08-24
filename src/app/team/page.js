@@ -113,6 +113,7 @@ export default function TeamPage() {
   const { lang, setLang } = useLanguage();
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar' || lang === 'fa';
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -129,13 +130,18 @@ export default function TeamPage() {
           </svg>
         </div>
         </a>
-        <nav className="nav-links">
+        <nav className={`nav-links${menuOpen ? ' open' : ''}`}>
           <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'fa' ? 'صفحه اصلی' : 'POČETNA STRANICA'}</a>
           <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : lang === 'fa' ? 'خدمات' : 'PONUDE'}</a>
           <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : lang === 'fa' ? 'موضع‌گیری' : 'STAV'}</a>
           <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : lang === 'fa' ? 'تماس' : 'KONTAKT'}</a>
         </nav>
         <div className="nav-actions">
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+          </button>
           <div className="lang-selector">
             <select value={lang} onChange={(e) => setLang(e.target.value)}>
               <option value="de">DE</option>

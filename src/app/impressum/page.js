@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
 
 const translations = {
@@ -86,6 +87,7 @@ export default function ImpressumPage() {
   const { lang, setLang } = useLanguage();
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar' || lang === 'fa';
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div id="app" dir={isRtl ? 'rtl' : 'ltr'}>
@@ -102,7 +104,7 @@ export default function ImpressumPage() {
             </svg>
           </div>
         </a>
-        <nav className="nav-links">
+        <nav className={`nav-links${menuOpen ? ' open' : ''}`}>
           <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'bks' ? 'POČETNA STRANICA' : 'صفحه اصلی'}</a>
           <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : lang === 'bks' ? 'PONUDE' : 'خدمات'}</a>
           <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : lang === 'bks' ? 'STAV' : 'موضع'}</a>
@@ -110,6 +112,11 @@ export default function ImpressumPage() {
           <a href="/kontakt">{lang === 'de' ? 'KONTAKT' : lang === 'tr' ? 'İLETİŞİM' : lang === 'ar' ? 'اتصل بنا' : lang === 'ku' ? 'TÊKILÎ' : lang === 'bks' ? 'KONTAKT' : 'تماس'}</a>
         </nav>
         <div className="nav-actions">
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+          </button>
           <div className="lang-selector">
             <select value={lang} onChange={(e) => setLang(e.target.value)}>
               <option value="de">DE</option>

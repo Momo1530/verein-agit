@@ -168,6 +168,7 @@ export default function KontaktPage() {
   const { lang, setLang } = useLanguage();
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar' || lang === 'fa';
+  const [menuOpen, setMenuOpen] = useState(false);
   const [formStatus, setFormStatus] = useState('idle'); // idle | sending | success | error
   const [charCount, setCharCount] = useState({ name: 0, email: 0, phone: 0, subject: 0, message: 0 });
   const [focusedField, setFocusedField] = useState(null); // 'name' | 'email' | 'phone' | 'subject' | 'message' | null
@@ -257,13 +258,18 @@ export default function KontaktPage() {
           </svg>
         </div>
         </a>
-        <nav className="nav-links">
+        <nav className={`nav-links${menuOpen ? ' open' : ''}`}>
           <a href="/">{lang === 'de' ? 'STARTSEITE' : lang === 'tr' ? 'ANA SAYFA' : lang === 'ar' ? 'الصفحة الرئيسية' : lang === 'ku' ? 'RÛPELA SEREKE' : lang === 'fa' ? 'صفحه اصلی' : 'POČETNA STRANICA'}</a>
           <a href="/angebote">{lang === 'de' ? 'ANGEBOTE' : lang === 'tr' ? 'TEKLİFLER' : lang === 'ar' ? 'العروض' : lang === 'ku' ? 'PÊŞNIYAR' : lang === 'fa' ? 'خدمات' : 'PONUDE'}</a>
           <a href="/haltung">{lang === 'de' ? 'HALTUNG' : lang === 'tr' ? 'TUTUM' : lang === 'ar' ? 'الموقف' : lang === 'ku' ? 'HELWEST' : lang === 'fa' ? 'موضع' : 'STAV'}</a>
           <a href="/team">{lang === 'de' ? 'TEAM' : lang === 'tr' ? 'EKİP' : lang === 'ar' ? 'الفريق' : lang === 'ku' ? 'TÎM' : lang === 'fa' ? 'تیم' : 'TIM'}</a>
         </nav>
         <div className="nav-actions">
+          <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+            <span className={`hamburger-line${menuOpen ? ' open' : ''}`}></span>
+          </button>
           <div className="lang-selector">
             <select value={lang} onChange={(e) => setLang(e.target.value)}>
               <option value="de">DE</option>
