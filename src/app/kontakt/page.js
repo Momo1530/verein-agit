@@ -169,8 +169,9 @@ export default function KontaktPage() {
   const t = translations[lang] || translations.de;
   const isRtl = lang === 'ar' || lang === 'fa';
   const [formStatus, setFormStatus] = useState('idle'); // idle | sending | success | error
-  const [charCount, setCharCount] = useState({ subject: 0, message: 0 });
-  const [focusedField, setFocusedField] = useState(null); // 'subject' | 'message' | null
+  const [charCount, setCharCount] = useState({ name: 0, email: 0, phone: 0, subject: 0, message: 0 });
+  const [focusedField, setFocusedField] = useState(null); // 'name' | 'email' | 'phone' | 'subject' | 'message' | null
+  const [invalidChar, setInvalidChar] = useState(false); // unerlaubtes Zeichen bei Telefon
 
   useEffect(() => {
     if (typeof window === 'undefined' || window.turnstileLoaded) return;
@@ -201,8 +202,9 @@ export default function KontaktPage() {
         if (data.success) {
           setFormStatus('success');
           form.reset();
-          setCharCount({ subject: 0, message: 0 });
+            setCharCount({ name: 0, email: 0, phone: 0, subject: 0, message: 0 });
           setFocusedField(null);
+          setInvalidChar(false);
           setTimeout(() => setFormStatus('idle'), 6000);
         } else {
           setFormStatus('error');
@@ -293,17 +295,65 @@ export default function KontaktPage() {
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">{t.form_name}</label>
-                  <input type="text" id="name" name="name" required />
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    maxLength="50"
+                    onChange={(e) => setCharCount((c) => ({ ...c, name: e.target.value.length }))}
+                    onFocus={() => setFocusedField('name')}
+                    onBlur={() => setFocusedField(null)}
+                  />
+                  {focusedField === 'name' && (
+                    <span className={`char-counter ${charCount.name >= 50 ? 'limit-reached' : ''}`}>
+                      {charCount.name} / 50
+                    </span>
+                  )}
                 </div>
                 <div className="form-group">
                   <label htmlFor="email">{t.form_email}</label>
-                  <input type="email" id="email" name="email" required />
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    maxLength="50"
+                    onChange={(e) => setCharCount((c) => ({ ...c, email: e.target.value.length }))}
+                    onFocus={() => setFocusedField('email')}
+                    onBlur={() => setFocusedField(null)}
+                  />
+                  {focusedField === 'email' && (
+                    <span className={`char-counter ${charCount.email >= 50 ? 'limit-reached' : ''}`}>
+                      {charCount.email} / 50
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="phone">{t.form_phone}</label>
-                  <input type="tel" id="phone" name="phone" />
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    maxLength="20"
+                    onChange={(e) => {
+                      const v = e.target.value;
+                      const cleaned = v.replace(/[^0-9+]/g, '');
+                      if (v !== cleaned) setInvalidChar(true);
+                      else setInvalidChar(false);
+                      e.target.value = cleaned;
+                      setCharCount((c) => ({ ...c, phone: cleaned.length }));
+                    }}
+                    onFocus={() => setFocusedField('phone')}
+                    onBlur={() => setFocusedField(null)}
+                  />
+                  {focusedField === 'phone' && (
+                    <span className={`char-counter ${invalidChar ? 'limit-reached' : ''}`}>
+                      {charCount.phone} / 20
+                    </span>
+                  )}
                 </div>
                 <div className="form-group">
                   <label htmlFor="subject">{t.form_subject}</label>
@@ -318,7 +368,9 @@ export default function KontaktPage() {
                     onBlur={() => setFocusedField(null)}
                   />
                   {focusedField === 'subject' && (
-                    <span className="char-counter">{charCount.subject} / 50</span>
+                    <span className={`char-counter ${charCount.subject >= 50 ? 'limit-reached' : ''}`}>
+                      {charCount.subject} / 50
+                    </span>
                   )}
                 </div>
               </div>
@@ -329,13 +381,15 @@ export default function KontaktPage() {
                   name="message"
                   rows="5"
                   required
-                  maxLength="5000"
+                  maxLength="2500"
                   onChange={(e) => setCharCount((c) => ({ ...c, message: e.target.value.length }))}
                   onFocus={() => setFocusedField('message')}
                   onBlur={() => setFocusedField(null)}
                 ></textarea>
                 {focusedField === 'message' && (
-                  <span className="char-counter">{charCount.message} / 5000</span>
+                  <span className={`char-counter ${charCount.message >= 2500 ? 'limit-reached' : ''}`}>
+                    {charCount.message} / 2500
+                  </span>
                 )}
               </div>
               <div className="form-group hp-field" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', opacity: 0 }}>
