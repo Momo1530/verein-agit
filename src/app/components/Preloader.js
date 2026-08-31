@@ -74,8 +74,22 @@ export default function Preloader() {
   // Code-Eingabe anzeigen bevor Preloader startet
   if (!codeAccepted) {
     return (
-      <div className="preloader-overlay" style={{ flexDirection: 'column' }}>
-        <div className="preloader-inner" style={{ gap: '1rem' }}>
+      <div className="preloader-overlay" style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 9999,
+        background: '#0a0a0a',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column'
+      }}>
+        <div className="preloader-inner" style={{ gap: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <p className="preloader-brand">AGIT</p>
           <form onSubmit={handleCodeSubmit} className="preloader-code-form">
             <input
