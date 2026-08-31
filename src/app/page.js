@@ -404,13 +404,14 @@ export default function Home() {
             </a>
             <a href="/team" className="ansprechperson-text-col fly-from-right delay-2" aria-label="Zum Team">
               <h3>Murat Percin, BA</h3>
+              <p className="ansprechperson-role">Sozialarbeiter, Antigewalt- und konfrontativer Ressourcentrainer</p>
             </a>
 
             <a href="/team" className="ansprechperson-image-col fly-from-left delay-3" aria-label="Zum Team">
               <img src="/kuebra.png" alt="Kübra Erik" onError={(e) => { e.target.onerror = null; e.target.src='/mann.svg'; }} />
             </a>
             <a href="/team" className="ansprechperson-text-col fly-from-right delay-4" aria-label="Zum Team">
-              <h3>Kübra Erik</h3>
+              <h3>Kübra Erik, BA</h3>
             </a>
           </div>
         </section>
