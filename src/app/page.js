@@ -435,6 +435,8 @@ export default function Home() {
               <h4>{t.kontakt_title}</h4>
               <p>Hallergasse 8/1/47, 1110 Wien, Österreich</p>
               <p>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+              <p>Murat Percin: <a href="tel:+4369910097285">+43 699 10097285</a></p>
+              <p>Kübra Erik: <a href="tel:+436606251500">+43 660 6251500</a></p>
             </div>
 
             <div className="footer-legal">

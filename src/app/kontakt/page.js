@@ -424,6 +424,8 @@ export default function KontaktPage() {
                 <h3>{t.contact_name}</h3>
                 <p><strong>Postanschrift:</strong><br/>{t.contact_address}</p>
                 <p><strong>E-Mail-Adresse:</strong><br/><a href={`mailto:${t.contact_email}`}>{t.contact_email}</a></p>
+                <p><strong>Kübra Erik:</strong><br/><a href="tel:+436606251500">+43 660 6251500</a></p>
+                <p><strong>Murat Percin, BA:</strong><br/><a href="tel:+4369910097285">+43 699 10097285</a></p>
               </div>
             </div>
           </div>
@@ -449,6 +451,8 @@ export default function KontaktPage() {
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
             <p>Hallergasse 8/1/47, 1110 Wien, Österreich</p>
             <p>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+            <p>Murat Percin: <a href="tel:+436****7285">+43 699 10097285</a></p>
+            <p>Kübra Erik: <a href="tel:+436****1500">+43 660 6251500</a></p>
           </div>
           <div className="footer-legal">
             <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'fa' ? 'مشخصات' : 'Impresum'}</h4>
