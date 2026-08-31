@@ -16,9 +16,17 @@ export default function Preloader() {
     if (typeof window !== 'undefined') {
       if (window.location.pathname !== '/' || sessionStorage.getItem('preloader_shown')) {
         setVisible(false);
+      } else if (!codeAccepted) {
+        // Body scrollen verhindern während Code-Eingabe
+        document.body.style.overflow = 'hidden';
       }
     }
-  }, []);
+    return () => {
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = '';
+      }
+    };
+  }, [codeAccepted]);
 
   const handleCodeSubmit = (e) => {
     e.preventDefault();
