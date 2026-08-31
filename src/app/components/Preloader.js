@@ -42,40 +42,33 @@ export default function Preloader() {
   useEffect(() => {
     if (!codeAccepted) return;
     
+    let animationFrameId;
     const startTime = Date.now();
     const minDuration = 2000;
 
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        const elapsed = Date.now() - startTime;
-        return Math.min(100, (elapsed / minDuration) * 100);
-      });
-    }, 16);
-
-    const handleLoad = () => {
+    const animate = () => {
       const elapsed = Date.now() - startTime;
-      const remaining = Math.max(0, minDuration - elapsed);
-      setTimeout(() => {
-        clearInterval(interval);
-        setProgress(100);
-        setTimeout(() => {
-          setPhase('complete');
-          sessionStorage.setItem('preloader_shown', '1');
-          setTimeout(() => setVisible(false), 900);
-        }, 200);
-      }, remaining);
+      const newProgress = Math.min(100, (elapsed / minDuration) * 100);
+      setProgress(newProgress);
+
+      if (newProgress < 100) {
+        animationFrameId = requestAnimationFrame(animate);
+      } else {
+        setPhase('complete');
+        sessionStorage.setItem('preloader_shown', '1');
+        document.body.style.overflow = '';
+        setTimeout(() => setVisible(false), 900);
+      }
     };
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-      return () => {
-        window.removeEventListener('load', handleLoad);
-        clearInterval(interval);
-      };
-    }
-  }, []);
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, [codeAccepted]);
 
   if (!visible) return null;
 
