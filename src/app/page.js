@@ -20,7 +20,7 @@ const translations = {
     form_title: "Treten Sie mit uns in Kontakt",
     form_subtitle: "Schreiben Sie uns Ihr Anliegen, wir melden uns verlässlich zurück.",
     form_name: "Name", form_email: "E-Mail", form_phone: "Telefonnummer (optional)", form_subject: "Betreff", form_message: "Nachricht", form_submit: "Nachricht senden", form_success: "Ihre Nachricht wurde erfolgreich gesendet!",
-    footer_desc: "Verein Antigewalt und Gewaltprävention", kontakt_title: "Kontakt", impressum_title: "Impressum"
+    footer_desc: "antigewalt- und interventionsteam", kontakt_title: "Kontakt", impressum_title: "Impressum"
   },
   tr: {
     nav_angebote: "TEKLİFLER", nav_haltung: "TUTUM", nav_team: "EKİP", nav_kontakt: "İLETİŞİM", nav_anfragen: "PROJE TALEP ET",
