@@ -220,6 +220,8 @@ export default function TeamPage() {
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'fa' ? 'تماس' : 'Kontakt'}</h4>
             <p>Hallergasse 8/1/47, 1110 Wien, Österreich</p>
             <p>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+            <p>Murat Percin: <a href="tel:+436****7285">+43 699 10097285</a></p>
+            <p>Kübra Erik: <a href="tel:+436****1500">+43 660 6251500</a></p>
           </div>
           <div className="footer-legal">
             <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'fa' ? 'مشخصات نشر' : 'Impresum'}</h4>
