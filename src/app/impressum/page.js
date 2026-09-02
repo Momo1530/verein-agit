@@ -162,15 +162,17 @@ export default function ImpressumPage() {
                 <image href="/agit_logo.jpg" width="1024" height="1024" filter="url(#remove-white-footer)" />
               </svg>
             </div>
-            <p className="footer-desc">{lang === 'de' ? 'Verein AGIT – Antigewalt- und Interventionsteam' : lang === 'tr' ? 'Şiddet Karşıtı ve Müdahale Ekibi Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف وفريق التدخل' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Tîma Destêwerdanê' : lang === 'bks' ? 'Udruženje protiv nasilja i interventni tim' : 'انجمن مبارزه با خشونت و تیم مداخله'}</p>
+            <p className="footer-desc">{lang === 'de' ? 'Antigewalt- und Interventionsteam' : lang === 'tr' ? 'Şiddet Karşıtı ve Müdahale Ekibi Derneği' : lang === 'ar' ? 'جمعية مكافحة العنف وفريق التدخل' : lang === 'ku' ? 'Komeleya Dijî Şîdetê û Tîma Destêwerdanê' : lang === 'bks' ? 'Udruženje protiv nasilja i interventni tim' : 'انجمن مبارزه با خشونت و تیم مداخله'}</p>
           </div>
           <div className="footer-contact">
             <h4>{lang === 'de' ? 'Kontakt' : lang === 'tr' ? 'İletişim' : lang === 'ar' ? 'اتصل' : lang === 'ku' ? 'Têkilî' : lang === 'bks' ? 'Kontakt' : 'تماس'}</h4>
             <p>Hallergasse 8/1/47, 1110 Wien, Österreich</p>
             <p>E-Mail: <a href="mailto:office@verein-agit.at">office@verein-agit.at</a></p>
+            <p>Murat Percin: <a href="tel:+436****7285">+43 699 10097285</a></p>
+            <p>Kübra Erik: <a href="tel:+436****1500">+43 660 6251500</a></p>
           </div>
           <div className="footer-legal">
-            <h4>{lang === 'de' ? 'Rechtliches' : lang === 'tr' ? 'Yasal' : lang === 'ar' ? 'قانوني' : lang === 'ku' ? 'Qanûnî' : lang === 'bks' ? 'Pravno' : 'قانونی'}</h4>
+            <h4>{lang === 'de' ? 'Impressum' : lang === 'tr' ? 'Künye' : lang === 'ar' ? 'بصمة' : lang === 'ku' ? 'Nasname' : lang === 'bks' ? 'Impresum' : 'مشخصات'}</h4>
             <p>ZVR-Zahl: 1897049103<br/>Behörde: LPD Wien</p>
             <p className="small-text"><a href="/impressum">Impressum</a> | <a href="/datenschutz">Datenschutzerklärung</a></p>
           </div>
