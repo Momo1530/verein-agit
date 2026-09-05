@@ -25,8 +25,8 @@ const translations = {
         content: "Diese Website dient der Information über die Ziele, Angebote, Projekte und Tätigkeiten des Vereins „AGIT – Antigewalt- und Interventionsteam“ sowie der Sensibilisierung der Öffentlichkeit für Gewaltfreiheit, Deeskalation und Zivilcourage."
       },
       {
-        title: "Bildnachweis",
-        content: "Bildmaterial erstellt mit KI (OpenAI / ChatGPT) im Auftrag des Vereins."
+        title: "Hinweis zu Bildrechten und KI-generierten Inhalten",
+        content: "Zur Illustration unserer Vereinsarbeit setzen wir unter anderem KI-gestützte Bildmedien ein:<br/><br/><strong>Workshop- & Gruppendarstellungen:</strong> Bei den abgebildeten Gruppenszenen handelt es sich um didaktische Symbolbilder (Fotomontagen). Die dargestellten jugendlichen Teilnehmer sind synthetisch erzeugt und stellen keine realen Personen dar (generiert via OpenAI / ChatGPT im Auftrag des Vereins)."
       }
     ]
   },
