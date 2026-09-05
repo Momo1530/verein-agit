@@ -23,6 +23,10 @@ const translations = {
       {
         title: "Grundlegende Richtung der Website („Blattlinie“)",
         content: "Diese Website dient der Information über die Ziele, Angebote, Projekte und Tätigkeiten des Vereins „AGIT – Antigewalt- und Interventionsteam“ sowie der Sensibilisierung der Öffentlichkeit für Gewaltfreiheit, Deeskalation und Zivilcourage."
+      },
+      {
+        title: "Bildnachweis",
+        content: "Bildmaterial erstellt mit KI (OpenAI / ChatGPT) im Auftrag des Vereins."
       }
     ]
   },
