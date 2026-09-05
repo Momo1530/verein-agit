@@ -412,7 +412,7 @@ export default function Home() {
             </a>
             <a href="/team" className="ansprechperson-text-col fly-from-right delay-4" aria-label="Zum Team">
               <h3>Kübra Erik, BA</h3>
-              <p className="ansprechperson-role">Sozialarbeiter, Antigewalt- und konfrontativer Ressourcentrainer</p>
+              <p className="ansprechperson-role">Bildungswissenschaftlerin, Sozialpädagogin, Antigewalt- und konfrontative Ressourcentrainerin</p>
             </a>
           </div>
         </section>
