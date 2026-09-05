@@ -26,7 +26,7 @@ const translations = {
       },
       {
         title: "Hinweis zu Bildrechten und KI-generierten Inhalten",
-        content: "Zur Illustration unserer Vereinsarbeit setzen wir unter anderem KI-gestützte Bildmedien ein:<br/><br/><strong>Workshop- & Gruppendarstellungen:</strong> Bei den abgebildeten Gruppenszenen handelt es sich um didaktische Symbolbilder (Fotomontagen). Die dargestellten jugendlichen Teilnehmer sind synthetisch erzeugt und stellen keine realen Personen dar (generiert via OpenAI / ChatGPT im Auftrag des Vereins)."
+        content: "Das auf dieser Website verwendete Bild ist ein Symbolbild (Fotomontage): Die abgebildeten jugendlichen Teilnehmer sind fiktiv und wurden im Auftrag des Vereins mittels KI (OpenAI / ChatGPT) generiert."
       }
     ]
   },
