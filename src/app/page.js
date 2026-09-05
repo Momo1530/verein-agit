@@ -245,7 +245,7 @@ export default function Home() {
             <p className="description">{t.hero_desc}</p>
           </div>
           <div className="hero-image">
-            <img src="/hero.jpg" alt="Group discussion on violence prevention" />
+            <img src="/hero_gruppenarbeit.jpg" alt="Group discussion on violence prevention" />
           </div>
         </section>
 
