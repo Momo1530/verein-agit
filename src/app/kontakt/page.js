@@ -18,7 +18,7 @@ const translations = {
     form_success: "Ihre Nachricht wurde erfolgreich gesendet! Wir melden uns in Kürze bei Ihnen.",
     form_error: "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
     contact_direct: "Direkter Kontakt",
-    contact_name: "Verein AGIT – Antigewalt und Gewaltprävention",
+    contact_name: "Verein AGIT – Antigewalt und Interventionsteam",
     contact_address: "Hallergasse 8/1/47, 1110 Wien",
     contact_email: "office@verein-agit.at"
   },
