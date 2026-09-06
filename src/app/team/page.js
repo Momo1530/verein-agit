@@ -11,7 +11,7 @@ const translations = {
     team_subtitle: "Unser Team",
     person1_name: "Kübra Erik, BA",
     person1_role: "",
-    person1_bio: "Bildungswissenschaftlerin, Sozialpädagogin sowie Anti-Gewalt- und Ressourcentrainerin. Sie verfügt über langjährige Erfahrung in der Arbeit mit Kindern und Jugendlichen in Einzel- und Gruppensettings, Schulklassen und Workshops. Darüber hinaus begleitete sie junge Frauen in belastenden Lebenssituationen und bringt Erfahrung in der Fallarbeit sowie in der Arbeit mit Fachkräften mit.",
+    person1_bio: "Bildungswissenschaftlerin sowie Anti-Gewalt- und Ressourcentrainerin. Sie verfügt über langjährige Erfahrung in der Arbeit mit Kindern und Jugendlichen in Einzel- und Gruppensettings, Schulklassen und Workshops. Darüber hinaus begleitete sie junge Frauen in belastenden Lebenssituationen und bringt Erfahrung in der Fallarbeit sowie in der Arbeit mit Fachkräften mit.",
     person1_email: "k.erik@verein-agit.at",
     person1_phone: "+43 660 6251500",
     person2_name: "Murat Percin, BA",
