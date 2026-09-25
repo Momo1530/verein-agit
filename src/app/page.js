@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from './hooks/useLanguage';
+import homeData from '../../content/pages/home.json';
 
 const translations = {
   de: {
@@ -241,8 +242,8 @@ export default function Home() {
         <section className="hero" style={{ flexDirection: isRtl ? 'row-reverse' : 'row' }}>
           <div className="hero-content">
             <p className="subtitle">{t.hero_subtitle}</p>
-            <h1 className="headline" dangerouslySetInnerHTML={{ __html: t.hero_headline }}></h1>
-            <p className="description">{t.hero_desc}</p>
+            <h1 className="headline" dangerouslySetInnerHTML={{ __html: homeData?.title || t.hero_headline }}></h1>
+            <p className="description">{homeData?.description || t.hero_desc}</p>
           </div>
           <div className="hero-image">
             <img src="/hero_gruppenarbeit.jpg" alt="Group discussion on violence prevention" />

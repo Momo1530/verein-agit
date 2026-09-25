@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "tinacms dev --local --skip-cloud-checks -c \"next dev\"",
+    "build": "tinacms build --local --skip-cloud-checks --partial-reindex && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tinacms-dev": "tinacms dev --local --skip-cloud-checks -c \"next dev\"",
+    "tinacms-build": "tinacms build --local --skip-cloud-checks"
   },
   "dependencies": {
+    "@tinacms/cli": "^3.1.0",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tinacms": "^3.14.1"
   }
 }
