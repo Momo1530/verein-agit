@@ -23,13 +23,11 @@ if (hasCloudCredentials) {
   if (!args.includes('--skip-cloud-checks')) args.push('--skip-cloud-checks');
 }
 
-// Only modify process.env if the script is invoked with arguments (CLI wrapper mode).
-if (args.length > 0) {
-  const bin = path.resolve(__dirname, '../node_modules/.bin/tinacms');
-  const cmd = `${bin} ${args.join(' ')}`;
-  try {
-    execSync(cmd, { stdio: 'inherit' });
-  } catch (err) {
-    process.exit(err.status || 1);
-  }
+// Always invoke tinacms CLI with the collected arguments.
+const bin = path.resolve(__dirname, '../node_modules/.bin/tinacms');
+const cmd = `${bin} ${args.join(' ')}`;
+try {
+  execSync(cmd, { stdio: 'inherit' });
+} catch (err) {
+  process.exit(err.status || 1);
 }
