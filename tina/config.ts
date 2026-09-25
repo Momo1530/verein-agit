@@ -1,13 +1,19 @@
-import { defineConfig, defineSchema } from 'tinacms';
+import { defineConfig } from 'tinacms';
+
+const hasCloudCredentials = Boolean(
+  process.env.NEXT_PUBLIC_TINA_CLIENT_ID && process.env.TINA_TOKEN
+);
+
+const isBuild = process.env.NODE_ENV === 'production';
 
 export default defineConfig({
   branch: process.env.NEXT_PUBLIC_TINA_BRANCH || 'main',
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || '',
   token: process.env.TINA_TOKEN || '',
   client: {
-    skip: true,
+    skip: !hasCloudCredentials,
   },
-  local: true,
+  local: !hasCloudCredentials,
   build: {
     outputFolder: 'admin',
     publicFolder: 'public',

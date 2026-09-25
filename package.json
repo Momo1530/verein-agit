@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "tinacms dev --local --skip-cloud-checks -c \"next dev\"",
-    "build": "tinacms build --local --skip-cloud-checks --partial-reindex && next build",
+    "dev": "node scripts/tina-env-check.js dev -c \"next dev\"",
+    "build": "node scripts/tina-env-check.js build --partial-reindex && next build",
     "start": "next start",
     "lint": "next lint",
-    "tinacms-dev": "tinacms dev --local --skip-cloud-checks -c \"next dev\"",
-    "tinacms-build": "tinacms build --local --skip-cloud-checks"
+    "tinacms-dev": "node scripts/tina-env-check.js dev -c \"next dev\"",
+    "tinacms-build": "node scripts/tina-env-check.js build"
   },
   "dependencies": {
     "@tinacms/cli": "^3.1.0",
@@ -16,5 +16,8 @@
     "react": "^18",
     "react-dom": "^18",
     "tinacms": "^3.14.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0"
   }
 }
