@@ -11,6 +11,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
@@ -47,21 +48,37 @@ FTP_HOST = '913.hosttech.eu'
 FTP_REMOTE_DIR = '/httpdocs/'
 
 
-def run(cmd, cwd=None):
-    print(f"[RUN] {' '.join(cmd)}")
-    result = subprocess.run(cmd, cwd=cwd, text=True, capture_output=True)
+def run(cmd, cwd=None, timeout=900):
+    print(f"[RUN] {' '.join(cmd)}", flush=True)
+    result = subprocess.run(cmd, cwd=cwd, text=True, capture_output=True, timeout=timeout)
     if result.stdout:
-        print(result.stdout)
+        print(result.stdout, flush=True)
     if result.stderr:
-        print(result.stderr, file=sys.stderr)
+        print(result.stderr, file=sys.stderr, flush=True)
     if result.returncode != 0:
         raise RuntimeError(f"Command failed: {' '.join(cmd)} (exit {result.returncode})")
     return result
 
 
+def kill_stale_tina():
+    """Kill leftover tinacms processes holding the datalayer port (9000).
+
+    A failed or interrupted build can leave a tinacms process behind, which then
+    makes every subsequent build fail with 'Datalayer server is busy on port 9000'.
+    """
+    for pattern in ('tinacms build', 'tinacms dev'):
+        subprocess.run(['pkill', '-f', pattern], check=False)
+    time.sleep(2)
+    # Escalate for anything still alive
+    for pattern in ('tinacms build', 'tinacms dev'):
+        subprocess.run(['pkill', '-9', '-f', pattern], check=False)
+    time.sleep(1)
+
+
 def deploy():
     """Pull latest main, build and deploy via FTP."""
     try:
+        kill_stale_tina()
         run(['git', 'fetch', 'origin'], cwd=REPO_DIR)
         run(['git', 'reset', '--hard', 'origin/main'], cwd=REPO_DIR)
         run([NPM_BIN, 'install'], cwd=REPO_DIR)
@@ -92,7 +109,14 @@ bye
             lftp_script_path = f.name
         try:
             os.chmod(lftp_script_path, 0o600)
-            subprocess.run(['lftp', '-f', lftp_script_path], cwd=REPO_DIR, check=True)
+            ftp = subprocess.run(['lftp', '-f', lftp_script_path], cwd=REPO_DIR,
+                                 text=True, capture_output=True)
+            if ftp.stdout:
+                print(ftp.stdout, flush=True)
+            if ftp.stderr:
+                print(ftp.stderr, file=sys.stderr, flush=True)
+            if ftp.returncode != 0:
+                raise RuntimeError(f'lftp failed (exit {ftp.returncode})')
         finally:
             try:
                 os.unlink(lftp_script_path)
