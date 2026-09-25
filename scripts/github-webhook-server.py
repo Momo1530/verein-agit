@@ -14,6 +14,13 @@ import sys
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
 
+# Line-buffered output so systemd/journald receives log lines immediately.
+try:
+    sys.stdout.reconfigure(line_buffering=True)
+    sys.stderr.reconfigure(line_buffering=True)
+except Exception:
+    pass
+
 REPO_DIR = Path(__file__).resolve().parent.parent
 ENV_FILE = REPO_DIR / '.env'
 PORT = 5000
@@ -109,15 +116,17 @@ class WebhookHandler(BaseHTTPRequestHandler):
         self._send(200, b'Verein Agit Webhook Listener')
 
     def do_POST(self):
-        if self.path != WEBHOOK_PATH:
-            self._send(404, b'Not found')
-            return
-
         content_length = int(self.headers.get('Content-Length', 0))
         body = self.rfile.read(content_length)
 
         signature = self.headers.get('X-Hub-Signature-256', '')
         event = self.headers.get('X-GitHub-Event', '')
+        sender = self.headers.get('User-Agent', '?')
+        print(f'[REQ] path={self.path} event={event!r} ua={sender!r} len={len(body)} sig={signature[:20]}')
+
+        if self.path != WEBHOOK_PATH:
+            self._send(404, b'Not found')
+            return
 
         if SECRET:
             expected = 'sha256=' + hmac.new(SECRET, body, hashlib.sha256).hexdigest()
