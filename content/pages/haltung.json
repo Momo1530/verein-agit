@@ -36,14 +36,14 @@
   },
   "tr": {
     "hero_title": "Tutumumuz",
-    "hero_desc": "Şiddet önleme bizim için bir atölyeden daha fazlasıdır – günlük hayata yerleşmesi gereken bir tutumdur.",
+    "hero_desc": "Şiddeti önlemeyi sadece atölyelerde bırakmıyor, günlük hayatımızın bir parçası haline getiriyoruz.",
     "leitbild_title": "İlkelerimiz",
-    "leitbild_text": "AGIT'in çalışmaları bütünsel, sistemik bir yaklaşıma dayanır. Şiddeti izole olarak ele almıyor, tüm sosyal çevreyi işe dahil ediyoruz. Hedef gruplarımız bu nedenle üç temel alana ayrılır:<br/><br/><strong>Yakın sosyal çevre (Aile & Velayet sahipleri):</strong> Ebeveynler ve bakım veren kişiler, gerilimi azaltma sürecinde önemli dayanaklardır. Hedefli ebeveyn çalışmasıyla ebeveynlik becerilerini güçlendirir ve aile içi günlük yaşamda şiddetsiz bir iklimi destekleriz.<br/><br/><strong>Çocuklar, gençler ve genç yetişkinler:</strong> Çalışmamızın merkezinde şiddetten etkilenen, şiddete yatkın olan veya zor yaşam koşulları nedeniyle risk altında bulunan genç insanlar yer alır. Onları bulundukları yerden alır, öğrenilmiş davranış kalıplarını kırmaları ve kendi kaynaklarını harekete geçirmeleri konusunda destekleriz.<br/><br/><strong>Uzmanlar, kurumlar ve çoğaltıcılar:</strong> Derneğimizin hedef grupları arasında çocuklar ve gençlerin yanı sıra okul, çocuk ve gençlik yardımı, gençlik çalışması, şiddet önleme ve kriz yönetimi alanlarında faaliyet gösteren uzmanlar ve kurumlar da yer alır.",
+    "leitbild_text": "AGİT olarak çalışmalarımızı bütünsel ve sistemli bir yaklaşımla sürdürüyoruz. Şiddeti tek başına bir sorun olarak değil, sosyal çevresiyle birlikte ele alıyor; tüm aktörleri sürece dahil ediyoruz. Bu doğrultuda çalışmalarımızı üç temel alanda yürütüyoruz:<br/><br/><strong>Yakın Sosyal Çevre (Aileler ve Bakım Verenler):</strong> Ebeveynler ve bakım veren kişiler, şiddet ve gerilimi azaltma sürecinin en önemli dayanaklarıdır. Ebeveynlik becerilerini güçlendiren odaklı çalışmalarımızla, aile içinde şiddetsiz bir yaşam ikliminin oluşmasını destekliyoruz.<br/><br/><strong>Çocuklar, Gençler ve Genç Yetişkinler:</strong> Çalışmalarımızın merkezinde şiddetten etkilenen, şiddete yönelen veya zor yaşam koşulları nedeniyle risk altında olan gençler yer alıyor. Gençleri bulundukları koşullar içinde kabul ediyor; alışılmış davranış kalıplarını kırmaları ve kendi potansiyellerini keşfetmeleri için onlara rehberlik ediyoruz.<br/><br/><strong>Uzmanlar ve Kurumlar (Çarpan Etkisi Oluşturanlar):</strong> Yalnızca gençlerle değil, onların hayatına dokunan profesyonellerle de çalışıyoruz. Okullar, çocuk ve gençlik yardım kuruluşları, kriz yönetimi ve şiddet önleme alanında çalışan uzman ve kurumlarla iş birliği yaparak ortak bir güç oluşturuyoruz.",
     "values_title": "Değerlerimiz",
     "values": [
       {
-        "title": "Saygı",
-        "desc": "Her insanın şiddetsiz bir ortam hakkı vardır. Herkese saygı ve önyargısız yaklaşırız."
+        "title": "Karşılıklı Saygı",
+        "desc": "Her bireyin şiddetsiz bir ortamda yaşama hakkı vardır. Yaklaşımımızın temelinde herkese saygı duymak ve önyargısız yaklaşmak yer alır."
       },
       {
         "title": "Katılım",
