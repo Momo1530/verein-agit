@@ -1,7 +1,7 @@
 {
   "de": {
     "hero_title": "Impressum",
-    "hero_desc": "Offenlegung gemäß § 25 Mediengesetz und Angaben gemäß § 5 E-Commerce-Gesetz (ECG)",
+    "hero_desc": "Offenlegung gemäß § 25 Mediengesetz und Angaben gemäß § 5 E-Commerce-Gesetz (ECG)\n\n",
     "sections": [
       {
         "title": "Medieninhaber & Herausgeber",
@@ -22,6 +22,9 @@
       {
         "title": "Hinweis zu Bildrechten und KI-generierten Inhalten",
         "content": "Das auf dieser Website verwendete Bild ist ein Symbolbild (Fotomontage): Die abgebildeten jugendlichen Teilnehmer sind fiktiv und wurden im Auftrag des Vereins mittels KI (OpenAI / ChatGPT) generiert."
+      },
+      {
+        "content": "Der Domain-Name verein-agit.at gehört offiziell zum Verein AGIT - Antigewalt- und Interventionsteam."
       }
     ]
   },
